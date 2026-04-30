@@ -1,0 +1,129 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Student Gallery — портфолио студентов (masonry с подписями) -->
+<style>
+
+    .af-student-gallery {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 12px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-student-gallery__inner { max-width: 1200px; margin: 0 auto; }
+    .af-student-gallery__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700; text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-student-gallery__sub {
+        text-align: center; color: var(--af-text-light);
+        font-size: clamp(18px, 1.5vw, 20px);
+        margin-bottom: clamp(32px, 5vw, 48px);
+        line-height: 1.6;
+    }
+    .af-student-gallery__masonry {
+        columns: 3;
+        column-gap: clamp(12px, 2vw, 20px);
+    }
+    .af-student-gallery__item {
+        break-inside: avoid;
+        margin-bottom: clamp(12px, 2vw, 20px);
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        position: relative;
+        cursor: pointer;
+    }
+    .af-student-gallery__item img {
+        width: 100%; display: block;
+        transition: transform 0.4s ease;
+    }
+    .af-student-gallery__item:hover img { transform: scale(1.05); }
+    .af-student-gallery__overlay {
+        position: absolute; inset: 0;
+        background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 50%);
+        opacity: 0; transition: opacity 0.3s;
+        display: flex; flex-direction: column;
+        justify-content: flex-end;
+        padding: clamp(12px, 2vw, 20px);
+    }
+    .af-student-gallery__item:hover .af-student-gallery__overlay { opacity: 1; }
+    .af-student-gallery__name {
+        color: #fff; font-weight: 700;
+        font-size: clamp(18px, 1.3vw, 20px);
+    }
+    .af-student-gallery__course {
+        color: rgba(255,255,255,0.8);
+        font-size: clamp(16px, 1.1vw, 18px);
+    }
+
+    @media (max-width: 768px) {
+        .af-student-gallery__masonry { columns: 2; }
+    }
+    @media (max-width: 400px) {
+        .af-student-gallery__masonry { columns: 1; max-width: 360px; margin: 0 auto; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-student-gallery">
+    <div class="af-student-gallery__inner">
+        <h2 class="af-student-gallery__heading">Student portfolio</h2>
+        <p class="af-student-gallery__sub">Real results from real students — see what you can create</p>
+        <div class="af-student-gallery__masonry">
+            <div class="af-student-gallery__item">
+                <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=400&h=500&fit=crop" alt="Student work">
+                <div class="af-student-gallery__overlay">
+                    <div class="af-student-gallery__name">Maria K.</div>
+                    <div class="af-student-gallery__course">Watercolor Basics, Cohort 12</div>
+                </div>
+            </div>
+            <div class="af-student-gallery__item">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=320&fit=crop" alt="Student work">
+                <div class="af-student-gallery__overlay">
+                    <div class="af-student-gallery__name">Alex D.</div>
+                    <div class="af-student-gallery__course">Oil Painting, Cohort 8</div>
+                </div>
+            </div>
+            <div class="af-student-gallery__item">
+                <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=400&h=400&fit=crop" alt="Student work">
+                <div class="af-student-gallery__overlay">
+                    <div class="af-student-gallery__name">Yuki T.</div>
+                    <div class="af-student-gallery__course">Digital Art, Cohort 5</div>
+                </div>
+            </div>
+            <div class="af-student-gallery__item">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=560&fit=crop" alt="Student work">
+                <div class="af-student-gallery__overlay">
+                    <div class="af-student-gallery__name">Carlos M.</div>
+                    <div class="af-student-gallery__course">Abstract Art, Cohort 3</div>
+                </div>
+            </div>
+            <div class="af-student-gallery__item">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=350&fit=crop" alt="Student work">
+                <div class="af-student-gallery__overlay">
+                    <div class="af-student-gallery__name">Sophie L.</div>
+                    <div class="af-student-gallery__course">Sketch & Ink, Cohort 10</div>
+                </div>
+            </div>
+            <div class="af-student-gallery__item">
+                <img src="https://images.unsplash.com/photo-1578301978693-85fa9fd0c585?w=400&h=480&fit=crop" alt="Student work">
+                <div class="af-student-gallery__overlay">
+                    <div class="af-student-gallery__name">Dmitry V.</div>
+                    <div class="af-student-gallery__course">Watercolor Advanced, Cohort 6</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

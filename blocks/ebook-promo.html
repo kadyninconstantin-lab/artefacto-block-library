@@ -1,0 +1,156 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: E-Book Promo — промо-блок с изображением книги и CTA -->
+<style>
+    .af-ebook {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-border: #e0d6cc;
+        --af-radius: 20px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-ebook__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: var(--af-card-bg);
+        border: 2px solid var(--af-border);
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1.2fr;
+        align-items: center;
+    }
+    .af-ebook__image {
+        padding: clamp(24px, 4vw, 48px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .af-ebook__image img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+    }
+    .af-ebook__content {
+        padding: clamp(24px, 4vw, 48px);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(12px, 2vw, 20px);
+    }
+    .af-ebook__badge {
+        display: inline-block;
+        align-self: flex-start;
+        background: var(--af-primary);
+        color: #fff;
+        font-size: clamp(14px, 1.2vw, 16px);
+        font-weight: 700;
+        padding: 6px 16px;
+        border-radius: 50px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+    .af-ebook__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3vw, 36px);
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .af-ebook__desc {
+        font-size: clamp(18px, 1.5vw, 20px);
+        line-height: 1.7;
+        color: var(--af-text-light);
+    }
+    .af-ebook__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .af-ebook__list li {
+        font-size: clamp(16px, 1.4vw, 18px);
+        line-height: 1.6;
+        padding-left: 28px;
+        position: relative;
+        color: var(--af-text-light);
+    }
+    .af-ebook__list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--af-primary);
+        font-weight: 700;
+    }
+    .af-ebook__btn {
+        min-height: 48px;
+        display: inline-flex;
+        align-self: center;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(14px, 2vw, 18px) clamp(32px, 4vw, 48px);
+        border-radius: 50px;
+        background: var(--af-primary);
+        color: #fff;
+        font-family: var(--af-font-body);
+        font-size: clamp(18px, 1.5vw, 20px);
+        font-weight: 700;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.25s, transform 0.2s;
+    }
+    .af-ebook__btn:hover {
+        background: var(--af-primary-hover);
+        transform: translateY(-2px);
+    }
+    @media (max-width: 768px) {
+        .af-ebook__inner {
+            grid-template-columns: 1fr;
+            text-align: center;
+        }
+        .af-ebook__image {
+            padding: clamp(24px, 4vw, 32px) clamp(24px, 4vw, 32px) 0;
+        }
+        .af-ebook__badge {
+            align-self: center;
+        }
+        .af-ebook__list li {
+            text-align: left;
+        }
+    }
+
+    *:focus-visible {
+        outline: 3px solid var(--af-primary, #de6518);
+        outline-offset: 3px;
+        border-radius: 4px;
+    }
+</style>
+<div class="af-ebook">
+    <div class="af-ebook__inner">
+        <div class="af-ebook__image">
+            <img src="https://placehold.co/320x420/f4efe9/3b3b3b?text=E-Book" alt="Обложка электронной книги" loading="lazy">
+        </div>
+        <div class="af-ebook__content">
+            <span class="af-ebook__badge">Бесплатно</span>
+            <h2 class="af-ebook__heading">Скачайте гайд по основам акварели</h2>
+            <p class="af-ebook__desc">48 страниц с пошаговыми упражнениями и секретами работы с цветом.</p>
+            <ul class="af-ebook__list">
+                <li>Подбор материалов для начинающих</li>
+                <li>5 базовых техник смешивания</li>
+                <li>Готовые палитры для пейзажей</li>
+            </ul>
+            <a href="#" class="af-ebook__btn">Получить бесплатно</a>
+        </div>
+    </div>
+</div>

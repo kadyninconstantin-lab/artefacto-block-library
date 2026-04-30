@@ -1,0 +1,102 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: CTA + Image — призыв к действию с картинкой -->
+<style>
+
+    .af-cta-img {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 20px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-cta-img__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        background: var(--af-primary);
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+    .af-cta-img__content {
+        padding: clamp(32px, 5vw, 64px);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: clamp(12px, 2vw, 20px);
+        color: #fff;
+    }
+    .af-cta-img__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 38px);
+        font-weight: 700;
+        line-height: 1.2;
+    }
+    .af-cta-img__desc {
+        font-size: clamp(18px, 1.5vw, 20px);
+        line-height: 1.7;
+        opacity: 0.9;
+    }
+    .af-cta-img__btn {
+    min-height: 48px;
+        display: inline-flex;
+        align-self: center;
+        padding: clamp(12px, 2vw, 16px) clamp(28px, 4vw, 40px);
+        border-radius: 50px;
+        background: #fff;
+        color: var(--af-primary);
+        font-family: var(--af-font-body);
+        font-size: clamp(18px, 1.5vw, 20px);
+        font-weight: 700;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        margin-top: 8px;
+        box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+    .af-cta-img__btn:hover {
+        background: var(--af-text);
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    }
+    .af-cta-img__btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+    }
+    .af-cta-img__image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        min-height: 300px;
+    }
+    @media (max-width: 768px) {
+        .af-cta-img__inner { grid-template-columns: 1fr; }
+        .af-cta-img__image { order: -1; }
+        .af-cta-img__image img { aspect-ratio: 16/9; min-height: auto; }
+    }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+
+<div class="af-cta-img">
+    <div class="af-cta-img__inner">
+        <div class="af-cta-img__content">
+            <h2 class="af-cta-img__heading">Ready to transform your painting?</h2>
+            <p class="af-cta-img__desc">Join 2,500+ students who discovered a new way to see watercolor. Limited spots for the live intensive.</p>
+            <a href="#form" class="af-cta-img__btn">Reserve your spot now</a>
+        </div>
+        <div class="af-cta-img__image">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=500&fit=crop" alt="Watercolor painting">
+        </div>
+    </div>
+</div>

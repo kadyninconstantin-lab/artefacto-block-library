@@ -1,0 +1,349 @@
+<!-- ============================================================
+     Artefacto: Universal 55+ Fix for GetCourse Landing Pages
+     v1.0 | 2026-04-01
+     ============================================================
+     Вставить в HEAD ЛЮБОГО лендинга на GetCourse.
+     Фиксит все платформенные элементы GC по стандартам 55+.
+
+     Что покрывает:
+     ✓ Все GC-элементы (формы, модалки, корзина, хедер, футер)
+     ✓ Artefacto-блоки (af-*, art-*)
+     ✓ Базовый safety net для .block-set контента
+     ✓ Контраст WCAG AAA, touch targets 48px, line-height
+     ✓ Focus indicators, reduced motion, mobile centering
+
+     Что НЕ покрывает (нужен страничный фикс):
+     ✗ Кастомные классы страницы (workshop-program, achive, etc.)
+     ✗ Spacing кастомных секций
+     ✗ Специфичные карточки/секции уникальные для страницы
+     ============================================================ -->
+<style>
+/* ================================================================
+   ARTEFACTO — UNIVERSAL 55+ FIX FOR GETCOURSE
+   v1.0 | Standards: Files/senior-design-guidelines.md
+   ================================================================ */
+
+
+/* ═══════════════════════════════════════════════════════════════
+   1. BASELINE — safety net для всего контента .block-set
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Body text: 18px+, line-height 1.65 */
+.block-set p,
+.block-set li,
+.block-set td,
+.block-set th {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+}
+
+/* Контраст: solid color вместо rgba для 7:1+ на белом/кремовом */
+.block-set p,
+.block-set li,
+.block-set td,
+.block-set th,
+.block-set span {
+  color: #3b3b3b !important;
+}
+
+/* Исключения: не ломаем цвет внутри кнопок, цен, бейджей, тёмных секций */
+.block-set .f-btn,
+.block-set .f-btn span,
+.block-set [class*="btn"] span,
+.block-set [class*="price"],
+.block-set [class*="__number"],
+.block-set [class*="badge"],
+.block-set [class*="tag"],
+.block-set [class*="countdown"],
+.block-set [class*="timer"],
+.block-set [style*="background-color"] span,
+.block-set [style*="background:"] span {
+  color: inherit !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   2. HEADER / NAVIGATION
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Nav links — GC default бывает clamp(12px,...), line-height: 1 */
+.header__nav-link:is(:link, :visited, :hover, :active),
+.gc-user-logined .header__nav-link:is(:link, :visited, :hover, :active) {
+  font-size: clamp(16px, 1.6vw, 18px) !important;
+  line-height: 1.4 !important;
+  color: #3b3b3b !important;
+}
+
+/* Submenu */
+.header__submenu-link:is(:active, :visited, :hover, :link) {
+  font-size: 18px !important;
+  line-height: 1.4 !important;
+  color: #3b3b3b !important;
+}
+
+/* Auth button — GC default 12-14px, padding ~30px height */
+.header__auth-button {
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+  min-height: 48px !important;
+  padding: 12px 20px !important;
+}
+
+/* Hamburger — GC default 40x40 */
+.header__burger {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   3. BUTTONS & CTAs — 18px, 48px touch, centered
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Все f-btn на лендинге */
+.block-set .f-btn {
+  font-size: 18px !important;
+  min-height: 48px !important;
+  line-height: 1.3 !important;
+}
+
+/* Popup кнопки */
+.block-set .show-popup {
+  font-size: 18px !important;
+  min-height: 48px !important;
+  padding: 16px clamp(40px, 6vw, 60px) !important;
+}
+
+/* CTA centering */
+.block-set .global-custom-btn {
+  text-align: center !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   4. FORMS — inputs 18px/48px, checkboxes 16px
+   ═══════════════════════════════════════════════════════════════ */
+
+/* All form inputs */
+.block-set .f-input,
+.block-set input[type="text"],
+.block-set input[type="email"],
+.block-set input[type="tel"],
+.block-set input[type="password"],
+.block-set select,
+.block-set textarea {
+  font-size: 18px !important;
+  min-height: 48px !important;
+  line-height: 1.4 !important;
+}
+
+/* Checkbox/consent — GC default 13-14px */
+.block-set .checkbox-text,
+.block-set .global-confirm-checkbox-block {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: #555555 !important; /* 7.46:1 на белом — PASS AAA */
+}
+
+/* Form input gaps — GC default бывает 6px */
+.block-set .custom-input {
+  margin-bottom: clamp(10px, 1.5vw, 14px) !important;
+}
+.block-set .custom-input-last {
+  margin-bottom: clamp(16px, 2vw, 24px) !important;
+}
+
+/* Countdown timer text */
+.block-set .custom-title-countdown .f-header p {
+  font-size: 18px !important;
+  line-height: 1.4 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   5. MODALS — GC модальные окна
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Modal inputs — GC default 14px */
+.gc-modal-content .lt-form .f-input {
+  font-size: 18px !important;
+  min-height: 48px !important;
+  line-height: 1.4 !important;
+}
+
+/* Modal buttons — GC default clamp(14px,...) */
+.gc-modal .modal-content .form-content .btn.f-btn {
+  font-size: 18px !important;
+  min-height: 48px !important;
+}
+
+/* Modal checkboxes — GC default 13px */
+.gc-modal .global-confirm-checkbox-block {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+  color: #555555 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   6. BASKET / CART — корзина GC
+   ═══════════════════════════════════════════════════════════════ */
+
+.lt-basket .btn {
+  font-size: 18px !important;
+  min-height: 48px !important;
+}
+
+.lt-basket .buttons .btn {
+  font-size: 16px !important;
+  min-height: 48px !important;
+}
+
+.lt-basket .positions-table .offer-title,
+.lt-basket .positions-table .total-row .offer-title,
+.lt-basket .positions-table .total-row .total-price,
+.total-cost-str {
+  font-size: 18px !important;
+}
+
+.lt-basket.basket-collapsed .collapsed-view .collapsed-info__text {
+  font-size: 16px !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   7. FOOTER — GC footer элементы
+   ═══════════════════════════════════════════════════════════════ */
+
+/* Footer text — GC default clamp(15px,...), line-height: 1 */
+html .footer-item__text {
+  font-size: clamp(16px, 2vw, 20px) !important;
+  line-height: 1.5 !important;
+  margin-bottom: clamp(24px, 3vw, 36px) !important;
+}
+
+html .footer-item__text--sm {
+  font-size: clamp(16px, 1.7vw, 18px) !important;
+  line-height: 1.5 !important;
+}
+
+.footer-item__title {
+  line-height: 1.2 !important;
+  margin-bottom: clamp(10px, 2vw, 18px) !important;
+}
+
+/* Subtitle — GC default clamp(12px,...) + rgba(255,255,255,0.5) → 4.2:1 FAIL */
+.footer-item__subtitle {
+  font-size: clamp(16px, 2vw, 18px) !important;
+  line-height: 1.4 !important;
+  color: rgba(255, 255, 255, 0.8) !important; /* → 7.7:1 PASS */
+  margin-bottom: clamp(8px, 1.5vw, 16px) !important;
+}
+
+/* Footer links — GC default clamp(14px,...), no padding */
+.footer-item-list__link:is(:active, :visited, :hover, :link) {
+  font-size: clamp(16px, 1.8vw, 18px) !important;
+  line-height: 1.4 !important;
+  display: inline-block !important;
+  min-height: 44px !important;
+  padding: 10px 0 !important;
+}
+
+.footer-item-list__link:not(:last-child) {
+  margin-bottom: 4px !important;
+}
+
+/* Footer form */
+.footer-main .my-container .lt-form .part-userField .f-input,
+.footer-main .my-container .lt-form .custom-btn .f-btn {
+  font-size: 16px !important;
+  min-height: 48px !important;
+}
+
+.footer-main .my-container .flex-column .global-confirm-checkbox-block {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   8. ARTEFACTO BLOCKS — af-* и art-* safety net
+   ═══════════════════════════════════════════════════════════════ */
+
+[class^="af-"] p, [class*=" af-"] p,
+[class^="art-"] p, [class*=" art-"] p,
+[class^="art-"] span {
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+}
+
+[class^="af-"] li, [class*=" af-"] li,
+[class^="art-"] li {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+}
+
+[class^="af-"] summary, [class*=" af-"] summary {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+  min-height: 48px !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   9. FOCUS INDICATORS — keyboard navigation (WCAG 2.4.7)
+   ═══════════════════════════════════════════════════════════════ */
+
+.block-set a:focus-visible,
+.block-set button:focus-visible,
+.block-set input:focus-visible,
+.block-set select:focus-visible,
+.block-set textarea:focus-visible,
+.block-set summary:focus-visible,
+.block-set [role="button"]:focus-visible,
+.header__nav-link:focus-visible,
+.header__auth-button:focus-visible,
+.footer-item-list__link:focus-visible {
+  outline: 3px solid #1A5276 !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   10. MOBILE (≤576px)
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (max-width: 576px) {
+  .header__auth-button {
+    font-size: 16px !important;
+    padding: 12px 16px !important;
+    min-height: 48px !important;
+  }
+
+  .lt-basket.basket-collapsed .collapsed-view .collapsed-info__text,
+  .total-cost-str {
+    font-size: 16px !important;
+  }
+
+  /* CTA full-width on mobile */
+  .block-set .f-btn {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+
+/* ═══════════════════════════════════════════════════════════════
+   11. REDUCED MOTION (WCAG 2.3.3)
+   ═══════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .block-set *,
+  .block-set *::before,
+  .block-set *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+</style>

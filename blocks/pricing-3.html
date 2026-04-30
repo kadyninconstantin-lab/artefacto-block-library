@@ -1,0 +1,230 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Pricing 3 Plans — три тарифа с выделенным -->
+<style>
+
+    .af-pricing3 {
+        --af-primary: #de6518;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-pricing3__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .af-pricing3__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(32px, 5vw, 56px);
+    }
+
+    .af-pricing3__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2vw, 24px);
+        align-items: stretch;
+    }
+
+    .af-pricing3__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(24px, 3vw, 36px);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border: 2px solid transparent;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .af-pricing3__card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .af-pricing3__card--featured {
+        border-color: var(--af-primary);
+        box-shadow: 0 8px 32px rgba(222, 101, 24, 0.15);
+    }
+
+    .af-pricing3__badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--af-primary);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 4px 16px;
+        border-radius: 20px;
+        white-space: nowrap;
+    }
+
+    .af-pricing3__name {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+
+    .af-pricing3__desc {
+        font-size: clamp(16px, 1.3vw, 18px);
+        color: var(--af-text-light);
+        margin-bottom: clamp(16px, 2.5vw, 24px);
+        line-height: 1.6;
+    }
+
+    .af-pricing3__price {
+        font-family: var(--af-font-heading);
+        font-size: clamp(32px, 4vw, 45px);
+        font-weight: 700;
+        color: var(--af-text);
+        margin-bottom: 4px;
+    }
+
+    .af-pricing3__price span {
+        font-size: 0.5em;
+        font-weight: 500;
+        color: var(--af-text-light);
+    }
+
+    .af-pricing3__period {
+        font-size: clamp(16px, 1.3vw, 18px);
+        color: var(--af-text-light);
+        margin-bottom: clamp(20px, 3vw, 32px);
+    }
+
+    .af-pricing3__features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 clamp(24px, 3vw, 32px);
+        flex-grow: 1;
+    }
+
+    .af-pricing3__features li {
+        font-size: clamp(16px, 1.4vw, 18px);
+        padding: 8px 0;
+        padding-left: 24px;
+        position: relative;
+        border-bottom: 1px solid #f0ece6;
+        line-height: 1.6;
+    }
+
+    .af-pricing3__features li:last-child { border-bottom: none; }
+
+    .af-pricing3__features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--af-primary);
+        font-weight: 700;
+    }
+
+    .af-pricing3__btn {
+    min-height: 48px;
+        display: block;
+        text-align: center;
+        padding: clamp(12px, 2vw, 16px);
+        border-radius: 50px;
+        font-family: var(--af-font-body);
+        font-size: clamp(18px, 1.4vw, 20px);
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid var(--af-primary);
+        margin-top: auto;
+    }
+
+    .af-pricing3__btn--primary {
+        background: var(--af-primary);
+        color: #fff;
+    }
+
+    .af-pricing3__btn--primary:hover {
+        background: #c55a15;
+        border-color: #c55a15;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(222, 101, 24, 0.3);
+    }
+
+    .af-pricing3__btn--outline {
+        background: transparent;
+        color: var(--af-primary);
+    }
+
+    .af-pricing3__btn--outline:hover {
+        background: var(--af-primary);
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .af-pricing3__grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+    }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+
+<div class="af-pricing3">
+    <div class="af-pricing3__inner">
+        <h2 class="af-pricing3__heading">Choose your plan</h2>
+        <div class="af-pricing3__grid">
+            <div class="af-pricing3__card">
+                <div class="af-pricing3__name">Recording Only</div>
+                <div class="af-pricing3__desc">Watch at your own pace with lifetime access</div>
+                <div class="af-pricing3__price">€49 <span>EUR</span></div>
+                <div class="af-pricing3__period">one-time payment</div>
+                <ul class="af-pricing3__features">
+                    <li>3 days of recorded sessions</li>
+                    <li>Lifetime access to recordings</li>
+                    <li>Materials list included</li>
+                </ul>
+                <a href="#form" class="af-pricing3__btn af-pricing3__btn--outline">Choose plan</a>
+            </div>
+
+            <div class="af-pricing3__card af-pricing3__card--featured">
+                <div class="af-pricing3__badge">Most Popular</div>
+                <div class="af-pricing3__name">Live + Recording</div>
+                <div class="af-pricing3__desc">Join live sessions with Q&A and get recordings</div>
+                <div class="af-pricing3__price">€89 <span>EUR</span></div>
+                <div class="af-pricing3__period">one-time payment</div>
+                <ul class="af-pricing3__features">
+                    <li>3 live sessions with Nicolás</li>
+                    <li>Live Q&A after each session</li>
+                    <li>Lifetime access to recordings</li>
+                    <li>Materials list included</li>
+                </ul>
+                <a href="#form" class="af-pricing3__btn af-pricing3__btn--primary">Choose plan</a>
+            </div>
+
+            <div class="af-pricing3__card">
+                <div class="af-pricing3__name">VIP Experience</div>
+                <div class="af-pricing3__desc">Everything plus personal feedback on your work</div>
+                <div class="af-pricing3__price">€149 <span>EUR</span></div>
+                <div class="af-pricing3__period">one-time payment</div>
+                <ul class="af-pricing3__features">
+                    <li>3 live sessions with Nicolás</li>
+                    <li>Live Q&A after each session</li>
+                    <li>Personal painting review</li>
+                    <li>Private Telegram group</li>
+                    <li>Lifetime access to recordings</li>
+                </ul>
+                <a href="#form" class="af-pricing3__btn af-pricing3__btn--outline">Choose plan</a>
+            </div>
+        </div>
+    </div>
+</div>

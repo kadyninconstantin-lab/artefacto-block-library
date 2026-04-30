@@ -1,0 +1,91 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: 4 Columns + Icons -->
+<style>
+
+    .af-cols4i {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-card-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-cols4i__inner { max-width: 1200px; margin: 0 auto; }
+    .af-cols4i__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(32px, 5vw, 56px);
+    }
+    .af-cols4i__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(12px, 2vw, 24px);
+    }
+    .af-cols4i__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(20px, 2.5vw, 32px);
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .af-cols4i__card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .af-cols4i__icon { font-size: clamp(29px, 3vw, 38px); margin-bottom: clamp(10px, 1.5vw, 16px); }
+    .af-cols4i__card-title {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 1.7vw, 19px);
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .af-cols4i__card-text {
+        font-size: clamp(16px, 1.3vw, 18px);
+        line-height: 1.6;
+        color: var(--af-text-light);
+    }
+    @media (max-width: 900px) { .af-cols4i__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .af-cols4i__grid { grid-template-columns: 1fr; } }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-cols4i">
+    <div class="af-cols4i__inner">
+        <h2 class="af-cols4i__heading">What makes us different</h2>
+        <div class="af-cols4i__grid">
+            <div class="af-cols4i__card">
+                <div class="af-cols4i__icon">🎨</div>
+                <h3 class="af-cols4i__card-title">Live Sessions</h3>
+                <p class="af-cols4i__card-text">Real-time painting with a master artist</p>
+            </div>
+            <div class="af-cols4i__card">
+                <div class="af-cols4i__icon">💬</div>
+                <h3 class="af-cols4i__card-title">Personal Feedback</h3>
+                <p class="af-cols4i__card-text">Individual critique of your work</p>
+            </div>
+            <div class="af-cols4i__card">
+                <div class="af-cols4i__icon">📹</div>
+                <h3 class="af-cols4i__card-title">Recordings</h3>
+                <p class="af-cols4i__card-text">Lifetime access to all sessions</p>
+            </div>
+            <div class="af-cols4i__card">
+                <div class="af-cols4i__icon">🤝</div>
+                <h3 class="af-cols4i__card-title">Community</h3>
+                <p class="af-cols4i__card-text">Join a group of like-minded artists</p>
+            </div>
+        </div>
+    </div>
+</div>

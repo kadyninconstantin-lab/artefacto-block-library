@@ -1,0 +1,78 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: CTA — призыв к действию (яркий блок) -->
+<style>
+
+    .af-cta {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-primary);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        text-align: center;
+        font-family: var(--af-font-body);
+        color: #fff;
+    }
+
+    .af-cta__inner {
+        max-width: 720px;
+        margin: 0 auto;
+    }
+
+    .af-cta__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(26px, 4vw, 45px);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+
+    .af-cta__desc {
+        font-size: clamp(18px, 1.6vw, 20px);
+        line-height: 1.7;
+        opacity: 0.9;
+        margin-bottom: clamp(24px, 4vw, 36px);
+    }
+
+    .af-cta__btn {
+    min-height: 48px;
+        display: inline-flex;
+        padding: clamp(14px, 2vw, 18px) clamp(36px, 5vw, 56px);
+        border-radius: 50px;
+        background: #fff;
+        color: var(--af-primary);
+        font-family: var(--af-font-body);
+        font-size: clamp(18px, 1.6vw, 20px);
+        font-weight: 700;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    .af-cta__btn {
+        box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+    }
+
+    .af-cta__btn:hover {
+        background: var(--af-primary-hover);
+        color: #fff;
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+    }
+
+    .af-cta__btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+
+<div class="af-cta">
+    <div class="af-cta__inner">
+        <h2 class="af-cta__heading">Ready to transform your painting?</h2>
+        <p class="af-cta__desc">Join the intensive and discover a new way to see watercolor. Limited spots available.</p>
+        <a href="#form" class="af-cta__btn">Reserve your spot now</a>
+    </div>
+</div>

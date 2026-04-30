@@ -1,0 +1,92 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: 3 Columns + Images -->
+<style>
+
+    .af-cols3img {
+        --af-primary: #de6518;
+        --af-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-cols3img__inner { max-width: 1200px; margin: 0 auto; }
+    .af-cols3img__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(32px, 5vw, 56px);
+    }
+    .af-cols3img__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2vw, 24px);
+    }
+    .af-cols3img__card {
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        background: #fff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .af-cols3img__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+    .af-cols3img__card img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        display: block;
+    }
+    .af-cols3img__card-body { padding: clamp(16px, 2vw, 24px); }
+    .af-cols3img__card-title {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 1.8vw, 20px);
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .af-cols3img__card-text {
+        font-size: clamp(16px, 1.3vw, 18px);
+        line-height: 1.6;
+        color: var(--af-text-light);
+    }
+    @media (max-width: 768px) { .af-cols3img__grid { grid-template-columns: 1fr; } }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-cols3img">
+    <div class="af-cols3img__inner">
+        <h2 class="af-cols3img__heading">Student galleries</h2>
+        <div class="af-cols3img__grid">
+            <div class="af-cols3img__card">
+                <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=500&h=375&fit=crop" alt="Landscape">
+                <div class="af-cols3img__card-body">
+                    <h3 class="af-cols3img__card-title">Landscapes</h3>
+                    <p class="af-cols3img__card-text">Moody skies, reflections, and atmospheric depth.</p>
+                </div>
+            </div>
+            <div class="af-cols3img__card">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=375&fit=crop" alt="Abstract">
+                <div class="af-cols3img__card-body">
+                    <h3 class="af-cols3img__card-title">Abstracts</h3>
+                    <p class="af-cols3img__card-text">Color exploration and experimental techniques.</p>
+                </div>
+            </div>
+            <div class="af-cols3img__card">
+                <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=500&h=375&fit=crop" alt="Portraits">
+                <div class="af-cols3img__card-body">
+                    <h3 class="af-cols3img__card-title">Portraits</h3>
+                    <p class="af-cols3img__card-text">Capturing emotion through watercolor portraits.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

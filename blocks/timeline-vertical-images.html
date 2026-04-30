@@ -1,0 +1,150 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Timeline Vertical + Images — шаги с картинками -->
+<style>
+
+    .af-timeline-img {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-timeline-img__inner { max-width: 900px; margin: 0 auto; }
+    .af-timeline-img__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-timeline-img__list {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(32px, 5vw, 56px);
+    }
+    .af-timeline-img__item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(24px, 4vw, 48px);
+        align-items: center;
+    }
+    .af-timeline-img__item:nth-child(even) .af-timeline-img__image {
+        order: 1;
+    }
+    .af-timeline-img__image img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: var(--af-radius);
+        display: block;
+    }
+    .af-timeline-img__content {
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+    }
+    .af-timeline-img__step {
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 4px;
+    }
+    .af-timeline-img__number {
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: var(--af-primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: var(--af-font-heading);
+        font-size: 16px;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+    .af-timeline-img__label {
+        font-size: clamp(16px, 1.2vw, 18px);
+        font-weight: 700;
+        color: var(--af-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .af-timeline-img__title {
+        font-family: var(--af-font-heading);
+        font-size: clamp(19px, 2.2vw, 26px);
+        font-weight: 700;
+        line-height: 1.3;
+    }
+    .af-timeline-img__text {
+        font-size: clamp(18px, 1.5vw, 20px);
+        line-height: 1.7;
+        color: var(--af-text-light);
+    }
+    @media (max-width: 640px) {
+        .af-timeline-img__item { grid-template-columns: 1fr; }
+        .af-timeline-img__item:nth-child(even) .af-timeline-img__image { order: -1; }
+        .af-timeline-img__image { order: -1; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-timeline-img">
+    <div class="af-timeline-img__inner">
+        <h2 class="af-timeline-img__heading">Course program</h2>
+        <div class="af-timeline-img__list">
+            <div class="af-timeline-img__item">
+                <div class="af-timeline-img__image">
+                    <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=450&fit=crop" alt="Day 1">
+                </div>
+                <div class="af-timeline-img__content">
+                    <div class="af-timeline-img__step">
+                        <div class="af-timeline-img__number">1</div>
+                        <span class="af-timeline-img__label">Day 1</span>
+                    </div>
+                    <h3 class="af-timeline-img__title">Foundation: Water & Color</h3>
+                    <p class="af-timeline-img__text">Understanding how water behaves on paper. Basic washes, color mixing, and finding your first brushstrokes. Pure discovery, no pressure.</p>
+                </div>
+            </div>
+
+            <div class="af-timeline-img__item">
+                <div class="af-timeline-img__image">
+                    <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=450&fit=crop" alt="Day 2">
+                </div>
+                <div class="af-timeline-img__content">
+                    <div class="af-timeline-img__step">
+                        <div class="af-timeline-img__number">2</div>
+                        <span class="af-timeline-img__label">Day 2</span>
+                    </div>
+                    <h3 class="af-timeline-img__title">Technique: Light & Shadow</h3>
+                    <p class="af-timeline-img__text">Layering, glazing, and creating depth. We paint a landscape from reference together, with Nicolás guiding every stroke in real time.</p>
+                </div>
+            </div>
+
+            <div class="af-timeline-img__item">
+                <div class="af-timeline-img__image">
+                    <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=450&fit=crop" alt="Day 3">
+                </div>
+                <div class="af-timeline-img__content">
+                    <div class="af-timeline-img__step">
+                        <div class="af-timeline-img__number">3</div>
+                        <span class="af-timeline-img__label">Day 3</span>
+                    </div>
+                    <h3 class="af-timeline-img__title">Expression: Your Own Voice</h3>
+                    <p class="af-timeline-img__text">Bringing it all together. You choose your subject and create your own composition. Personal feedback from Nicolás on your work.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

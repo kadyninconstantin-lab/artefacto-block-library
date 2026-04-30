@@ -1,0 +1,126 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Guarantee — гарантия и знаки доверия -->
+<style>
+
+    .af-guarantee {
+        --af-primary: #de6518;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-border: #999999;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-guarantee__inner { max-width: 960px; margin: 0 auto; }
+    .af-guarantee__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(32px, 5vw, 56px);
+        display: flex; align-items: center;
+        gap: clamp(24px, 4vw, 48px);
+        box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+    }
+    .af-guarantee__badge {
+        flex-shrink: 0;
+        width: clamp(112px, 14vw, 140px);
+        height: clamp(112px, 14vw, 140px);
+        background: linear-gradient(135deg, var(--af-primary), #f4a261);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 4px 20px rgba(222,101,24,0.25);
+        padding: 10px;
+        box-sizing: border-box;
+    }
+    .af-guarantee__badge-text {
+        color: #fff; text-align: center; line-height: 1.15;
+        font-weight: 800; font-size: clamp(11px, 1.1vw, 14px);
+        text-transform: uppercase; letter-spacing: 0.02em;
+    }
+    .af-guarantee__badge-text span {
+        display: block;
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 2.6vw, 32px);
+        font-weight: 700;
+        line-height: 1;
+        margin-bottom: 2px;
+    }
+    .af-guarantee__content { flex: 1; }
+    .af-guarantee__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(21px, 2.8vw, 29px);
+        font-weight: 700; margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-guarantee__text {
+        font-size: clamp(18px, 1.4vw, 20px);
+        color: var(--af-text-light); line-height: 1.7;
+        margin-bottom: 20px;
+    }
+    .af-guarantee__badges {
+        display: flex; flex-wrap: wrap;
+        gap: clamp(12px, 2vw, 20px);
+    }
+    .af-guarantee__trust {
+        display: flex; align-items: center;
+        gap: 8px; font-size: clamp(16px, 1.2vw, 18px);
+        font-weight: 600; color: var(--af-text);
+    }
+    .af-guarantee__trust-icon {
+        width: 28px; height: 28px;
+        background: rgba(222,101,24,0.1);
+        border-radius: 8px;
+        display: flex; align-items: center; justify-content: center;
+        font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+        .af-guarantee__card { flex-direction: column; text-align: center; }
+        .af-guarantee__badges { justify-content: center; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-guarantee">
+    <div class="af-guarantee__inner">
+        <div class="af-guarantee__card">
+            <div class="af-guarantee__badge">
+                <div class="af-guarantee__badge-text">
+                    <span>30</span>
+                    day money<br>back
+                </div>
+            </div>
+            <div class="af-guarantee__content">
+                <h2 class="af-guarantee__heading">100% Satisfaction Guarantee</h2>
+                <p class="af-guarantee__text">Try the course risk-free for 30 days. If it is not the right fit, we will refund your payment in full — no questions asked. We believe in the quality of our program and want you to feel confident in your decision.</p>
+                <div class="af-guarantee__badges">
+                    <div class="af-guarantee__trust">
+                        <div class="af-guarantee__trust-icon">&#128274;</div>
+                        Secure payment
+                    </div>
+                    <div class="af-guarantee__trust">
+                        <div class="af-guarantee__trust-icon">&#9989;</div>
+                        Verified reviews
+                    </div>
+                    <div class="af-guarantee__trust">
+                        <div class="af-guarantee__trust-icon">&#127942;</div>
+                        Award-winning
+                    </div>
+                    <div class="af-guarantee__trust">
+                        <div class="af-guarantee__trust-icon">&#128100;</div>
+                        5,000+ students
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

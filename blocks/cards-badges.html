@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Cards with Badges — карточки со стикерами -->
+<style>
+
+    .af-cardsbdg {
+        --af-primary: #de6518; --af-bg: #f4efe9; --af-card-bg: #ffffff;
+        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body); color: var(--af-text);
+    }
+    .af-cardsbdg__inner { max-width: 1200px; margin: 0 auto; }
+    .af-cardsbdg__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; text-align: center; margin-bottom: clamp(32px, 5vw, 48px); }
+    .af-cardsbdg__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 24px); }
+    .af-cardsbdg__card { background: var(--af-card-bg); border-radius: var(--af-radius); padding: clamp(24px, 3vw, 36px); position: relative; transition: transform 0.3s, box-shadow 0.3s; }
+    .af-cardsbdg__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .af-cardsbdg__badge { position: absolute; top: 16px; right: 16px; background: var(--af-primary); color: #fff; font-size: 16px; font-weight: 700; text-transform: uppercase; padding: 4px 12px; border-radius: 20px; }
+    .af-cardsbdg__icon { font-size: clamp(32px, 3vw, 40px); margin-bottom: 12px; }
+    .af-cardsbdg__card-title { font-family: var(--af-font-heading); font-size: clamp(18px, 1.8vw, 21px); font-weight: 700; margin-bottom: 8px; }
+    .af-cardsbdg__card-text { font-size: clamp(16px, 1.4vw, 18px); line-height: 1.7; color: var(--af-text-light); }
+    @media (max-width: 768px) { .af-cardsbdg__grid { grid-template-columns: 1fr; } }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+<div class="af-cardsbdg">
+    <div class="af-cardsbdg__inner">
+        <h2 class="af-cardsbdg__heading">Course formats</h2>
+        <div class="af-cardsbdg__grid">
+            <div class="af-cardsbdg__card"><div class="af-cardsbdg__badge">Popular</div><div class="af-cardsbdg__icon">🎨</div><h3 class="af-cardsbdg__card-title">Group Online</h3><p class="af-cardsbdg__card-text">Live sessions with up to 12 students. Interactive format with Q&A.</p></div>
+            <div class="af-cardsbdg__card"><div class="af-cardsbdg__badge">New</div><div class="af-cardsbdg__icon">👤</div><h3 class="af-cardsbdg__card-title">1-on-1 Coaching</h3><p class="af-cardsbdg__card-text">Private sessions with Nicolás. Fully customized to your level and goals.</p></div>
+            <div class="af-cardsbdg__card"><div class="af-cardsbdg__icon">📹</div><h3 class="af-cardsbdg__card-title">Self-Paced</h3><p class="af-cardsbdg__card-text">Watch recordings at your own speed with weekly assignments and feedback.</p></div>
+        </div>
+    </div>
+</div>

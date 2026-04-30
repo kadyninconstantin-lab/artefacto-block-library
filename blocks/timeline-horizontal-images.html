@@ -1,0 +1,136 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Timeline Horizontal + Images — шаги горизонтально с картинками -->
+<style>
+
+    .af-timelineh-img {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-card-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-timelineh-img__inner { max-width: 1200px; margin: 0 auto; }
+    .af-timelineh-img__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-timelineh-img__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2vw, 24px);
+    }
+    .af-timelineh-img__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .af-timelineh-img__card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .af-timelineh-img__card img {
+        width: 100%;
+        aspect-ratio: 16/10;
+        object-fit: cover;
+        display: block;
+    }
+    .af-timelineh-img__body {
+        padding: clamp(16px, 2.5vw, 28px);
+    }
+    .af-timelineh-img__step {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 8px;
+    }
+    .af-timelineh-img__number {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--af-primary);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 16px;
+        font-weight: 700;
+        flex-shrink: 0;
+    }
+    .af-timelineh-img__label {
+        font-size: clamp(16px, 1.1vw, 18px);
+        font-weight: 700;
+        color: var(--af-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .af-timelineh-img__title {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 1.8vw, 21px);
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .af-timelineh-img__text {
+        font-size: clamp(16px, 1.3vw, 18px);
+        line-height: 1.6;
+        color: var(--af-text-light);
+    }
+    @media (max-width: 768px) { .af-timelineh-img__grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-timelineh-img">
+    <div class="af-timelineh-img__inner">
+        <h2 class="af-timelineh-img__heading">How it works</h2>
+        <div class="af-timelineh-img__grid">
+            <div class="af-timelineh-img__card">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=500&h=312&fit=crop" alt="Step 1">
+                <div class="af-timelineh-img__body">
+                    <div class="af-timelineh-img__step">
+                        <div class="af-timelineh-img__number">1</div>
+                        <span class="af-timelineh-img__label">Step one</span>
+                    </div>
+                    <h3 class="af-timelineh-img__title">Register & prepare</h3>
+                    <p class="af-timelineh-img__text">Sign up, choose your plan, and gather the materials from our list. Takes 15 minutes.</p>
+                </div>
+            </div>
+            <div class="af-timelineh-img__card">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&h=312&fit=crop" alt="Step 2">
+                <div class="af-timelineh-img__body">
+                    <div class="af-timelineh-img__step">
+                        <div class="af-timelineh-img__number">2</div>
+                        <span class="af-timelineh-img__label">Step two</span>
+                    </div>
+                    <h3 class="af-timelineh-img__title">Join the sessions</h3>
+                    <p class="af-timelineh-img__text">Connect live for 3 days of guided painting. Ask questions, get feedback in real time.</p>
+                </div>
+            </div>
+            <div class="af-timelineh-img__card">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=312&fit=crop" alt="Step 3">
+                <div class="af-timelineh-img__body">
+                    <div class="af-timelineh-img__step">
+                        <div class="af-timelineh-img__number">3</div>
+                        <span class="af-timelineh-img__label">Step three</span>
+                    </div>
+                    <h3 class="af-timelineh-img__title">Keep growing</h3>
+                    <p class="af-timelineh-img__text">Rewatch recordings anytime. Share your work in the community. Continue your journey.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

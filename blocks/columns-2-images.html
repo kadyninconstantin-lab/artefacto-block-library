@@ -1,0 +1,85 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: 2 Columns + Images -->
+<style>
+
+    .af-cols2img {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-cols2img__inner { max-width: 1200px; margin: 0 auto; }
+    .af-cols2img__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(32px, 5vw, 56px);
+    }
+    .af-cols2img__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(16px, 2.5vw, 32px);
+    }
+    .af-cols2img__card {
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        background: #f4efe9;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .af-cols2img__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.1); }
+    .af-cols2img__card img {
+        width: 100%;
+        aspect-ratio: 16/10;
+        object-fit: cover;
+        display: block;
+    }
+    .af-cols2img__card-body { padding: clamp(20px, 2.5vw, 28px); }
+    .af-cols2img__card-title {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .af-cols2img__card-text {
+        font-size: clamp(16px, 1.4vw, 18px);
+        line-height: 1.7;
+        color: var(--af-text-light);
+    }
+    @media (max-width: 640px) { .af-cols2img__grid { grid-template-columns: 1fr; } }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-cols2img">
+    <div class="af-cols2img__inner">
+        <h2 class="af-cols2img__heading">Our courses</h2>
+        <div class="af-cols2img__grid">
+            <div class="af-cols2img__card">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=375&fit=crop" alt="Watercolor">
+                <div class="af-cols2img__card-body">
+                    <h3 class="af-cols2img__card-title">Watercolor Fundamentals</h3>
+                    <p class="af-cols2img__card-text">Master the basics of watercolor painting — from color mixing to wet-on-wet techniques.</p>
+                </div>
+            </div>
+            <div class="af-cols2img__card">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=375&fit=crop" alt="Oil painting">
+                <div class="af-cols2img__card-body">
+                    <h3 class="af-cols2img__card-title">Oil Painting Masterclass</h3>
+                    <p class="af-cols2img__card-text">Learn classical oil painting techniques from still life to landscapes with professional guidance.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,107 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Pricing 2 Plans -->
+<style>
+
+    .af-pricing2 {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-card-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-pricing2__inner { max-width: 860px; margin: 0 auto; }
+    .af-pricing2__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(32px, 5vw, 56px);
+    }
+    .af-pricing2__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(16px, 2.5vw, 28px);
+        align-items: stretch;
+    }
+    .af-pricing2__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(28px, 3.5vw, 40px);
+        display: flex;
+        flex-direction: column;
+        border: 2px solid transparent;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+    }
+    .af-pricing2__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .af-pricing2__card--featured {
+        border-color: var(--af-primary);
+        background: #fff;
+    }
+    .af-pricing2__badge {
+        position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+        background: var(--af-primary); color: #fff; font-size: 16px; font-weight: 700;
+        text-transform: uppercase; padding: 4px 16px; border-radius: 20px; white-space: nowrap;
+    }
+    .af-pricing2__name { font-family: var(--af-font-heading); font-size: clamp(19px, 2.2vw, 24px); font-weight: 700; margin-bottom: 8px; }
+    .af-pricing2__price { font-family: var(--af-font-heading); font-size: clamp(35px, 4.5vw, 48px); font-weight: 700; margin-bottom: 4px; }
+    .af-pricing2__price span { font-size: 0.45em; color: var(--af-text-light); font-weight: 500; }
+    .af-pricing2__period { font-size: clamp(16px, 1.2vw, 18px); color: var(--af-text-light); margin-bottom: clamp(20px, 3vw, 28px); }
+    .af-pricing2__features { list-style: none; padding: 0; flex-grow: 1; margin-bottom: clamp(24px, 3vw, 32px); }
+    .af-pricing2__features li { font-size: clamp(16px, 1.4vw, 18px); padding: 8px 0 8px 24px; position: relative; border-bottom: 1px solid rgba(0,0,0,0.06); line-height: 1.6; }
+    .af-pricing2__features li:last-child { border-bottom: none; }
+    .af-pricing2__features li::before { content: '✓'; position: absolute; left: 0; color: var(--af-primary); font-weight: 700; }
+    .af-pricing2__btn {
+        display: flex; align-items: center; justify-content: center;
+        min-height: 52px; padding: 12px 24px;
+        border-radius: 50px; font-family: var(--af-font-body); font-size: clamp(18px, 1.4vw, 20px);
+        font-weight: 700; line-height: 1; text-decoration: none; cursor: pointer; transition: all 0.3s ease;
+        border: 2px solid var(--af-primary); margin-top: auto;
+        box-sizing: border-box;
+    }
+    .af-pricing2__btn--primary { background: var(--af-primary); color: #fff; }
+    .af-pricing2__btn--primary:hover { background: #c55a15; border-color: #c55a15; transform: translateY(-2px); }
+    .af-pricing2__btn--outline { background: transparent; color: var(--af-primary); }
+    .af-pricing2__btn--outline:hover { background: var(--af-primary); color: #fff; }
+    @media (max-width: 640px) { .af-pricing2__grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+
+<div class="af-pricing2">
+    <div class="af-pricing2__inner">
+        <h2 class="af-pricing2__heading">Choose your plan</h2>
+        <div class="af-pricing2__grid">
+            <div class="af-pricing2__card">
+                <div class="af-pricing2__name">Standard</div>
+                <div class="af-pricing2__price">€49 <span>EUR</span></div>
+                <div class="af-pricing2__period">one-time</div>
+                <ul class="af-pricing2__features">
+                    <li>3 recorded sessions</li>
+                    <li>Lifetime access</li>
+                    <li>Materials list</li>
+                </ul>
+                <a href="#form" class="af-pricing2__btn af-pricing2__btn--outline">Choose</a>
+            </div>
+            <div class="af-pricing2__card af-pricing2__card--featured">
+                <div class="af-pricing2__badge">Best Value</div>
+                <div class="af-pricing2__name">Live + Recording</div>
+                <div class="af-pricing2__price">€89 <span>EUR</span></div>
+                <div class="af-pricing2__period">one-time</div>
+                <ul class="af-pricing2__features">
+                    <li>3 live sessions</li>
+                    <li>Live Q&A</li>
+                    <li>Lifetime access to recordings</li>
+                    <li>Materials list</li>
+                </ul>
+                <a href="#form" class="af-pricing2__btn af-pricing2__btn--primary">Choose</a>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,140 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Marquee — бесконечная бегущая строка (логотипы / отзывы) -->
+<style>
+
+    .af-marquee {
+        --af-primary: #de6518;
+        --af-bg: #3b3b3b;
+        --af-text: #ffffff;
+        --af-text-light: rgba(255,255,255,0.85);
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(28px, 5vw, 48px) 0;
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+        overflow: hidden;
+    }
+    .af-marquee__label {
+        text-align: center;
+        font-size: clamp(16px, 1.1vw, 18px);
+        font-weight: 600; text-transform: uppercase;
+        letter-spacing: 0.12em;
+        color: var(--af-text-light);
+        margin-bottom: clamp(16px, 3vw, 28px);
+    }
+    .af-marquee__track {
+        display: flex;
+        width: max-content;
+        animation: af-marquee-scroll 30s linear infinite;
+    }
+    .af-marquee:hover .af-marquee__track {
+        animation-play-state: paused;
+    }
+    .af-marquee__item {
+        flex-shrink: 0;
+        padding: 0 clamp(20px, 4vw, 48px);
+        display: flex; align-items: center; gap: 12px;
+        white-space: nowrap;
+    }
+    .af-marquee__star { color: var(--af-primary); font-size: 1.1em; }
+    .af-marquee__quote {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 1.6vw, 20px);
+        font-style: italic; font-weight: 400;
+    }
+    .af-marquee__author {
+        font-size: clamp(16px, 1.1vw, 18px);
+        color: var(--af-text-light); font-weight: 600;
+    }
+    .af-marquee__sep {
+        color: var(--af-primary); font-size: 1.2em;
+        padding: 0 8px;
+    }
+
+    @keyframes af-marquee-scroll {
+        from { transform: translateX(0); }
+        to { transform: translateX(-50%); }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+
+<div class="af-marquee">
+    <div class="af-marquee__label">What our students say</div>
+    <div class="af-marquee__track">
+        <!-- Original set -->
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"Changed how I see color forever"</span>
+            <span class="af-marquee__author">— Maria K.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"Best online art course I have taken"</span>
+            <span class="af-marquee__author">— Alex D.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"The feedback alone is worth 10x the price"</span>
+            <span class="af-marquee__author">— Yuki T.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"Went from zero to selling prints in 3 months"</span>
+            <span class="af-marquee__author">— Carlos M.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"Nicolas is an incredible teacher"</span>
+            <span class="af-marquee__author">— Sophie L.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+        <!-- Duplicate set for seamless loop -->
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"Changed how I see color forever"</span>
+            <span class="af-marquee__author">— Maria K.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"Best online art course I have taken"</span>
+            <span class="af-marquee__author">— Alex D.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"The feedback alone is worth 10x the price"</span>
+            <span class="af-marquee__author">— Yuki T.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"Went from zero to selling prints in 3 months"</span>
+            <span class="af-marquee__author">— Carlos M.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+        <div class="af-marquee__item">
+            <span class="af-marquee__star">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span class="af-marquee__quote">"Nicolas is an incredible teacher"</span>
+            <span class="af-marquee__author">— Sophie L.</span>
+        </div>
+        <span class="af-marquee__sep">&#9671;</span>
+    </div>
+</div>

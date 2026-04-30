@@ -1,0 +1,227 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Segment Selector — табы-сегменты с контентом (2-6 кнопок) -->
+<style>
+
+    .af-segments {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 20px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-segments__inner {
+        max-width: 860px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .af-segments__question {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 2.5vw, 24px);
+        font-weight: 600;
+        margin-bottom: clamp(16px, 3vw, 28px);
+    }
+
+    /* Tabs — flex wrap, auto-adapt to 2-6 buttons */
+    .af-segments__tabs {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: clamp(8px, 1.5vw, 12px);
+        margin-bottom: clamp(24px, 4vw, 40px);
+    }
+
+    .af-segments__tab {
+        padding: 12px 20px;
+        border: 2px solid #d0ccc6;
+        border-radius: 50px;
+        background: var(--af-card-bg);
+        color: var(--af-text);
+        font-family: var(--af-font-body);
+        font-size: clamp(16px, 1.4vw, 18px);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.25s ease;
+        text-align: center;
+        white-space: nowrap;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        position: relative;
+    }
+
+    /* Clickability cue: subtle arrow icon */
+    .af-segments__tab::before {
+        content: '›';
+        display: inline-block;
+        margin-right: 6px;
+        font-size: 1.1em;
+        font-weight: 700;
+        color: var(--af-primary);
+        opacity: 0.5;
+        transition: all 0.25s ease;
+    }
+
+    .af-segments__tab:hover {
+        border-color: var(--af-primary);
+        color: var(--af-primary);
+        box-shadow: 0 4px 16px rgba(222, 101, 24, 0.12);
+        transform: translateY(-1px);
+    }
+
+    .af-segments__tab:hover::before {
+        opacity: 1;
+    }
+
+    .af-segments__tab:active {
+        transform: translateY(0);
+    }
+
+    .af-segments__tab.active {
+        background: var(--af-primary);
+        border-color: var(--af-primary);
+        color: #fff;
+        box-shadow: 0 4px 14px rgba(222, 101, 24, 0.25);
+    }
+
+    .af-segments__tab.active::before {
+        color: #fff;
+        opacity: 0.7;
+    }
+
+    /* Content panels */
+    .af-segments__content {
+        display: none;
+        text-align: left;
+        animation: afSegFadeIn 0.3s ease;
+    }
+
+    .af-segments__content.active {
+        display: block;
+    }
+
+    @keyframes afSegFadeIn {
+        from { opacity: 0; transform: translateY(8px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    .af-segments__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(24px, 4vw, 40px);
+    }
+
+    .af-segments__card-tag {
+        display: inline-block;
+        font-size: clamp(16px, 1.3vw, 18px);
+        font-weight: 600;
+        color: var(--af-text-light);
+        margin-bottom: clamp(8px, 1.5vw, 16px);
+    }
+
+    .af-segments__card-text {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 2.2vw, 22px);
+        font-weight: 400;
+        line-height: 1.6;
+        color: var(--af-text);
+    }
+
+    .af-segments__card-text p {
+        margin-bottom: clamp(12px, 2vw, 20px);
+    }
+
+    .af-segments__card-text p:last-child {
+        margin-bottom: 0;
+    }
+
+    @media (max-width: 600px) {
+        .af-segments__tabs {
+            gap: 8px;
+        }
+        .af-segments__tab {
+            padding: 10px 16px;
+            font-size: 16px;
+        }
+    }
+
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+
+<div class="af-segments">
+    <div class="af-segments__inner">
+        <h2 class="af-segments__question">Подходит ли этот интенсив именно вам?</h2>
+
+        <div class="af-segments__tabs">
+            <button class="af-segments__tab active" onclick="afShowSegment(this, 0)">Inspired Beginners</button>
+            <button class="af-segments__tab" onclick="afShowSegment(this, 1)">Художник на плато</button>
+            <button class="af-segments__tab" onclick="afShowSegment(this, 2)">Master Seekers</button>
+            <button class="af-segments__tab" onclick="afShowSegment(this, 3)">Creative Retirees</button>
+        </div>
+
+        <div class="af-segments__content active">
+            <div class="af-segments__card">
+                <div class="af-segments__card-tag">Inspired Beginners</div>
+                <div class="af-segments__card-text">
+                    <p>You've always wanted to paint but never knew where to start. You're drawn to watercolor because it feels free and expressive.</p>
+                    <p>This intensive is your perfect first step — no experience needed, just curiosity and a willingness to play with water and color.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="af-segments__content">
+            <div class="af-segments__card">
+                <div class="af-segments__card-tag">Художник на плато</div>
+                <div class="af-segments__card-text">
+                    <p>Вы уже не новичек и ищете свой стиль, рисуете несколько лет и устали от рутины, возможно, работы не плохие — но все одинаковые.</p>
+                    <p>Иногда, вы видите, что результат предсказуем, когда видите работы мастера в голове вопрос: «КАК это делает?!»</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="af-segments__content">
+            <div class="af-segments__card">
+                <div class="af-segments__card-tag">Master Seekers</div>
+                <div class="af-segments__card-text">
+                    <p>You have technical skill but crave deeper understanding. You want to learn from a master who sees watercolor differently.</p>
+                    <p>Nicolás López's philosophy of "listening to the water" will transform how you approach every painting.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="af-segments__content">
+            <div class="af-segments__card">
+                <div class="af-segments__card-tag">Creative Retirees</div>
+                <div class="af-segments__card-text">
+                    <p>You finally have the time to pursue your creative dreams. Painting is your way to express yourself and connect with a community.</p>
+                    <p>This intensive is designed for all levels — enjoy the process, not just the result.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function afShowSegment(btn, index) {
+    var root = btn.closest('.af-segments');
+    root.querySelectorAll('.af-segments__tab').forEach(function(t) { t.classList.remove('active'); });
+    root.querySelectorAll('.af-segments__content').forEach(function(c) { c.classList.remove('active'); });
+    btn.classList.add('active');
+    root.querySelectorAll('.af-segments__content')[index].classList.add('active');
+}
+</script>

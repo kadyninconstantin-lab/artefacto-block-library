@@ -1,0 +1,127 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Video Play — видео с кастомной кнопкой play -->
+<style>
+
+    .af-video-play {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-video-play__inner { max-width: 960px; margin: 0 auto; }
+    .af-video-play__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700; text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-video-play__sub {
+        text-align: center; color: var(--af-text-light);
+        font-size: clamp(18px, 1.5vw, 20px);
+        margin-bottom: clamp(32px, 5vw, 48px);
+        line-height: 1.6;
+    }
+    .af-video-play__wrapper {
+        position: relative;
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        aspect-ratio: 16/9;
+        cursor: pointer;
+        box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+    .af-video-play__poster {
+        width: 100%; height: 100%;
+        object-fit: cover; display: block;
+        transition: transform 0.4s ease;
+    }
+    .af-video-play__wrapper:hover .af-video-play__poster {
+        transform: scale(1.03);
+    }
+    .af-video-play__overlay {
+        position: absolute; inset: 0;
+        background: rgba(0,0,0,0.25);
+        display: flex; align-items: center; justify-content: center;
+        transition: background 0.3s;
+    }
+    .af-video-play__wrapper:hover .af-video-play__overlay {
+        background: rgba(0,0,0,0.35);
+    }
+    .af-video-play__btn {
+    min-height: 48px;
+        width: clamp(64px, 10vw, 88px);
+        height: clamp(64px, 10vw, 88px);
+        background: var(--af-primary);
+        border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        box-shadow: 0 4px 24px rgba(222,101,24,0.4);
+        transition: transform 0.3s, background 0.3s;
+    }
+    .af-video-play__wrapper:hover .af-video-play__btn {
+        transform: scale(1.1);
+        background: var(--af-primary-hover);
+    }
+    .af-video-play__btn svg {
+        width: 32px; height: 32px;
+        fill: #fff;
+        margin-left: 4px;
+    }
+    .af-video-play__caption {
+        text-align: center;
+        margin-top: 16px;
+        font-size: clamp(16px, 1.3vw, 18px);
+        color: var(--af-text-light);
+    }
+    .af-video-play__iframe {
+        width: 100%; height: 100%;
+        border: 0; display: block;
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-video-play">
+    <div class="af-video-play__inner">
+        <h2 class="af-video-play__heading">See how the course works</h2>
+        <p class="af-video-play__sub">Watch a 2-minute overview from your future instructor</p>
+        <div class="af-video-play__wrapper" id="video-wrapper" data-video="https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1">
+            <img class="af-video-play__poster" src="https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=960&h=540&fit=crop" alt="Video preview">
+            <div class="af-video-play__overlay">
+                <div class="af-video-play__btn">
+                    <svg viewBox="0 0 24 24"><polygon points="5,3 19,12 5,21"/></svg>
+                </div>
+            </div>
+        </div>
+        <p class="af-video-play__caption">2:15 — Meet the instructor and discover what you will create</p>
+    </div>
+</div>
+
+<script>
+(function(){
+    var wrapper = document.getElementById('video-wrapper');
+    if (!wrapper) return;
+    wrapper.addEventListener('click', function(){
+        var url = wrapper.getAttribute('data-video');
+        if (!url) return;
+        var iframe = document.createElement('iframe');
+        iframe.className = 'af-video-play__iframe';
+        iframe.src = url;
+        iframe.allow = 'autoplay; encrypted-media';
+        iframe.allowFullscreen = true;
+        wrapper.innerHTML = '';
+        wrapper.appendChild(iframe);
+        wrapper.style.cursor = 'default';
+    }, {once: true});
+})();
+</script>

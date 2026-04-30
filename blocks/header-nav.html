@@ -1,0 +1,367 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Header Nav — навигация с логотипом, меню, бургер -->
+<style>
+    .af-header-nav {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: rgba(59, 59, 59, 0.8);
+        --af-white: #ffffff;
+        --af-radius: 10px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(12px, 2vw, 20px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+        position: relative;
+        z-index: 1000;
+    }
+
+    .af-header-nav.af-header-nav--sticky .af-header-nav__inner {
+        position: fixed;
+        top: 8px;
+        left: 50%;
+        transform: translateX(-50%);
+        max-width: 1200px;
+        width: calc(100% - 32px);
+        padding: 0 clamp(16px, 2vw, 24px);
+        background: var(--af-bg);
+        border-radius: var(--af-radius);
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        z-index: 1000;
+    }
+
+    .af-header-nav__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+
+    .af-header-nav__logo {
+        text-decoration: none;
+        color: inherit;
+        flex-shrink: 0;
+    }
+
+    .af-header-nav__logo-text {
+        font-family: var(--af-font-heading);
+        font-size: clamp(20px, 2vw, 26px);
+        font-weight: 700;
+        color: var(--af-text);
+    }
+
+    .af-header-nav__menu {
+        display: flex;
+        align-items: center;
+        gap: clamp(12px, 2vw, 28px);
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    .af-header-nav__link {
+        font-size: clamp(16px, 1.4vw, 18px);
+        font-weight: 500;
+        color: var(--af-text-light);
+        text-decoration: none;
+        position: relative;
+        transition: color 0.3s ease;
+        line-height: 1.4;
+        padding: 4px 0;
+    }
+
+    .af-header-nav__link::after {
+        content: '';
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        width: 0;
+        height: 2px;
+        background: var(--af-primary);
+        transition: width 0.3s ease, left 0.3s ease;
+        transform: translateX(-50%);
+    }
+
+    .af-header-nav__link:hover {
+        color: var(--af-text);
+    }
+
+    .af-header-nav__link:hover::after {
+        width: 100%;
+    }
+
+    .af-header-nav__cta {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: 12px clamp(20px, 2vw, 28px);
+        border-radius: 8px;
+        background: var(--af-primary);
+        color: var(--af-white);
+        font-family: var(--af-font-body);
+        font-size: clamp(16px, 1.3vw, 18px);
+        font-weight: 600;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        flex-shrink: 0;
+    }
+
+    .af-header-nav__cta:hover {
+        background: var(--af-primary-hover);
+    }
+
+    /* Burger button */
+    .af-header-nav__burger {
+        display: none;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 5px;
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 8px;
+        background: var(--af-primary);
+        cursor: pointer;
+        flex-shrink: 0;
+        padding: 0;
+    }
+
+    .af-header-nav__burger span {
+        display: block;
+        width: 22px;
+        height: 2px;
+        background: var(--af-white);
+        transition: transform 0.3s ease, opacity 0.3s ease;
+        transform-origin: center;
+    }
+
+    /* Mobile overlay */
+    .af-header-nav__overlay {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .af-header-nav__menu,
+        .af-header-nav__cta-desktop {
+            display: none;
+        }
+
+        .af-header-nav__burger {
+            display: flex;
+        }
+
+        .af-header-nav__overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(59, 59, 59, 0.5);
+            z-index: 1001;
+        }
+
+        .af-header-nav__overlay.af-header-nav__overlay--open {
+            display: block;
+        }
+
+        .af-header-nav__sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 280px;
+            height: 100%;
+            background: var(--af-text);
+            padding: clamp(16px, 3vw, 24px);
+            display: flex;
+            flex-direction: column;
+            z-index: 1002;
+        }
+
+        .af-header-nav__sidebar-top {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 32px;
+        }
+
+        .af-header-nav__sidebar-logo {
+            font-family: var(--af-font-heading);
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--af-white);
+            text-decoration: none;
+        }
+
+        .af-header-nav__close {
+            width: 40px;
+            height: 40px;
+            border: none;
+            background: transparent;
+            cursor: pointer;
+            position: relative;
+            padding: 0;
+        }
+
+        .af-header-nav__close span {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 20px;
+            height: 2px;
+            background: var(--af-white);
+        }
+
+        .af-header-nav__close span:first-child {
+            transform: translate(-50%, -50%) rotate(45deg);
+        }
+
+        .af-header-nav__close span:last-child {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+
+        .af-header-nav__mobile-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        .af-header-nav__mobile-link {
+            font-size: 20px;
+            font-weight: 500;
+            color: var(--af-white);
+            text-decoration: none;
+            line-height: 1.4;
+            transition: opacity 0.3s ease;
+        }
+
+        .af-header-nav__mobile-link:hover {
+            opacity: 0.8;
+        }
+
+        .af-header-nav__mobile-cta {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 14px 28px;
+            border-radius: 8px;
+            background: var(--af-primary);
+            color: var(--af-white);
+            font-family: var(--af-font-body);
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            border: none;
+            cursor: pointer;
+            margin-top: auto;
+            text-align: center;
+            transition: background 0.3s ease;
+        }
+
+        .af-header-nav__mobile-cta:hover {
+            background: var(--af-primary-hover);
+        }
+
+        .af-header-nav.af-header-nav--sticky .af-header-nav__inner {
+            position: static;
+            transform: none;
+            width: auto;
+            box-shadow: none;
+            border-radius: 0;
+            padding: 0;
+        }
+    }
+
+    :focus-visible { outline: 3px solid var(--af-primary); outline-offset: 3px; border-radius: 4px; }
+</style>
+
+<header class="af-header-nav" id="af-header-nav">
+    <div class="af-header-nav__inner">
+        <button class="af-header-nav__burger" aria-label="Открыть меню">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <a href="/" class="af-header-nav__logo">
+            <span class="af-header-nav__logo-text">Artefacto</span>
+        </a>
+        <ul class="af-header-nav__menu">
+            <li><a href="#program" class="af-header-nav__link">Программа</a></li>
+            <li><a href="#instructor" class="af-header-nav__link">Преподаватель</a></li>
+            <li><a href="#reviews" class="af-header-nav__link">Отзывы</a></li>
+            <li><a href="#pricing" class="af-header-nav__link">Тарифы</a></li>
+            <li><a href="#faq" class="af-header-nav__link">FAQ</a></li>
+        </ul>
+        <a href="#form" class="af-header-nav__cta af-header-nav__cta-desktop">Записаться</a>
+    </div>
+
+    <!-- Mobile sidebar -->
+    <div class="af-header-nav__overlay" id="af-header-nav-overlay">
+        <div class="af-header-nav__sidebar">
+            <div class="af-header-nav__sidebar-top">
+                <a href="/" class="af-header-nav__sidebar-logo">Artefacto</a>
+                <button class="af-header-nav__close" aria-label="Закрыть меню">
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+            <ul class="af-header-nav__mobile-menu">
+                <li><a href="#program" class="af-header-nav__mobile-link">Программа</a></li>
+                <li><a href="#instructor" class="af-header-nav__mobile-link">Преподаватель</a></li>
+                <li><a href="#reviews" class="af-header-nav__mobile-link">Отзывы</a></li>
+                <li><a href="#pricing" class="af-header-nav__mobile-link">Тарифы</a></li>
+                <li><a href="#faq" class="af-header-nav__mobile-link">FAQ</a></li>
+            </ul>
+            <a href="#form" class="af-header-nav__mobile-cta">Записаться</a>
+        </div>
+    </div>
+</header>
+
+<script>
+(function() {
+    const header = document.getElementById('af-header-nav');
+    const burger = header.querySelector('.af-header-nav__burger');
+    const overlay = document.getElementById('af-header-nav-overlay');
+    const closeBtn = header.querySelector('.af-header-nav__close');
+    const mobileLinks = header.querySelectorAll('.af-header-nav__mobile-link, .af-header-nav__mobile-cta');
+
+    function openMenu() {
+        overlay.classList.add('af-header-nav__overlay--open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeMenu() {
+        overlay.classList.remove('af-header-nav__overlay--open');
+        document.body.style.overflow = '';
+    }
+
+    burger.addEventListener('click', openMenu);
+    closeBtn.addEventListener('click', closeMenu);
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeMenu();
+    });
+    mobileLinks.forEach(function(link) {
+        link.addEventListener('click', closeMenu);
+    });
+
+    // Sticky on scroll
+    var lastScroll = 0;
+    window.addEventListener('scroll', function() {
+        if (window.scrollY > 100) {
+            header.classList.add('af-header-nav--sticky');
+        } else {
+            header.classList.remove('af-header-nav--sticky');
+        }
+    });
+})();
+</script>

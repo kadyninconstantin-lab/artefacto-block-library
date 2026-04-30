@@ -1,0 +1,113 @@
+{# process-steps. items: [{step_number?, title, description, badge?}] #}
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Process Steps — как это работает (шаги) -->
+<style>
+
+    .af-process {
+        --af-primary: #de6518;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-process__inner { max-width: 1100px; margin: 0 auto; }
+    .af-process__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700; text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-process__sub {
+        text-align: center; color: var(--af-text-light);
+        font-size: clamp(18px, 1.5vw, 20px);
+        margin-bottom: clamp(40px, 6vw, 64px);
+        line-height: 1.6;
+    }
+    .af-process__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: clamp(16px, 3vw, 28px);
+        position: relative;
+    }
+    .af-process__grid::before {
+        content: '';
+        position: absolute;
+        top: 48px; left: 12%; right: 12%;
+        height: 2px;
+        background: repeating-linear-gradient(90deg, var(--af-primary) 0, var(--af-primary) 8px, transparent 8px, transparent 16px);
+        z-index: 0;
+    }
+    .af-process__step {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(24px, 3vw, 36px) clamp(16px, 2.5vw, 24px);
+        text-align: center;
+        position: relative; z-index: 1;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .af-process__step:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .af-process__num {
+        width: 48px; height: 48px;
+        background: var(--af-primary);
+        color: #fff; border-radius: 50%;
+        display: flex; align-items: center; justify-content: center;
+        font-family: var(--af-font-heading);
+        font-size: 21px; font-weight: 700;
+        margin: 0 auto clamp(16px, 2vw, 24px);
+    }
+    .af-process__badge {
+        display: inline-block;
+        font-size: 14px; font-weight: 600;
+        color: var(--af-primary);
+        background: rgba(222,101,24,0.1);
+        padding: 2px 10px; border-radius: 10px;
+        margin-bottom: 8px;
+    }
+    .af-process__title {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 1.8vw, 19px);
+        font-weight: 700; margin-bottom: 8px;
+    }
+    .af-process__desc {
+        font-size: clamp(16px, 1.3vw, 18px);
+        color: var(--af-text-light); line-height: 1.6;
+    }
+
+    @media (max-width: 640px) {
+        .af-process__grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+        .af-process__grid::before { display: none; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-process">
+    <div class="af-process__inner">
+        <h2 class="af-process__heading">How it works</h2>
+        <p class="af-process__sub">From sign-up to your first masterpiece in simple steps</p>
+        <div class="af-process__grid">
+            {% for item in items %}
+            <div class="af-process__step">
+                <div class="af-process__num">{{ item.step_number if item.get('step_number') else loop.index }}</div>
+                {% if item.get('badge') %}<div class="af-process__badge">{{ item.badge }}</div>{% endif %}
+                <div class="af-process__title">{{ item.title }}</div>
+                <p class="af-process__desc">{{ item.description }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>

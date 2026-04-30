@@ -1,0 +1,86 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Stats / Numbers — цифры и достижения в ряд -->
+<style>
+
+    .af-stats {
+        --af-primary: #de6518;
+        --af-bg: #3b3b3b;
+        --af-text: #ffffff;
+        --af-text-light: rgba(255,255,255,0.85);
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-stats__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+
+    .af-stats__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(16px, 3vw, 32px);
+        text-align: center;
+    }
+
+    .af-stats__item {
+        padding: clamp(16px, 2vw, 24px);
+    }
+
+    .af-stats__number {
+        font-family: var(--af-font-heading);
+        font-size: clamp(32px, 4.5vw, 51px);
+        font-weight: 700;
+        color: var(--af-primary);
+        line-height: 1.1;
+        margin-bottom: 8px;
+    }
+
+    .af-stats__label {
+        font-size: clamp(16px, 1.3vw, 18px);
+        color: var(--af-text-light);
+        font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+        .af-stats__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 400px) {
+        .af-stats__grid { grid-template-columns: 1fr; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-stats">
+    <div class="af-stats__inner">
+        <div class="af-stats__grid">
+            <div class="af-stats__item">
+                <div class="af-stats__number">2,500+</div>
+                <div class="af-stats__label">Students worldwide</div>
+            </div>
+            <div class="af-stats__item">
+                <div class="af-stats__number">7 years</div>
+                <div class="af-stats__label">Teaching experience</div>
+            </div>
+            <div class="af-stats__item">
+                <div class="af-stats__number">30+</div>
+                <div class="af-stats__label">Countries</div>
+            </div>
+            <div class="af-stats__item">
+                <div class="af-stats__number">4.9/5</div>
+                <div class="af-stats__label">Average rating</div>
+            </div>
+        </div>
+    </div>
+</div>

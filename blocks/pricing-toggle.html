@@ -1,0 +1,347 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Pricing Toggle — тарифы с переключателем месяц/год -->
+<style>
+
+    .af-ptoggle {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-ptoggle__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .af-ptoggle__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+
+    .af-ptoggle__sub {
+        text-align: center;
+        color: var(--af-text-light);
+        font-size: clamp(18px, 1.5vw, 20px);
+        margin-bottom: clamp(20px, 3vw, 28px);
+    }
+
+    /* Toggle switch */
+    .af-ptoggle__switch-wrap {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: clamp(28px, 4vw, 40px);
+    }
+
+    .af-ptoggle__switch-label {
+        font-size: clamp(16px, 1.4vw, 18px);
+        font-weight: 600;
+        color: var(--af-text-light);
+        transition: color 0.3s;
+    }
+
+    .af-ptoggle__switch-label.active {
+        color: var(--af-text);
+    }
+
+    .af-ptoggle__switch {
+        position: relative;
+        width: 52px;
+        height: 28px;
+        background: #d5cfc7;
+        border-radius: 14px;
+        border: none;
+        cursor: pointer;
+        transition: background 0.3s;
+        padding: 0;
+    }
+
+    .af-ptoggle__switch.on {
+        background: var(--af-primary);
+    }
+
+    .af-ptoggle__switch-knob {
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 22px;
+        height: 22px;
+        border-radius: 50%;
+        background: #fff;
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+    }
+
+    .af-ptoggle__switch.on .af-ptoggle__switch-knob {
+        transform: translateX(24px);
+    }
+
+    .af-ptoggle__save-badge {
+        background: rgba(222, 101, 24, 0.12);
+        color: var(--af-primary);
+        font-size: 16px;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 20px;
+    }
+
+    /* Cards grid */
+    .af-ptoggle__grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: clamp(16px, 2vw, 24px);
+        align-items: stretch;
+    }
+
+    .af-ptoggle__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(24px, 3vw, 36px);
+        display: flex;
+        flex-direction: column;
+        position: relative;
+        border: 2px solid transparent;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .af-ptoggle__card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+
+    .af-ptoggle__card--featured {
+        border-color: var(--af-primary);
+        box-shadow: 0 8px 32px rgba(222, 101, 24, 0.15);
+    }
+
+    .af-ptoggle__badge {
+        position: absolute;
+        top: -12px;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--af-primary);
+        color: #fff;
+        font-size: 16px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        padding: 4px 16px;
+        border-radius: 20px;
+        white-space: nowrap;
+    }
+
+    .af-ptoggle__name {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 700;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+
+    .af-ptoggle__desc {
+        font-size: clamp(16px, 1.3vw, 18px);
+        color: var(--af-text-light);
+        margin-bottom: clamp(16px, 2vw, 20px);
+        text-align: center;
+    }
+
+    .af-ptoggle__price {
+        text-align: center;
+        margin-bottom: clamp(16px, 2vw, 24px);
+    }
+
+    .af-ptoggle__amount {
+        font-family: var(--af-font-heading);
+        font-size: clamp(32px, 4vw, 45px);
+        font-weight: 700;
+        color: var(--af-text);
+    }
+
+    .af-ptoggle__period {
+        font-size: clamp(16px, 1.2vw, 18px);
+        color: var(--af-text-light);
+    }
+
+    .af-ptoggle__old-price {
+        font-size: clamp(16px, 1.3vw, 18px);
+        color: var(--af-text-light);
+        text-decoration: line-through;
+        margin-top: 4px;
+    }
+
+    .af-ptoggle__features {
+        list-style: none;
+        padding: 0;
+        margin: 0 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        padding-bottom: clamp(16px, 2vw, 24px);
+    }
+
+    .af-ptoggle__features li {
+        font-size: clamp(16px, 1.3vw, 18px);
+        padding-left: 24px;
+        position: relative;
+        line-height: 1.6;
+    }
+
+    .af-ptoggle__features li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: var(--af-primary);
+        font-weight: 700;
+    }
+
+    .af-ptoggle__btn {
+    min-height: 48px;
+        display: block;
+        text-align: center;
+        padding: clamp(12px, 2vw, 16px);
+        border-radius: 50px;
+        font-family: var(--af-font-body);
+        font-size: clamp(18px, 1.4vw, 20px);
+        font-weight: 700;
+        text-decoration: none;
+        border: 2px solid var(--af-primary);
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: transparent;
+        color: var(--af-primary);
+    }
+
+    .af-ptoggle__btn:hover {
+        background: var(--af-primary);
+        color: #fff;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(222, 101, 24, 0.3);
+    }
+
+    .af-ptoggle__card--featured .af-ptoggle__btn {
+        background: var(--af-primary);
+        color: #fff;
+    }
+
+    .af-ptoggle__card--featured .af-ptoggle__btn:hover {
+        background: var(--af-primary-hover);
+        border-color: var(--af-primary-hover);
+    }
+
+    @media (max-width: 768px) {
+        .af-ptoggle__grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; }
+        .af-ptoggle__card--featured { order: -1; }
+    }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+
+<div class="af-ptoggle">
+    <div class="af-ptoggle__inner">
+        <h2 class="af-ptoggle__heading">Choose your plan</h2>
+        <p class="af-ptoggle__sub">All plans include lifetime recording access</p>
+
+        <div class="af-ptoggle__switch-wrap">
+            <span class="af-ptoggle__switch-label active" id="afPtLabel1">One-time</span>
+            <button class="af-ptoggle__switch" id="afPtSwitch" onclick="afPtToggle()">
+                <span class="af-ptoggle__switch-knob"></span>
+            </button>
+            <span class="af-ptoggle__switch-label" id="afPtLabel2">Bundle (save 30%)</span>
+            <span class="af-ptoggle__save-badge">-30%</span>
+        </div>
+
+        <div class="af-ptoggle__grid">
+            <div class="af-ptoggle__card">
+                <div class="af-ptoggle__name">Recording Only</div>
+                <div class="af-ptoggle__desc">Watch at your own pace</div>
+                <div class="af-ptoggle__price">
+                    <div class="af-ptoggle__amount" data-single="€49" data-bundle="€35">€49</div>
+                    <div class="af-ptoggle__old-price" style="display:none" data-bundle="€49"></div>
+                </div>
+                <ul class="af-ptoggle__features">
+                    <li>All session recordings</li>
+                    <li>Reference materials PDF</li>
+                    <li>Lifetime access</li>
+                </ul>
+                <a href="#form" class="af-ptoggle__btn">Get started</a>
+            </div>
+
+            <div class="af-ptoggle__card af-ptoggle__card--featured">
+                <div class="af-ptoggle__badge">Most Popular</div>
+                <div class="af-ptoggle__name">Live + Recording</div>
+                <div class="af-ptoggle__desc">Full interactive experience</div>
+                <div class="af-ptoggle__price">
+                    <div class="af-ptoggle__amount" data-single="€89" data-bundle="€62">€89</div>
+                    <div class="af-ptoggle__old-price" style="display:none" data-bundle="€89"></div>
+                </div>
+                <ul class="af-ptoggle__features">
+                    <li>Everything in Recording Only</li>
+                    <li>3 live sessions with Q&A</li>
+                    <li>Private Telegram community</li>
+                    <li>Certificate of completion</li>
+                </ul>
+                <a href="#form" class="af-ptoggle__btn">Choose plan</a>
+            </div>
+
+            <div class="af-ptoggle__card">
+                <div class="af-ptoggle__name">VIP Experience</div>
+                <div class="af-ptoggle__desc">Personal guidance from Nicolás</div>
+                <div class="af-ptoggle__price">
+                    <div class="af-ptoggle__amount" data-single="€149" data-bundle="€105">€149</div>
+                    <div class="af-ptoggle__old-price" style="display:none" data-bundle="€149"></div>
+                </div>
+                <ul class="af-ptoggle__features">
+                    <li>Everything in Live + Recording</li>
+                    <li>1-on-1 session with Nicolás (30 min)</li>
+                    <li>Personalized feedback on your work</li>
+                    <li>Priority support forever</li>
+                </ul>
+                <a href="#form" class="af-ptoggle__btn">Go VIP</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    let isBundle = false;
+
+    window.afPtToggle = function() {
+        isBundle = !isBundle;
+        const sw = document.getElementById('afPtSwitch');
+        const l1 = document.getElementById('afPtLabel1');
+        const l2 = document.getElementById('afPtLabel2');
+
+        sw.classList.toggle('on', isBundle);
+        l1.classList.toggle('active', !isBundle);
+        l2.classList.toggle('active', isBundle);
+
+        document.querySelectorAll('.af-ptoggle__amount').forEach(el => {
+            el.textContent = isBundle ? el.dataset.bundle : el.dataset.single;
+        });
+
+        document.querySelectorAll('.af-ptoggle__old-price').forEach(el => {
+            if (isBundle) {
+                el.textContent = el.dataset.bundle;
+                el.style.display = 'block';
+            } else {
+                el.style.display = 'none';
+            }
+        });
+    };
+})();
+</script>

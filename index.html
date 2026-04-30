@@ -1,0 +1,1611 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artefacto Block Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --app-bg: #1a1a2e;
+            --app-surface: #16213e;
+            --app-border: #2a2a4a;
+            --app-text: #e0e0e0;
+            --app-text-muted: #8888aa;
+            --app-accent: #de6518;
+            --app-accent-hover: #f47a2e;
+            --app-success: #4caf50;
+            --app-radius: 12px;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background: var(--app-bg);
+            color: var(--app-text);
+            line-height: 1.6;
+        }
+
+        /* ===== APP HEADER ===== */
+        .app-header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(26, 26, 46, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--app-border);
+            padding: 16px 32px;
+        }
+
+        .app-header__inner {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        .app-header__title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .app-header__title span {
+            color: var(--app-accent);
+        }
+
+        /* ===== FILTERS ===== */
+        .filters {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 6px 16px;
+            border: 1px solid var(--app-border);
+            border-radius: 20px;
+            background: transparent;
+            color: var(--app-text-muted);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--app-accent);
+            color: var(--app-accent);
+        }
+
+        .filter-btn.active {
+            background: var(--app-accent);
+            border-color: var(--app-accent);
+            color: #fff;
+        }
+
+        /* ===== BLOCK COUNT ===== */
+        .block-count {
+            padding: 8px 32px;
+            max-width: 1400px;
+            margin: 0 auto;
+            color: var(--app-text-muted);
+            font-size: 0.85rem;
+        }
+
+        /* ===== GRID ===== */
+        .blocks-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 16px 32px 64px;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        /* ===== BLOCK CARD ===== */
+        .block-card {
+            background: var(--app-surface);
+            border: 1px solid var(--app-border);
+            border-radius: var(--app-radius);
+            overflow: hidden;
+            transition: border-color 0.3s;
+        }
+
+        .block-card:hover {
+            border-color: var(--app-accent);
+            box-shadow: 0 4px 20px rgba(222, 101, 24, 0.08);
+        }
+
+        .block-card__header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border-bottom: 1px solid var(--app-border);
+        }
+
+        .block-card__info {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .block-card__name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #fff;
+        }
+
+        .block-card__tag {
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 10px;
+            border-radius: 10px;
+            background: rgba(222, 101, 24, 0.15);
+            color: var(--app-accent);
+        }
+
+        .block-card__actions {
+            display: flex;
+            gap: 8px;
+        }
+
+        .btn-copy, .btn-info {
+            padding: 8px 16px;
+            border: 1px solid var(--app-border);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--app-text);
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-copy:hover {
+            background: var(--app-accent);
+            border-color: var(--app-accent);
+            color: #fff;
+        }
+
+        .btn-copy.copied {
+            background: var(--app-success);
+            border-color: var(--app-success);
+            color: #fff;
+        }
+
+        .btn-info:hover {
+            border-color: var(--app-text-muted);
+            color: #fff;
+        }
+
+        /* ===== PREVIEW FRAME ===== */
+        .block-card__preview {
+            background: #fff;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .block-card__preview iframe {
+            width: 100%;
+            border: none;
+            display: block;
+        }
+
+        /* ===== RESPONSIVE TOGGLE ===== */
+        .preview-controls {
+            display: flex;
+            gap: 4px;
+            padding: 0 4px;
+        }
+
+        .preview-size-btn {
+            padding: 4px 10px;
+            border: none;
+            border-radius: 6px;
+            background: transparent;
+            color: var(--app-text-muted);
+            font-family: inherit;
+            font-size: 0.7rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .preview-size-btn.active {
+            background: rgba(255,255,255,0.1);
+            color: #fff;
+        }
+
+        .preview-size-btn:hover {
+            color: #fff;
+        }
+
+        /* ===== INSTRUCTION MODAL ===== */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 32px;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal {
+            background: var(--app-surface);
+            border: 1px solid var(--app-border);
+            border-radius: 16px;
+            max-width: 600px;
+            width: 100%;
+            max-height: 80vh;
+            overflow-y: auto;
+            padding: 32px;
+        }
+
+        .modal h2 {
+            font-size: 1.3rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .modal h3 {
+            font-size: 1rem;
+            color: var(--app-accent);
+            margin: 20px 0 8px;
+        }
+
+        .modal ol, .modal ul {
+            padding-left: 20px;
+            margin-bottom: 12px;
+        }
+
+        .modal li {
+            margin-bottom: 8px;
+            color: var(--app-text);
+            font-size: 0.9rem;
+        }
+
+        .modal code {
+            background: rgba(222, 101, 24, 0.15);
+            color: var(--app-accent);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-size: 0.85rem;
+        }
+
+        .modal__close {
+            display: block;
+            width: 100%;
+            margin-top: 24px;
+            padding: 12px;
+            background: var(--app-accent);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .modal__close:hover {
+            background: var(--app-accent-hover);
+        }
+
+        /* ===== TOAST ===== */
+        .toast {
+            position: fixed;
+            bottom: 32px;
+            left: 50%;
+            transform: translateX(-50%) translateY(100px);
+            background: #1a1a2e;
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-family: inherit;
+            font-size: 0.95rem;
+            font-weight: 600;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.3);
+            border: 1px solid var(--app-accent);
+            z-index: 300;
+            opacity: 0;
+            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .toast__icon {
+            color: var(--app-success);
+            font-size: 1.2rem;
+        }
+
+        /* ===== IMAGE EDITOR PANEL ===== */
+        .img-editor-overlay {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.7);
+            backdrop-filter: blur(4px);
+            z-index: 200;
+            justify-content: center;
+            align-items: center;
+            padding: 32px;
+        }
+
+        .img-editor-overlay.active {
+            display: flex;
+        }
+
+        .img-editor {
+            background: var(--app-surface);
+            border: 1px solid var(--app-border);
+            border-radius: 16px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 85vh;
+            overflow-y: auto;
+            padding: 32px;
+        }
+
+        .img-editor h2 {
+            font-size: 1.2rem;
+            color: #fff;
+            margin-bottom: 8px;
+        }
+
+        .img-editor__hint {
+            font-size: 0.8rem;
+            color: var(--app-text-muted);
+            margin-bottom: 20px;
+        }
+
+        .img-editor__item {
+            border: 1px solid var(--app-border);
+            border-radius: 12px;
+            padding: 16px;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 16px;
+            align-items: flex-start;
+        }
+
+        .img-editor__thumb {
+            width: 100px;
+            height: 75px;
+            object-fit: cover;
+            border-radius: 8px;
+            background: #2a2a4a;
+            flex-shrink: 0;
+        }
+
+        .img-editor__fields {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .img-editor__label {
+            font-size: 0.75rem;
+            color: var(--app-text-muted);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .img-editor__input {
+            width: 100%;
+            padding: 10px 14px;
+            border: 1px solid var(--app-border);
+            border-radius: 8px;
+            background: var(--app-bg);
+            color: var(--app-text);
+            font-family: inherit;
+            font-size: 0.85rem;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .img-editor__input:focus {
+            border-color: var(--app-accent);
+        }
+
+        .img-editor__input::placeholder {
+            color: var(--app-text-muted);
+        }
+
+        .img-editor__converted {
+            font-size: 0.75rem;
+            color: var(--app-success);
+            display: none;
+        }
+
+        /* ===== IMAGE EDITOR GUIDE ===== */
+        .img-guide {
+            margin-bottom: 20px;
+            border: 1px solid var(--app-border);
+            border-radius: 12px;
+            overflow: hidden;
+        }
+
+        .img-guide__toggle {
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 14px 18px;
+            background: rgba(222, 101, 24, 0.08);
+            border: none;
+            color: var(--app-accent);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .img-guide__toggle:hover {
+            background: rgba(222, 101, 24, 0.15);
+        }
+
+        .img-guide__arrow {
+            transition: transform 0.3s;
+            font-size: 0.7rem;
+        }
+
+        .img-guide.open .img-guide__arrow {
+            transform: rotate(180deg);
+        }
+
+        .img-guide__body {
+            display: none;
+            padding: 20px 18px;
+            border-top: 1px solid var(--app-border);
+        }
+
+        .img-guide.open .img-guide__body {
+            display: block;
+        }
+
+        .img-guide__steps {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            counter-reset: guide-step;
+        }
+
+        .img-guide__step {
+            counter-increment: guide-step;
+            display: flex;
+            gap: 14px;
+            align-items: flex-start;
+            padding: 12px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .img-guide__step:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .img-guide__step-num {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            background: var(--app-accent);
+            color: #fff;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+
+        .img-guide__step-num::before {
+            content: counter(guide-step);
+        }
+
+        .img-guide__step-text {
+            font-size: 0.85rem;
+            color: var(--app-text);
+            line-height: 1.6;
+            padding-top: 3px;
+        }
+
+        .img-guide__step-text strong {
+            color: #fff;
+        }
+
+        .img-guide__step-text code {
+            background: rgba(222, 101, 24, 0.15);
+            color: var(--app-accent);
+            padding: 1px 6px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+        }
+
+        .img-guide__note {
+            margin-top: 16px;
+            padding: 12px 16px;
+            background: rgba(76, 175, 80, 0.1);
+            border: 1px solid rgba(76, 175, 80, 0.2);
+            border-radius: 8px;
+            font-size: 0.8rem;
+            color: var(--app-success);
+            line-height: 1.5;
+        }
+
+        .img-editor__buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 8px;
+        }
+
+        .img-editor__btn {
+            flex: 1;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-family: inherit;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .img-editor__btn--apply {
+            background: var(--app-accent);
+            color: #fff;
+        }
+
+        .img-editor__btn--apply:hover {
+            background: var(--app-accent-hover);
+        }
+
+        .img-editor__btn--cancel {
+            background: transparent;
+            border: 1px solid var(--app-border);
+            color: var(--app-text);
+        }
+
+        .img-editor__btn--cancel:hover {
+            border-color: var(--app-text-muted);
+        }
+
+        .btn-images {
+            padding: 8px 16px;
+            border: 1px solid var(--app-border);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--app-text);
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .btn-images:hover {
+            border-color: #7c4dff;
+            color: #7c4dff;
+        }
+
+        /* ===== FREE STICKER TOGGLE ===== */
+        .sticker-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border: 1px solid var(--app-border);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--app-text-muted);
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .sticker-toggle:hover {
+            border-color: var(--app-accent);
+            color: var(--app-accent);
+        }
+
+        .sticker-toggle.active {
+            background: rgba(222, 101, 24, 0.15);
+            border-color: var(--app-accent);
+            color: var(--app-accent);
+        }
+
+        .sticker-toggle__check {
+            width: 16px;
+            height: 16px;
+            border: 2px solid currentColor;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+
+        .sticker-toggle.active .sticker-toggle__check {
+            background: var(--app-accent);
+            border-color: var(--app-accent);
+            color: #fff;
+        }
+
+        /* ===== 55+ SENIOR TOGGLE ===== */
+        .senior-toggle {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 14px;
+            border: 1px solid var(--app-border);
+            border-radius: 8px;
+            background: transparent;
+            color: var(--app-text-muted);
+            font-family: inherit;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.2s;
+            user-select: none;
+        }
+
+        .senior-toggle:hover {
+            border-color: #5c6bc0;
+            color: #5c6bc0;
+        }
+
+        .senior-toggle.active {
+            background: rgba(92, 107, 192, 0.15);
+            border-color: #5c6bc0;
+            color: #5c6bc0;
+        }
+
+        .senior-toggle__check {
+            width: 16px;
+            height: 16px;
+            border: 2px solid currentColor;
+            border-radius: 4px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            flex-shrink: 0;
+        }
+
+        .senior-toggle.active .senior-toggle__check {
+            background: #5c6bc0;
+            border-color: #5c6bc0;
+            color: #fff;
+        }
+
+        /* ===== CARDS CONFIGURATOR ===== */
+        .cards-config {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .cards-config__label {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--app-text-muted);
+            white-space: nowrap;
+        }
+
+        .cards-config__select {
+            padding: 6px 12px;
+            border: 1px solid var(--app-border);
+            border-radius: 8px;
+            background: var(--app-bg);
+            color: var(--app-accent);
+            font-family: inherit;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+
+        .cards-config__select:focus {
+            border-color: var(--app-accent);
+        }
+
+        .cards-config__select option {
+            background: var(--app-bg);
+            color: var(--app-text);
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .app-header { padding: 12px 16px; }
+            .blocks-grid { padding: 16px 16px 64px; }
+            .block-card__header { flex-direction: column; align-items: flex-start; gap: 12px; }
+            .block-count { padding: 8px 16px; }
+            .img-editor__item { flex-direction: column; }
+            .img-editor__thumb { width: 100%; height: 120px; }
+        }
+    </style>
+</head>
+<body>
+    <header class="app-header">
+        <div class="app-header__inner">
+            <div class="app-header__title"><span>Artefacto</span> Block Library</div>
+            <div class="filters">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="hero">Hero</button>
+                <button class="filter-btn" data-filter="content">Content</button>
+                <button class="filter-btn" data-filter="columns">Columns</button>
+                <button class="filter-btn" data-filter="cards">Cards</button>
+                <button class="filter-btn" data-filter="pricing">Pricing</button>
+                <button class="filter-btn" data-filter="social">Social Proof</button>
+                <button class="filter-btn" data-filter="interactive">Interactive</button>
+                <button class="filter-btn" data-filter="utility">Utility</button>
+                <button class="filter-btn" data-filter="conversion">Conversion</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="block-count" id="blockCount"></div>
+
+    <main class="blocks-grid" id="blocksGrid">
+        <!-- Blocks will be loaded dynamically -->
+    </main>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast">
+        <span class="toast__icon">&#10003;</span>
+        <span id="toastText">Код скопирован!</span>
+    </div>
+
+    <!-- IMAGE EDITOR MODAL -->
+    <div class="img-editor-overlay" id="imgEditorOverlay">
+        <div class="img-editor">
+            <h2 id="imgEditorTitle">Images</h2>
+
+            <div class="img-guide" id="imgGuide">
+                <button class="img-guide__toggle" onclick="document.getElementById('imgGuide').classList.toggle('open')">
+                    <span>Как заменить картинку через Google Drive</span>
+                    <span class="img-guide__arrow">&#9660;</span>
+                </button>
+                <div class="img-guide__body">
+                    <ol class="img-guide__steps">
+                        <li class="img-guide__step">
+                            <span class="img-guide__step-num"></span>
+                            <span class="img-guide__step-text">Загрузите картинку на <strong>Google Drive</strong></span>
+                        </li>
+                        <li class="img-guide__step">
+                            <span class="img-guide__step-num"></span>
+                            <span class="img-guide__step-text">Нажмите правой кнопкой на файл &rarr; <strong>Share</strong> (Поделиться)</span>
+                        </li>
+                        <li class="img-guide__step">
+                            <span class="img-guide__step-num"></span>
+                            <span class="img-guide__step-text">В окне доступа выберите <strong>&laquo;Anyone with the link&raquo;</strong> (Все у кого есть ссылка)</span>
+                        </li>
+                        <li class="img-guide__step">
+                            <span class="img-guide__step-num"></span>
+                            <span class="img-guide__step-text">Нажмите <strong>&laquo;Copy link&raquo;</strong> (Копировать ссылку)</span>
+                        </li>
+                        <li class="img-guide__step">
+                            <span class="img-guide__step-num"></span>
+                            <span class="img-guide__step-text">Вставьте ссылку в поле ниже &mdash; она автоматически сконвертируется в прямой URL</span>
+                        </li>
+                        <li class="img-guide__step">
+                            <span class="img-guide__step-num"></span>
+                            <span class="img-guide__step-text">Нажмите <strong>&laquo;Apply&raquo;</strong> &mdash; картинка обновится в превью и в копируемом коде</span>
+                        </li>
+                    </ol>
+                    <div class="img-guide__note">
+                        Также работают любые прямые ссылки на картинки (не только Google Drive).
+                        Например: <code>https://example.com/photo.jpg</code>
+                    </div>
+                </div>
+            </div>
+
+            <div id="imgEditorList"></div>
+            <div class="img-editor__buttons">
+                <button class="img-editor__btn img-editor__btn--cancel" onclick="closeImgEditor()">Cancel</button>
+                <button class="img-editor__btn img-editor__btn--apply" onclick="applyImages()">Apply</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- INSTRUCTION MODAL -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal">
+            <h2>Как использовать блок</h2>
+
+            <h3>Вставка в GetCourse</h3>
+            <ol>
+                <li>Нажмите <code>Копировать код</code> на нужном блоке</li>
+                <li>Откройте GetCourse &rarr; Сайт &rarr; ваша страница</li>
+                <li>Нажмите <code>Добавить блок</code> &rarr; выберите <code>HTML</code></li>
+                <li>В редакторе нажмите кнопку <code>&lt;/&gt;</code> (режим кода)</li>
+                <li>Вставьте код <code>Ctrl+V</code> (или <code>Cmd+V</code>)</li>
+                <li>Сохраните &mdash; блок появится на странице</li>
+            </ol>
+
+            <h3>Хотите изменить блок?</h3>
+            <ol>
+                <li>Скопируйте код блока (кнопка <code>Копировать код</code>)</li>
+                <li>Откройте <a href="https://claude.ai" target="_blank" style="color: var(--app-accent)">claude.ai</a></li>
+                <li>Вставьте код и напишите, что изменить. Примеры:
+                    <ul>
+                        <li><em>&laquo;Сделай картинку слева, а текст справа&raquo;</em></li>
+                        <li><em>&laquo;Добавь третью колонку&raquo;</em></li>
+                        <li><em>&laquo;Поменяй оранжевый цвет на синий&raquo;</em></li>
+                        <li><em>&laquo;Увеличь шрифт заголовка&raquo;</em></li>
+                        <li><em>&laquo;Сделай 4 карточки вместо 3&raquo;</em></li>
+                    </ul>
+                </li>
+                <li>Скопируйте результат из Claude и вставьте в GetCourse</li>
+            </ol>
+
+            <h3>Советы</h3>
+            <ul>
+                <li>Каждый блок автономный &mdash; стили встроены прямо в код</li>
+                <li>Блоки адаптивны &mdash; выглядят хорошо на любом экране</li>
+                <li>Замените тексты, картинки и ссылки на свои</li>
+                <li>Цвета можно менять через переменные в начале <code>&lt;style&gt;</code></li>
+            </ul>
+
+            <button class="modal__close" onclick="closeModal()">Понятно</button>
+        </div>
+    </div>
+
+    <script>
+        // ===== FREE STICKER =====
+        const stickerState = {}; // blockId -> true/false
+        const originalCache = {}; // blockId -> original HTML (without sticker)
+
+        const STICKER_CSS = `
+.af-free-sticker{position:fixed;top:18px;right:18px;z-index:9999;width:72px;height:72px;background:#de6518;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:'Manrope',sans-serif;font-size:1.3rem;font-weight:800;letter-spacing:0.05em;box-shadow:0 4px 20px rgba(222,101,24,0.4);transform:rotate(12deg);animation:af-sticker-bob 2s ease-in-out infinite;}
+@keyframes af-sticker-bob{0%,100%{transform:rotate(12deg) scale(1);}50%{transform:rotate(12deg) scale(1.07);}}
+`;
+
+        function addStickerToHtml(html) {
+            const styleTag = `<style>${STICKER_CSS}</style>`;
+            const stickerDiv = `<div class="af-free-sticker">FREE</div>`;
+            // Inject right after opening of the first root div
+            const insertPos = html.indexOf('>', html.indexOf('<div'));
+            if (insertPos === -1) return styleTag + stickerDiv + html;
+            return html.slice(0, insertPos + 1) + styleTag + stickerDiv + html.slice(insertPos + 1);
+        }
+
+        function removeStickerFromHtml(html) {
+            return html
+                .replace(/<style>[^<]*\.af-free-sticker[^<]*<\/style>/g, '')
+                .replace(/<div class="af-free-sticker">FREE<\/div>/g, '');
+        }
+
+        // ===== SHARED HELPERS =====
+        function refreshIframe(blockId) {
+            const card = document.querySelector(`[data-block-id="${blockId}"]`);
+            if (card) {
+                const iframe = card.querySelector('iframe');
+                if (iframe) {
+                    iframe.srcdoc = blockCache[blockId];
+                    iframe.onload = () => autoResizeIframe(iframe);
+                }
+            }
+        }
+
+        function ensureOriginal(blockId) {
+            if (!originalCache[blockId]) {
+                originalCache[blockId] = removeStickerFromHtml(removeSeniorCssFromHtml(blockCache[blockId]));
+            }
+        }
+
+        function rebuildBlock(blockId) {
+            let html = originalCache[blockId] || blockCache[blockId];
+            if (stickerState[blockId]) html = addStickerToHtml(html);
+            if (seniorState[blockId]) html = addSeniorCssToHtml(html);
+            blockCache[blockId] = html;
+            refreshIframe(blockId);
+        }
+
+        function toggleSticker(btn, blockId) {
+            const isActive = !stickerState[blockId];
+            stickerState[blockId] = isActive;
+            btn.classList.toggle('active', isActive);
+            btn.querySelector('.sticker-toggle__check').innerHTML = isActive ? '&#10003;' : '';
+            ensureOriginal(blockId);
+            rebuildBlock(blockId);
+        }
+
+        // ===== 55+ SENIOR MODE =====
+        const seniorState = {}; // blockId -> true/false
+
+        const SENIOR_CSS = `
+/* Artefacto 55+ Senior-Friendly Override — sizes & spacing ONLY, NO font-weight changes */
+[class*="__heading"]{font-size:clamp(36px,5vw,44px)!important;line-height:1.35!important}
+[class*="__desc"],[class*="__body"] p,[class*="__quote"],[class*="__sub"],[class*="__text"]{font-size:clamp(18px,2vw,20px)!important;line-height:1.7!important;letter-spacing:0.015em!important}
+[class*="__role"],[class*="__eyebrow"],[class*="__highlight"],[class*="__tag"]{font-size:clamp(16px,1.6vw,18px)!important}
+[class*="__label"]{font-size:clamp(18px,1.6vw,20px)!important;margin-bottom:10px!important}
+[class*="__btn"],a[class*="__btn"]{min-height:48px!important;padding:16px 32px!important;font-size:20px!important;letter-spacing:0.01em!important}
+[class*="__input"],[class*="__select"],[class*="__textarea"]{min-height:52px!important;font-size:20px!important;padding:16px 18px!important;border-width:2px!important}
+summary{min-height:48px!important;font-size:clamp(18px,1.8vw,20px)!important}
+[class*="__name"]{font-size:clamp(16px,1.5vw,18px)!important}
+[class*="__card-title"]{font-size:clamp(22px,2.2vw,24px)!important}
+[class*="__card-text"],[class*="__card-desc"]{font-size:clamp(18px,1.8vw,20px)!important;line-height:1.7!important}
+[class*="__stars"]{font-size:20px!important;letter-spacing:3px!important}
+[class*="__price"]{font-size:clamp(36px,4vw,44px)!important}
+[class*="__text"] p,[class*="__desc"] p,[class*="__body"] p{margin-bottom:24px!important}
+:focus-visible{outline:3px solid currentColor!important;outline-offset:3px!important;border-radius:4px!important}
+`;
+
+        function addSeniorCssToHtml(html) {
+            return `<style class="af-senior-override">${SENIOR_CSS}</style>` + html;
+        }
+
+        function removeSeniorCssFromHtml(html) {
+            return html.replace(/<style class="af-senior-override">[\s\S]*?<\/style>/g, '');
+        }
+
+        function toggleSenior(btn, blockId) {
+            const isActive = !seniorState[blockId];
+            seniorState[blockId] = isActive;
+            btn.classList.toggle('active', isActive);
+            btn.querySelector('.senior-toggle__check').innerHTML = isActive ? '&#10003;' : '';
+            ensureOriginal(blockId);
+            rebuildBlock(blockId);
+        }
+
+        // ===== IMAGE EDITOR =====
+        let currentEditBlockId = null;
+
+        // Convert Google Drive share link to direct image URL
+        function convertGDriveUrl(url) {
+            url = url.trim();
+            // https://drive.google.com/file/d/FILE_ID/view?...
+            let match = url.match(/drive\.google\.com\/file\/d\/([a-zA-Z0-9_-]+)/);
+            if (match) return 'https://lh3.googleusercontent.com/d/' + match[1];
+            // https://drive.google.com/open?id=FILE_ID
+            match = url.match(/drive\.google\.com\/open\?id=([a-zA-Z0-9_-]+)/);
+            if (match) return 'https://lh3.googleusercontent.com/d/' + match[1];
+            return url;
+        }
+
+        // Extract <img> src from block HTML
+        function extractImages(html) {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const imgs = doc.querySelectorAll('img');
+            return Array.from(imgs).map(img => ({
+                src: img.getAttribute('src') || '',
+                alt: img.getAttribute('alt') || ''
+            }));
+        }
+
+        function openImgEditor(blockId) {
+            currentEditBlockId = blockId;
+            const block = BLOCKS.find(b => b.id === blockId);
+            const html = blockCache[blockId];
+            if (!html) return;
+
+            const images = extractImages(html);
+            if (images.length === 0) return;
+
+            document.getElementById('imgEditorTitle').textContent = block.name + ' — Images';
+            const list = document.getElementById('imgEditorList');
+            list.innerHTML = '';
+
+            images.forEach((img, i) => {
+                const item = document.createElement('div');
+                item.className = 'img-editor__item';
+                item.innerHTML = `
+                    <img class="img-editor__thumb" src="${img.src}" alt="${img.alt}" onerror="this.style.background='#3a3a5a'">
+                    <div class="img-editor__fields">
+                        <div class="img-editor__label">${img.alt || 'Image ' + (i + 1)}</div>
+                        <input class="img-editor__input" type="text" data-index="${i}" data-original="${img.src}"
+                               placeholder="Paste URL or Google Drive link" value="${img.src}"
+                               oninput="onImgUrlInput(this)">
+                        <div class="img-editor__converted" id="imgConverted${i}"></div>
+                    </div>
+                `;
+                list.appendChild(item);
+            });
+
+            document.getElementById('imgEditorOverlay').classList.add('active');
+        }
+
+        function onImgUrlInput(input) {
+            const raw = input.value.trim();
+            const converted = convertGDriveUrl(raw);
+            const msgEl = document.getElementById('imgConverted' + input.dataset.index);
+            const thumb = input.closest('.img-editor__item').querySelector('.img-editor__thumb');
+
+            if (converted !== raw) {
+                msgEl.textContent = 'Google Drive link converted';
+                msgEl.style.display = 'block';
+            } else {
+                msgEl.style.display = 'none';
+            }
+
+            // Live thumb preview
+            if (raw) thumb.src = converted;
+        }
+
+        function closeImgEditor() {
+            document.getElementById('imgEditorOverlay').classList.remove('active');
+            currentEditBlockId = null;
+        }
+
+        function applyImages() {
+            if (!currentEditBlockId) return;
+            let html = blockCache[currentEditBlockId];
+            const inputs = document.querySelectorAll('#imgEditorList .img-editor__input');
+
+            inputs.forEach(input => {
+                const originalSrc = input.dataset.original;
+                let newSrc = input.value.trim();
+                if (!newSrc || newSrc === originalSrc) return;
+                newSrc = convertGDriveUrl(newSrc);
+                // Replace in HTML (escape special regex chars in original URL)
+                const escaped = originalSrc.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                html = html.replace(new RegExp(escaped, 'g'), newSrc);
+            });
+
+            // Update original cache (clean version without toggles)
+            const cleanHtml = removeStickerFromHtml(removeSeniorCssFromHtml(html));
+            originalCache[currentEditBlockId] = cleanHtml;
+            // Rebuild with active toggles
+            rebuildBlock(currentEditBlockId);
+
+            // Update iframe preview
+            const card = document.querySelector(`[data-block-id="${currentEditBlockId}"]`);
+            if (card) {
+                const iframe = card.querySelector('iframe');
+                if (iframe) {
+                    iframe.srcdoc = blockCache[currentEditBlockId];
+                    iframe.onload = () => autoResizeIframe(iframe);
+                }
+            }
+
+            closeImgEditor();
+            showToast('Images updated!');
+        }
+
+        document.getElementById('imgEditorOverlay').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeImgEditor();
+        });
+
+        // Block registry - each block has metadata + file path
+        const BLOCKS = [
+            { id: 'hero-split', name: 'Hero Split', category: 'hero', desc: 'Текст слева, картинка справа', file: 'blocks/hero-split.html' },
+            { id: 'hero-split-reversed', name: 'Hero Split Reversed', category: 'hero', desc: 'Картинка слева, текст справа', file: 'blocks/hero-split-reversed.html' },
+            { id: 'hero-centered', name: 'Hero Centered', category: 'hero', desc: 'Всё по центру, картинка снизу', file: 'blocks/hero-centered.html' },
+            { id: 'hero-mosaic', name: 'Hero Mosaic 2x2', category: 'hero', desc: 'Сетка картинок 2×2 + текст + CTA', file: 'blocks/hero-mosaic.html' },
+            { id: 'hero-mosaic-strip', name: 'Hero Mosaic Strip', category: 'hero', desc: '4 картинки в ряд + текст (компактный)', file: 'blocks/hero-mosaic-strip.html' },
+            { id: 'hero-mosaic-collage', name: 'Hero Mosaic Collage', category: 'hero', desc: 'Наложенные картинки-коллаж + текст сбоку', file: 'blocks/hero-mosaic-collage.html' },
+            { id: 'hero-fullbg', name: 'Hero Full Background', category: 'hero', desc: 'Текст поверх фоновой картинки', file: 'blocks/hero-fullbg.html' },
+            { id: 'image-text-left', name: 'Image Left + Text', category: 'content', desc: 'Картинка слева, текст справа', file: 'blocks/image-text-left.html' },
+            { id: 'image-text-right', name: 'Image Right + Text', category: 'content', desc: 'Текст слева, картинка справа', file: 'blocks/image-text-right.html' },
+            { id: 'image-top-text', name: 'Image Top + Text', category: 'content', desc: 'Картинка сверху, текст снизу', file: 'blocks/image-top-text.html' },
+            { id: 'text-block', name: 'Text Block', category: 'content', desc: 'Заголовок + текст, без картинки', file: 'blocks/text-block.html' },
+            { id: 'columns-2-icons', name: '2 Columns + Icons', category: 'columns', desc: 'Две колонки с иконками', file: 'blocks/columns-2-icons.html' },
+            { id: 'columns-3-icons', name: '3 Columns + Icons', category: 'columns', desc: 'Три колонки с иконками', file: 'blocks/columns-3-icons.html' },
+            { id: 'columns-4-icons', name: '4 Columns + Icons', category: 'columns', desc: 'Четыре колонки с иконками', file: 'blocks/columns-4-icons.html' },
+            { id: 'columns-2-images', name: '2 Columns + Images', category: 'columns', desc: 'Две колонки с картинками', file: 'blocks/columns-2-images.html' },
+            { id: 'columns-3-images', name: '3 Columns + Images', category: 'columns', desc: 'Три колонки с картинками', file: 'blocks/columns-3-images.html' },
+            { id: 'cards-paintings', name: 'Cards with Paintings', category: 'cards', desc: 'Три карточки с картинами сверху и текстом', file: 'blocks/cards-paintings.html' },
+            { id: 'cards-grid', name: 'Cards Grid Constructor', category: 'cards', desc: 'Конструктор: выбери 2–7 карточек', file: null, configurable: 'cards-grid', configDefault: 3 },
+            { id: 'cards-badges', name: 'Cards with Badges', category: 'cards', desc: 'Карточки со стикерами', file: 'blocks/cards-badges.html' },
+            { id: 'pricing-plans', name: 'Pricing Plans Constructor', category: 'pricing', desc: 'Конструктор: выбери 1–3 тарифа', file: null, configurable: 'pricing', configDefault: 2 },
+            { id: 'pricing-horizontal', name: 'Pricing Horizontal', category: 'pricing', desc: 'Тарифы горизонтально', file: 'blocks/pricing-horizontal.html' },
+            { id: 'pricing-toggle', name: 'Pricing Toggle', category: 'pricing', desc: 'Тарифы с переключателем скидки', file: 'blocks/pricing-toggle.html' },
+            { id: 'testimonials-grid', name: 'Testimonials Grid', category: 'social', desc: 'Отзывы сеткой 2 колонки', file: 'blocks/testimonials-grid.html' },
+            { id: 'testimonial-quote', name: 'Big Quote', category: 'social', desc: 'Большая цитата-отзыв', file: 'blocks/testimonial-quote.html' },
+            { id: 'testimonials-photos', name: 'Testimonials + Photos', category: 'social', desc: 'Отзывы с фото и звёздами', file: 'blocks/testimonials-photos.html' },
+            { id: 'slider-testimonials', name: 'Slider Testimonials', category: 'social', desc: 'Слайдер отзывов с автопрокруткой', file: 'blocks/slider-testimonials.html' },
+            { id: 'stats', name: 'Stats / Numbers', category: 'social', desc: 'Цифры и достижения в ряд', file: 'blocks/stats.html' },
+            { id: 'stats-images', name: 'Stats + Images', category: 'social', desc: 'Цифры с картинками', file: 'blocks/stats-images.html' },
+            { id: 'logos-strip', name: 'Logo Strip', category: 'social', desc: 'Логотипы партнёров', file: 'blocks/logos-strip.html' },
+            { id: 'timeline-vertical', name: 'Timeline Vertical', category: 'interactive', desc: 'Шаги / программа вертикально', file: 'blocks/timeline-vertical.html' },
+            { id: 'timeline-vertical-images', name: 'Timeline + Images', category: 'interactive', desc: 'Шаги с картинками (зигзаг)', file: 'blocks/timeline-vertical-images.html' },
+            { id: 'timeline-horizontal', name: 'Timeline Horizontal', category: 'interactive', desc: 'Шаги горизонтально', file: 'blocks/timeline-horizontal.html' },
+            { id: 'timeline-horizontal-images', name: 'Timeline Horizontal + Images', category: 'interactive', desc: 'Шаги горизонтально с картинками', file: 'blocks/timeline-horizontal-images.html' },
+            { id: 'accordion', name: 'Accordion Constructor', category: 'interactive', desc: 'Конструктор: выбери 1–5 пунктов', file: null, configurable: 'accordion', configDefault: 3 },
+            { id: 'faq', name: 'FAQ', category: 'interactive', desc: 'Вопросы и ответы', file: 'blocks/faq.html' },
+            { id: 'faq-image', name: 'FAQ + Image', category: 'interactive', desc: 'FAQ с картинкой сбоку', file: 'blocks/faq-image.html' },
+            { id: 'segment-selector', name: 'Segment Selector', category: 'interactive', desc: 'Табы-сегменты + контент', file: 'blocks/segment-selector.html' },
+            { id: 'content-card', name: 'Content Card', category: 'cards', desc: 'Карточка с тегом и текстом', file: 'blocks/content-card.html' },
+            { id: 'checklist', name: 'Checklist', category: 'content', desc: 'Чеклист с галочками', file: 'blocks/checklist.html' },
+            { id: 'cta', name: 'CTA Block', category: 'utility', desc: 'Призыв к действию', file: 'blocks/cta.html' },
+            { id: 'cta-image', name: 'CTA + Image', category: 'utility', desc: 'CTA с картинкой сбоку', file: 'blocks/cta-image.html' },
+            { id: 'cta-simple', name: 'CTA Simple', category: 'conversion', desc: 'Заголовок + подзаголовок + кнопка по центру', file: 'blocks/cta-simple.html' },
+            { id: 'cta-accent', name: 'CTA Accent', category: 'conversion', desc: 'Кнопка на акцентном фоне', file: 'blocks/cta-accent.html' },
+            { id: 'cta-minimal', name: 'CTA Minimal', category: 'conversion', desc: 'Только кнопка по центру, без текста', file: 'blocks/cta-minimal.html' },
+            { id: 'gallery', name: 'Gallery', category: 'utility', desc: 'Сетка картинок / работ', file: 'blocks/gallery.html' },
+            { id: 'team', name: 'Team', category: 'utility', desc: 'Команда / преподаватели', file: 'blocks/team.html' },
+            { id: 'form', name: 'Contact Form', category: 'utility', desc: 'Форма записи', file: 'blocks/form.html' },
+            { id: 'footer', name: 'Footer', category: 'utility', desc: 'Подвал страницы', file: 'blocks/footer.html' },
+            { id: 'before-after', name: 'Before / After', category: 'conversion', desc: 'Слайдер сравнения до/после', file: 'blocks/before-after.html' },
+            { id: 'video-play', name: 'Video + Play', category: 'conversion', desc: 'Видео с кастомной кнопкой play', file: 'blocks/video-play.html' },
+            { id: 'countdown', name: 'Countdown Timer', category: 'conversion', desc: 'Таймер обратного отсчёта', file: 'blocks/countdown.html' },
+            { id: 'stats-animated', name: 'Stats Animated', category: 'social', desc: 'Анимированные счётчики по скроллу', file: 'blocks/stats-animated.html' },
+            { id: 'guarantee', name: 'Guarantee Badge', category: 'conversion', desc: 'Гарантия и знаки доверия', file: 'blocks/guarantee.html' },
+            { id: 'instructor-bio', name: 'Instructor Bio', category: 'conversion', desc: 'Подробная карточка преподавателя', file: 'blocks/instructor-bio.html' },
+            { id: 'student-gallery', name: 'Student Gallery', category: 'social', desc: 'Портфолио студентов (masonry)', file: 'blocks/student-gallery.html' },
+            { id: 'sticky-cta', name: 'Sticky CTA Bar', category: 'conversion', desc: 'Фиксированная CTA при скролле', file: 'blocks/sticky-cta.html' },
+            { id: 'comparison-table', name: 'Comparison Table', category: 'conversion', desc: 'Таблица сравнения (мы vs другие)', file: 'blocks/comparison-table.html' },
+            { id: 'process-steps', name: 'Process Steps', category: 'interactive', desc: 'Как это работает — 4 шага', file: 'blocks/process-steps.html' },
+            { id: 'marquee', name: 'Marquee Strip', category: 'social', desc: 'Бегущая строка отзывов', file: 'blocks/marquee.html' },
+            { id: 'notification-bar', name: 'Notification Bar', category: 'conversion', desc: 'Баннер-уведомление сверху', file: 'blocks/notification-bar.html' },
+            { id: 'zoom-schedule', name: 'Zoom Schedule', category: 'interactive', desc: 'Расписание Zoom-встреч с фильтрами и ссылками (таблица + карточки)', file: 'blocks/zoom-schedule.html', tags: ['schedule', 'zoom', 'interactive', 'filter'] },
+            { id: 'getcourse-fontfix', name: 'GetCourse Font Fix', category: 'utility', desc: 'Утилита: неблокирующая загрузка шрифтов + защита от обрезки страницы на GetCourse', file: 'blocks/getcourse-fontfix.html' },
+            { id: 'ebook-promo', name: 'E-Book Promo', category: 'conversion', desc: 'Промо-блок с обложкой книги, описанием и CTA', file: 'blocks/ebook-promo.html' },
+            { id: 'risks-grid', name: 'Risks / Pain Points Grid', category: 'content', desc: 'Сетка карточек проблем/болей с иконками', file: 'blocks/risks-grid.html' },
+        ];
+
+        // Cache for loaded block HTML
+        const blockCache = {};
+
+        // Load block HTML from file
+        async function loadBlock(block) {
+            if (blockCache[block.id]) return blockCache[block.id];
+            if (!block.file) return null;
+            try {
+                const resp = await fetch(block.file);
+                if (!resp.ok) return null;
+                const html = await resp.text();
+                blockCache[block.id] = html;
+                return html;
+            } catch {
+                return null;
+            }
+        }
+
+        // ===== CARDS GRID CONSTRUCTOR =====
+        const CARD_TEMPLATES = [
+            { icon: '🌊', title: 'Unique Method', text: 'Start with what water wants to do, not with rigid technique drills.' },
+            { icon: '👨‍🎨', title: 'Master Teacher', text: 'Learn from Nicolás López with 20+ years of experience.' },
+            { icon: '🏆', title: 'Real Results', text: 'Students create impressive paintings from day one.' },
+            { icon: '🎥', title: 'Live Sessions', text: 'Real-time guidance and painting together with the teacher.' },
+            { icon: '📹', title: 'Recordings', text: 'Lifetime access to all session recordings. Rewatch at your pace.' },
+            { icon: '💬', title: 'Community', text: 'Join a warm community of like-minded art enthusiasts.' },
+            { icon: '📋', title: 'Materials Guide', text: 'Complete list of recommended materials with budget-friendly options.' },
+        ];
+
+        const cardsGridState = {}; // blockId -> current count
+
+        function getCardsGridCols(count) {
+            if (count <= 2) return 2;
+            if (count <= 3) return 3;
+            if (count === 4) return 2;
+            return 3;
+        }
+
+        function generateCardsGridHtml(count) {
+            const cols = getCardsGridCols(count);
+            const cards = CARD_TEMPLATES.slice(0, count);
+            const maxW = cols <= 2 ? '1000px' : '1200px';
+            const mobileBreak = cols <= 2 ? '640px' : '768px';
+
+            let cardsHtml = cards.map(c =>
+                `            <div class="af-cardsgrid__card"><div class="af-cardsgrid__icon">${c.icon}</div><h3 class="af-cardsgrid__card-title">${c.title}</h3><p class="af-cardsgrid__card-text">${c.text}</p></div>`
+            ).join('\n');
+
+            return `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Cards Grid (${count} cards) -->
+<style>
+    .af-cardsgrid {
+        --af-primary: #de6518; --af-bg: #ffffff; --af-card-bg: #f4efe9;
+        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body); color: var(--af-text);
+    }
+    .af-cardsgrid__inner { max-width: ${maxW}; margin: 0 auto; }
+    .af-cardsgrid__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; text-align: center; margin-bottom: clamp(32px, 5vw, 48px); }
+    .af-cardsgrid__grid { display: grid; grid-template-columns: repeat(${cols}, 1fr); gap: clamp(16px, 2vw, 24px); }
+    .af-cardsgrid__card { background: var(--af-card-bg); border-radius: var(--af-radius); padding: clamp(24px, 3vw, 36px); text-align: center; transition: transform 0.3s, box-shadow 0.3s; }
+    .af-cardsgrid__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .af-cardsgrid__icon { font-size: clamp(32px, 3vw, 40px); margin-bottom: 12px; }
+    .af-cardsgrid__card-title { font-family: var(--af-font-heading); font-size: clamp(18px, 1.8vw, 21px); font-weight: 700; margin-bottom: 8px; }
+    .af-cardsgrid__card-text { font-size: clamp(16px, 1.4vw, 18px); line-height: 1.7; color: var(--af-text-light); }
+    @media (max-width: ${mobileBreak}) { .af-cardsgrid__grid { grid-template-columns: 1fr; } }
+    *:focus-visible { outline: 3px solid var(--af-primary, #de6518); outline-offset: 3px; border-radius: 4px; }
+</style>
+<div class="af-cardsgrid">
+    <div class="af-cardsgrid__inner">
+        <h2 class="af-cardsgrid__heading">Why students love this course</h2>
+        <div class="af-cardsgrid__grid">
+${cardsHtml}
+        </div>
+    </div>
+</div>`;
+        }
+
+        function updateCardsGrid(blockId, count) {
+            count = parseInt(count);
+            if (count < 2 || count > 7) return;
+            cardsGridState[blockId] = count;
+
+            const html = generateCardsGridHtml(count);
+            blockCache[blockId] = html;
+            // Update original cache too
+            originalCache[blockId] = html;
+
+            // Re-apply toggles if active
+            if (stickerState[blockId] || seniorState[blockId]) {
+                rebuildBlock(blockId);
+            } else {
+                refreshIframe(blockId);
+            }
+        }
+
+        // ===== PRICING PLANS CONSTRUCTOR =====
+        const pricingState = {}; // blockId -> current count (1-3)
+        const pricingFiles = { 1: 'blocks/pricing-1.html', 2: 'blocks/pricing-2.html', 3: 'blocks/pricing-3.html' };
+        const pricingHtmlCache = {}; // count -> html
+
+        async function loadPricingHtml(count) {
+            if (pricingHtmlCache[count]) return pricingHtmlCache[count];
+            try {
+                const resp = await fetch(pricingFiles[count]);
+                if (!resp.ok) return null;
+                const html = await resp.text();
+                pricingHtmlCache[count] = html;
+                return html;
+            } catch { return null; }
+        }
+
+        async function updatePricing(blockId, count) {
+            count = parseInt(count);
+            if (count < 1 || count > 3) return;
+            pricingState[blockId] = count;
+
+            const html = await loadPricingHtml(count);
+            if (!html) return;
+            blockCache[blockId] = html;
+            originalCache[blockId] = html;
+
+            if (stickerState[blockId] || seniorState[blockId]) {
+                rebuildBlock(blockId);
+            } else {
+                refreshIframe(blockId);
+            }
+        }
+
+        // ===== ACCORDION CONSTRUCTOR =====
+        const ACCORDION_TEMPLATES = [
+            { title: 'Day 1 — Foundation: Water & Color', tag: '4 hours', img: 'https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&h=350&fit=crop', text: 'Understanding how water behaves on paper. Basic washes, color mixing, and finding your brushstrokes. We start with experiments — no pressure, pure discovery.' },
+            { title: 'Day 2 — Technique: Light & Shadow', tag: '4 hours', img: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&h=350&fit=crop', text: 'Layering, glazing, and creating depth. We paint a landscape from reference together, with Nicolás guiding every stroke in real time.' },
+            { title: 'Day 3 — Expression: Your Own Voice', tag: '4 hours', img: 'https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=350&fit=crop', text: 'Bringing it all together. You choose your subject and create your own composition. Personal feedback from Nicolás on your completed work.' },
+            { title: 'Day 4 — Plein Air: Painting Outdoors', tag: '3 hours', img: 'https://images.unsplash.com/photo-1596548438137-d51ea5c83ca5?w=800&h=350&fit=crop', text: 'Taking your skills outside. Capturing light, atmosphere, and spontaneous moments in nature with a portable watercolor setup.' },
+            { title: 'Day 5 — Portfolio: Your Best Work', tag: '3 hours', img: 'https://images.unsplash.com/photo-1605721911519-3dfeb3be25e7?w=800&h=350&fit=crop', text: 'Selecting and refining your strongest pieces. Tips for photographing, presenting, and sharing your watercolor art with the world.' },
+        ];
+        const accordionState = {}; // blockId -> current count (1-5)
+
+        function generateAccordionHtml(count) {
+            const items = ACCORDION_TEMPLATES.slice(0, count);
+            let itemsHtml = items.map((item, i) =>
+                `            <details class="af-accordion__item"${i === 0 ? ' open' : ''}>
+                <summary>${item.title}</summary>
+                <div class="af-accordion__body">
+                    <img class="af-accordion__img" src="${item.img}" alt="${item.title}">
+                    <span class="af-accordion__tag">${item.tag}</span>
+                    <p>${item.text}</p>
+                </div>
+            </details>`
+            ).join('\n');
+
+            return `<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Accordion (${count} items) -->
+<style>
+    .af-accordion {
+        --af-primary: #de6518; --af-bg: #f4efe9; --af-card-bg: #ffffff;
+        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 12px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body); color: var(--af-text);
+    }
+    .af-accordion__inner { max-width: 800px; margin: 0 auto; }
+    .af-accordion__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; text-align: center; margin-bottom: clamp(24px, 4vw, 48px); }
+    .af-accordion__list { display: flex; flex-direction: column; gap: clamp(8px, 1.5vw, 12px); }
+    .af-accordion__item { background: var(--af-card-bg); border-radius: var(--af-radius); overflow: hidden; }
+    .af-accordion__item summary {
+        padding: clamp(16px, 2.5vw, 24px); font-size: clamp(18px, 1.6vw, 20px); font-weight: 700;
+        cursor: pointer; list-style: none; display: flex; align-items: center; justify-content: space-between; gap: 16px; transition: color 0.2s;
+    }
+    .af-accordion__item summary::-webkit-details-marker { display: none; }
+    .af-accordion__item summary::after { content: '+'; font-size: 24px; font-weight: 400; color: var(--af-primary); flex-shrink: 0; transition: transform 0.3s; }
+    .af-accordion__item[open] summary::after { transform: rotate(45deg); }
+    .af-accordion__item summary:hover { color: var(--af-primary); }
+    .af-accordion__body { padding: 0 clamp(16px, 2.5vw, 24px) clamp(16px, 2.5vw, 24px); }
+    .af-accordion__body p { font-size: clamp(18px, 1.5vw, 20px); line-height: 1.7; color: var(--af-text-light); margin-bottom: 8px; }
+    .af-accordion__body p:last-child { margin-bottom: 0; }
+    .af-accordion__tag { display: inline-block; font-size: 16px; font-weight: 700; color: var(--af-primary); background: rgba(222,101,24,0.1); padding: 2px 10px; border-radius: 10px; margin-bottom: 12px; }
+    .af-accordion__img { width: 100%; border-radius: 8px; aspect-ratio: 16/7; object-fit: cover; display: block; margin-bottom: 12px; }
+    @media (max-width: 768px) { .af-accordion__img { aspect-ratio: 16/9; } }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+<div class="af-accordion">
+    <div class="af-accordion__inner">
+        <h2 class="af-accordion__heading">Course program</h2>
+        <div class="af-accordion__list">
+${itemsHtml}
+        </div>
+    </div>
+</div>`;
+        }
+
+        function updateAccordion(blockId, count) {
+            count = parseInt(count);
+            if (count < 1 || count > 5) return;
+            accordionState[blockId] = count;
+
+            const html = generateAccordionHtml(count);
+            blockCache[blockId] = html;
+            originalCache[blockId] = html;
+
+            if (stickerState[blockId] || seniorState[blockId]) {
+                rebuildBlock(blockId);
+            } else {
+                refreshIframe(blockId);
+            }
+        }
+
+        // Render all block cards
+        async function renderBlocks(filter = 'all') {
+            const grid = document.getElementById('blocksGrid');
+            const filtered = filter === 'all' ? BLOCKS : BLOCKS.filter(b => b.category === filter);
+
+            document.getElementById('blockCount').textContent = `${filtered.length} blocks`;
+
+            grid.innerHTML = '';
+
+            for (const block of filtered) {
+                let html;
+                if (block.configurable === 'cards-grid') {
+                    const count = cardsGridState[block.id] || block.configDefault || 3;
+                    cardsGridState[block.id] = count;
+                    html = generateCardsGridHtml(count);
+                    blockCache[block.id] = html;
+                } else if (block.configurable === 'pricing') {
+                    const count = pricingState[block.id] || block.configDefault || 2;
+                    pricingState[block.id] = count;
+                    html = await loadPricingHtml(count);
+                    if (html) blockCache[block.id] = html;
+                } else if (block.configurable === 'accordion') {
+                    const count = accordionState[block.id] || block.configDefault || 3;
+                    accordionState[block.id] = count;
+                    html = generateAccordionHtml(count);
+                    blockCache[block.id] = html;
+                } else {
+                    html = await loadBlock(block);
+                }
+                const card = document.createElement('div');
+                card.className = 'block-card';
+                card.dataset.category = block.category;
+                card.dataset.blockId = block.id;
+
+                const hasContent = html !== null;
+                const hasImages = hasContent && /<img\s/i.test(html);
+                const isConfigurable = block.configurable === 'cards-grid' || block.configurable === 'pricing' || block.configurable === 'accordion';
+
+                let configHtml = '';
+                if (block.configurable === 'cards-grid') {
+                    configHtml = `
+                    <div class="cards-config">
+                        <span class="cards-config__label">Cards:</span>
+                        <select class="cards-config__select" onchange="updateCardsGrid('${block.id}', this.value)">
+                            ${[2,3,4,5,6,7].map(n => `<option value="${n}" ${n === (cardsGridState[block.id] || 3) ? 'selected' : ''}>${n}</option>`).join('')}
+                        </select>
+                    </div>`;
+                } else if (block.configurable === 'pricing') {
+                    configHtml = `
+                    <div class="cards-config">
+                        <span class="cards-config__label">Plans:</span>
+                        <select class="cards-config__select" onchange="updatePricing('${block.id}', this.value)">
+                            ${[1,2,3].map(n => `<option value="${n}" ${n === (pricingState[block.id] || 2) ? 'selected' : ''}>${n}</option>`).join('')}
+                        </select>
+                    </div>`;
+                } else if (block.configurable === 'accordion') {
+                    configHtml = `
+                    <div class="cards-config">
+                        <span class="cards-config__label">Items:</span>
+                        <select class="cards-config__select" onchange="updateAccordion('${block.id}', this.value)">
+                            ${[1,2,3,4,5].map(n => `<option value="${n}" ${n === (accordionState[block.id] || 3) ? 'selected' : ''}>${n}</option>`).join('')}
+                        </select>
+                    </div>`;
+                }
+
+                card.innerHTML = `
+                    <div class="block-card__header">
+                        <div class="block-card__info">
+                            <span class="block-card__name">${block.name}</span>
+                            <span class="block-card__tag">${block.category}</span>
+                            <span style="color: var(--app-text-muted); font-size: 0.8rem;">${block.desc}</span>
+                        </div>
+                        <div class="block-card__actions">
+                            ${configHtml}
+                            <div class="preview-controls">
+                                <button class="preview-size-btn active" onclick="resizePreview(this, '100%')">Desktop</button>
+                                <button class="preview-size-btn" onclick="resizePreview(this, '768px')">Tablet</button>
+                                <button class="preview-size-btn" onclick="resizePreview(this, '390px')">Mobile</button>
+                            </div>
+                            ${hasContent ? `
+                                <button class="sticker-toggle" onclick="toggleSticker(this, '${block.id}')">
+                                    <span class="sticker-toggle__check"></span> FREE
+                                </button>
+                                <button class="senior-toggle" onclick="toggleSenior(this, '${block.id}')">
+                                    <span class="senior-toggle__check"></span> 55+
+                                </button>
+                            ` : ''}
+                            ${hasImages ? `
+                                <button class="btn-images" onclick="openImgEditor('${block.id}')">&#128247; Images</button>
+                            ` : ''}
+                            ${hasContent ? `
+                                <button class="btn-copy" onclick="copyBlock(event, '${block.id}')">Copy code</button>
+                            ` : `
+                                <button class="btn-copy" disabled style="opacity:0.4">Coming soon</button>
+                            `}
+                            <button class="btn-info" onclick="openModal()">?</button>
+                        </div>
+                    </div>
+                    ${hasContent ? `
+                        <div class="block-card__preview">
+                            <iframe srcdoc="${escapeAttr(html)}" onload="autoResizeIframe(this)" style="width: 100%;"></iframe>
+                        </div>
+                    ` : `
+                        <div class="block-card__preview" style="padding: 48px; text-align: center; color: #999; font-style: italic;">
+                            Block is being built...
+                        </div>
+                    `}
+                `;
+
+                // Restore toggle states after filter switch
+                if (hasContent) {
+                    if (stickerState[block.id]) {
+                        const btn = card.querySelector('.sticker-toggle');
+                        if (btn) { btn.classList.add('active'); btn.querySelector('.sticker-toggle__check').innerHTML = '&#10003;'; }
+                    }
+                    if (seniorState[block.id]) {
+                        const btn = card.querySelector('.senior-toggle');
+                        if (btn) { btn.classList.add('active'); btn.querySelector('.senior-toggle__check').innerHTML = '&#10003;'; }
+                    }
+                }
+
+                grid.appendChild(card);
+            }
+        }
+
+        function escapeAttr(str) {
+            return str.replace(/&/g, '&amp;').replace(/"/g, '&quot;');
+        }
+
+        // Auto-resize iframe to fit content
+        function autoResizeIframe(iframe) {
+            try {
+                iframe.style.height = iframe.contentDocument.documentElement.scrollHeight + 'px';
+            } catch(e) {
+                iframe.style.height = '400px';
+            }
+        }
+
+        // Resize preview (desktop/tablet/mobile)
+        function resizePreview(btn, width) {
+            const controls = btn.parentElement;
+            controls.querySelectorAll('.preview-size-btn').forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
+
+            const iframe = btn.closest('.block-card').querySelector('iframe');
+            if (iframe) {
+                iframe.style.maxWidth = width;
+                iframe.style.margin = width === '100%' ? '0' : '0 auto';
+                iframe.style.display = 'block';
+                // Re-measure height after resize
+                setTimeout(() => autoResizeIframe(iframe), 300);
+            }
+        }
+
+        // Copy block code (copies current state with sticker/senior if active)
+        async function copyBlock(evt, blockId) {
+            const block = BLOCKS.find(b => b.id === blockId);
+            if (!block) return;
+
+            // Use cached version (includes sticker/senior toggles)
+            const html = blockCache[blockId] || await loadBlock(block);
+            if (!html) return;
+
+            await navigator.clipboard.writeText(html);
+
+            // Visual feedback on button
+            const btn = evt.target.closest('.btn-copy');
+            const original = btn.textContent;
+            btn.textContent = 'Copied!';
+            btn.classList.add('copied');
+            setTimeout(() => {
+                btn.textContent = original;
+                btn.classList.remove('copied');
+            }, 2000);
+
+            // Toast notification
+            showToast(`${block.name} — код скопирован!`);
+        }
+
+        // Toast
+        let toastTimer;
+        function showToast(text) {
+            const toast = document.getElementById('toast');
+            document.getElementById('toastText').textContent = text;
+            toast.classList.add('show');
+            clearTimeout(toastTimer);
+            toastTimer = setTimeout(() => toast.classList.remove('show'), 2500);
+        }
+
+        // Modal
+        function openModal() {
+            document.getElementById('modalOverlay').classList.add('active');
+        }
+        function closeModal() {
+            document.getElementById('modalOverlay').classList.remove('active');
+        }
+        document.getElementById('modalOverlay').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) closeModal();
+        });
+
+        // Filters
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                btn.classList.add('active');
+                renderBlocks(btn.dataset.filter);
+            });
+        });
+
+        // Keyboard: Escape closes modals
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+                closeImgEditor();
+            }
+        });
+
+        // Init
+        renderBlocks();
+    </script>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: FAQ + Image — вопросы с картинкой сбоку -->
+<style>
+
+    .af-faq-img {
+        --af-primary: #de6518;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-faq-img__inner {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(32px, 5vw, 64px);
+        align-items: start;
+    }
+    .af-faq-img__left { }
+    .af-faq-img__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-faq-img__desc {
+        font-size: clamp(18px, 1.5vw, 20px);
+        line-height: 1.7;
+        color: var(--af-text-light);
+        margin-bottom: clamp(24px, 3vw, 32px);
+    }
+    .af-faq-img__image img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: var(--af-radius);
+        display: block;
+    }
+    .af-faq-img__list {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(8px, 1.5vw, 12px);
+    }
+    .af-faq-img__item {
+        background: var(--af-card-bg);
+        border-radius: 12px;
+        overflow: hidden;
+    }
+    .af-faq-img__item summary {
+        padding: clamp(14px, 2vw, 20px);
+        font-size: clamp(18px, 1.5vw, 20px);
+        font-weight: 700;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        transition: color 0.2s;
+    }
+    .af-faq-img__item summary::-webkit-details-marker { display: none; }
+    .af-faq-img__item summary::after { content: '+'; font-size: 22px; font-weight: 400; color: var(--af-primary); flex-shrink: 0; transition: transform 0.3s; }
+    .af-faq-img__item[open] summary::after { transform: rotate(45deg); }
+    .af-faq-img__item summary:hover { color: var(--af-primary); }
+    .af-faq-img__answer {
+        padding: 0 clamp(14px, 2vw, 20px) clamp(14px, 2vw, 20px);
+        font-size: clamp(16px, 1.3vw, 18px);
+        line-height: 1.7;
+        color: var(--af-text-light);
+    }
+    @media (max-width: 768px) {
+        .af-faq-img__inner { grid-template-columns: 1fr; }
+        .af-faq-img__image { display: none; }
+    }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+
+<div class="af-faq-img">
+    <div class="af-faq-img__inner">
+        <div class="af-faq-img__left">
+            <h2 class="af-faq-img__heading">Common questions</h2>
+            <p class="af-faq-img__desc">Everything you need to know before joining the intensive.</p>
+            <div class="af-faq-img__image">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=450&fit=crop" alt="FAQ">
+            </div>
+        </div>
+        <div class="af-faq-img__list">
+            <details class="af-faq-img__item">
+                <summary>Do I need painting experience?</summary>
+                <div class="af-faq-img__answer">No! The intensive is designed for all levels, from complete beginners to experienced painters.</div>
+            </details>
+            <details class="af-faq-img__item">
+                <summary>What materials do I need?</summary>
+                <div class="af-faq-img__answer">Basic watercolor supplies. We'll send you a detailed materials list with budget-friendly options after registration.</div>
+            </details>
+            <details class="af-faq-img__item">
+                <summary>Will sessions be recorded?</summary>
+                <div class="af-faq-img__answer">Yes, all sessions are recorded. You get lifetime access to rewatch at your own pace.</div>
+            </details>
+            <details class="af-faq-img__item">
+                <summary>What if I miss a live session?</summary>
+                <div class="af-faq-img__answer">Recordings are available within hours. You can catch up anytime and still participate in discussions.</div>
+            </details>
+            <details class="af-faq-img__item">
+                <summary>Is there a refund policy?</summary>
+                <div class="af-faq-img__answer">Full refund within 24 hours of purchase if you haven't accessed the materials.</div>
+            </details>
+        </div>
+    </div>
+</div>

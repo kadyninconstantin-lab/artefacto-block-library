@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Content Card — карточка с тегом и текстом -->
+<style>
+
+    .af-contentcard {
+        --af-primary: #de6518;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 20px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-contentcard__inner { max-width: 720px; margin: 0 auto; }
+    .af-contentcard__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(24px, 4vw, 40px);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+    }
+    .af-contentcard__card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+    .af-contentcard__tag {
+        display: inline-block;
+        font-size: clamp(16px, 1.2vw, 18px);
+        font-weight: 600;
+        color: var(--af-text-light);
+        margin-bottom: clamp(8px, 1.5vw, 16px);
+    }
+    .af-contentcard__text {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 2.2vw, 22px);
+        font-weight: 400;
+        line-height: 1.6;
+    }
+    .af-contentcard__text p { margin-bottom: clamp(12px, 2vw, 20px); }
+    .af-contentcard__text p:last-child { margin-bottom: 0; }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-contentcard">
+    <div class="af-contentcard__inner">
+        <div class="af-contentcard__card">
+            <div class="af-contentcard__tag">Художник на плато</div>
+            <div class="af-contentcard__text">
+                <p>Вы уже не новичек и ищете свой стиль, рисуете несколько лет и устали от рутины, возможно, работы не плохие — но все одинаковые.</p>
+                <p>Иногда, вы видите, что результат предсказуем, когда видите работы мастера в голове вопрос: «КАК это делает?!»</p>
+            </div>
+        </div>
+    </div>
+</div>

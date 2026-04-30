@@ -1,0 +1,37 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Logo Strip — логотипы партнёров -->
+<style>
+
+    .af-logos {
+        --af-bg: #ffffff; --af-text-light: #4a4a4a;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg); padding: clamp(32px, 5vw, 56px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body); text-align: center;
+    }
+    .af-logos__inner { max-width: 1000px; margin: 0 auto; }
+    .af-logos__label { font-size: clamp(16px, 1.2vw, 18px); color: var(--af-text-light); font-weight: 500; margin-bottom: clamp(20px, 3vw, 32px); text-transform: uppercase; letter-spacing: 0.08em; }
+    .af-logos__row { display: flex; align-items: center; justify-content: center; gap: clamp(24px, 5vw, 56px); flex-wrap: wrap; }
+    .af-logos__row img { height: clamp(24px, 3.5vw, 40px); width: auto; object-fit: contain; filter: grayscale(100%) opacity(50%); transition: all 0.3s; }
+    .af-logos__row img:hover { filter: grayscale(0%) opacity(100%); }
+    @media (max-width: 640px) {
+        .af-logos__row { gap: clamp(16px, 4vw, 32px); }
+        .af-logos__row img { height: clamp(20px, 5vw, 32px); }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+<div class="af-logos">
+    <div class="af-logos__inner">
+        <div class="af-logos__label">Featured in</div>
+        <div class="af-logos__row">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg" alt="Google">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg" alt="Microsoft">
+        </div>
+    </div>
+</div>

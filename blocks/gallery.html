@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Gallery — сетка картинок / работ -->
+<style>
+
+    .af-gallery {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-radius: 12px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-gallery__inner { max-width: 1200px; margin: 0 auto; }
+    .af-gallery__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-gallery__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(clamp(200px, 25vw, 280px), 1fr));
+        gap: clamp(8px, 1.5vw, 16px);
+    }
+    .af-gallery__item {
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        aspect-ratio: 1;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+    }
+    .af-gallery__item:hover { transform: scale(1.03); }
+    .af-gallery__item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-gallery">
+    <div class="af-gallery__inner">
+        <h2 class="af-gallery__heading">Student artworks</h2>
+        <div class="af-gallery__grid">
+            <div class="af-gallery__item"><img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=400&h=400&fit=crop" alt="Artwork 1"></div>
+            <div class="af-gallery__item"><img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=400&fit=crop" alt="Artwork 2"></div>
+            <div class="af-gallery__item"><img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=400&h=400&fit=crop" alt="Artwork 3"></div>
+            <div class="af-gallery__item"><img src="https://images.unsplash.com/photo-1578301978693-85fa9fd0c585?w=400&h=400&fit=crop" alt="Artwork 4"></div>
+            <div class="af-gallery__item"><img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=400&fit=crop" alt="Artwork 5"></div>
+            <div class="af-gallery__item"><img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=400&fit=crop" alt="Artwork 6"></div>
+        </div>
+    </div>
+</div>

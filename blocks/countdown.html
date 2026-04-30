@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Countdown — таймер обратного отсчёта -->
+<style>
+
+    .af-countdown {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #3b3b3b;
+        --af-card-bg: rgba(255,255,255,0.08);
+        --af-text: #ffffff;
+        --af-text-light: rgba(255,255,255,0.85);
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+        text-align: center;
+    }
+    .af-countdown__inner { max-width: 800px; margin: 0 auto; }
+    .af-countdown__label {
+        font-size: clamp(16px, 1.3vw, 18px);
+        font-weight: 600; text-transform: uppercase;
+        letter-spacing: 0.1em; color: var(--af-primary);
+        margin-bottom: 8px;
+    }
+    .af-countdown__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700; margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-countdown__timer {
+        display: flex; justify-content: center;
+        gap: clamp(12px, 3vw, 24px);
+        margin-bottom: clamp(28px, 5vw, 44px);
+    }
+    .af-countdown__unit {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(16px, 3vw, 28px) clamp(20px, 4vw, 36px);
+        min-width: clamp(70px, 12vw, 110px);
+    }
+    .af-countdown__number {
+        font-family: var(--af-font-heading);
+        font-size: clamp(32px, 5vw, 56px);
+        font-weight: 700; line-height: 1.1;
+    }
+    .af-countdown__text {
+        font-size: clamp(16px, 1.1vw, 18px);
+        color: var(--af-text-light);
+        margin-top: 4px; text-transform: uppercase;
+        letter-spacing: 0.05em;
+    }
+    .af-countdown__btn {
+    min-height: 48px;
+        display: inline-block;
+        background: var(--af-primary); color: #fff;
+        padding: clamp(14px, 2vw, 18px) clamp(32px, 5vw, 48px);
+        border-radius: 80px; font-weight: 700;
+        font-size: clamp(18px, 1.4vw, 20px);
+        text-decoration: none; border: none; cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+    }
+    .af-countdown__btn:hover {
+        background: var(--af-primary-hover);
+        transform: translateY(-2px);
+    }
+
+    @media (max-width: 480px) {
+        .af-countdown__unit { min-width: 60px; padding: 14px 10px; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-countdown">
+    <div class="af-countdown__inner">
+        <div class="af-countdown__label">Limited enrollment</div>
+        <h2 class="af-countdown__heading">Registration closes soon</h2>
+        <div class="af-countdown__timer" id="af-countdown-timer">
+            <div class="af-countdown__unit">
+                <div class="af-countdown__number" data-unit="days">03</div>
+                <div class="af-countdown__text">Days</div>
+            </div>
+            <div class="af-countdown__unit">
+                <div class="af-countdown__number" data-unit="hours">14</div>
+                <div class="af-countdown__text">Hours</div>
+            </div>
+            <div class="af-countdown__unit">
+                <div class="af-countdown__number" data-unit="minutes">27</div>
+                <div class="af-countdown__text">Minutes</div>
+            </div>
+            <div class="af-countdown__unit">
+                <div class="af-countdown__number" data-unit="seconds">45</div>
+                <div class="af-countdown__text">Seconds</div>
+            </div>
+        </div>
+        <a href="#" class="af-countdown__btn">Reserve your spot</a>
+    </div>
+</div>
+
+<script>
+(function(){
+    var timer = document.getElementById('af-countdown-timer');
+    if (!timer) return;
+    // Set target: 3 days from now
+    var target = new Date().getTime() + 3 * 24 * 60 * 60 * 1000;
+    function pad(n){ return n < 10 ? '0' + n : n; }
+    function tick(){
+        var now = new Date().getTime();
+        var diff = Math.max(0, target - now);
+        var d = Math.floor(diff / 86400000);
+        var h = Math.floor((diff % 86400000) / 3600000);
+        var m = Math.floor((diff % 3600000) / 60000);
+        var s = Math.floor((diff % 60000) / 1000);
+        var els = timer.querySelectorAll('.af-countdown__number');
+        els[0].textContent = pad(d);
+        els[1].textContent = pad(h);
+        els[2].textContent = pad(m);
+        els[3].textContent = pad(s);
+    }
+    tick();
+    setInterval(tick, 1000);
+})();
+</script>

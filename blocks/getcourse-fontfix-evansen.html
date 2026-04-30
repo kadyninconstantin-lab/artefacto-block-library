@@ -1,0 +1,910 @@
+<!-- Artefacto: 55+ Full Audit Fix v2 — Evansen Workshop April -->
+<!-- Полный аудит по senior-design-guidelines.md -->
+<!-- Вставить в HEAD страницы на GetCourse -->
+<style>
+/* ================================================================
+   55+ FULL AUDIT FIX v2 — Evansen Workshop April
+   artefactoschool.online/workshops_evansen_april
+   ================================================================
+   Стандарты: Files/senior-design-guidelines.md
+   - Шрифты: body 18px+, secondary 16px+, buttons 18px+
+   - Line-height: body 1.6+, headings 1.3+
+   - Контраст: WCAG AAA 7:1
+   - Touch targets: 48x48px minimum
+   - Кнопки CTA: всегда по центру
+   - Все селекторы с .block-set для изоляции от админки GC
+   ================================================================ */
+
+
+/* ════════════════════════════════════════════════════════════════
+   1. ШРИФТЫ — BODY TEXT (18px+, line-height 1.6+)
+   ════════════════════════════════════════════════════════════════ */
+
+/* Базовый safety net для всего контента лендинга */
+.block-set p,
+.block-set li,
+.block-set td,
+.block-set th,
+.block-set span {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+}
+
+/* Описания в карточках — были rgba(59,59,59,0.7) = ~4.6:1 контраст, FAIL AAA */
+.block-set .grid-wrapper-card__descr,
+.block-set .program-card__list-item,
+.block-set .program-card__label,
+.block-set .step-to-goin__list-descr,
+.block-set .achive-card__descr,
+.block-set .instructor__text,
+.block-set .support-and-feedback-card__list-item,
+.block-set .custom-columns-item__text {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+  color: #3b3b3b !important; /* Solid color вместо rgba 0.7-0.8 → 9:1 на белом */
+}
+
+/* FAQ body text */
+.block-set .faq-item__text,
+.block-set .faq-item__link,
+.block-set .faq-item__list-item {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+  color: #3b3b3b !important;
+}
+
+/* Тарифы / Pricing */
+.block-set .tariff-plans .tariff-plans__descr,
+.block-set .tariff-plans ul > li,
+.block-set .tariff-plans .tariff-plans-spots {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+}
+
+/* Tariff мелкий текст — был 10px на оригинале! */
+.block-set .tariff-plans .tariff-plans__descr-sm {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+/* Custom columns описание — clamp min 16px OK, но line-height 120% слишком мало */
+.block-set .custom-columns .custom-descr p {
+  font-size: 18px !important;
+  line-height: 1.6 !important;
+}
+
+/* Custom columns subtitle */
+.block-set .custom-columns .custom-subtitle p {
+  font-size: 18px !important;
+  line-height: 1.4 !important;
+}
+
+/* Custom columns item text — был clamp(14px, 2vw, 16px) */
+.block-set .custom-columns-item__text {
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+}
+
+/* Ссылки в контенте */
+.block-set .grid-cotainer__link:is(:active, :visited, :hover, :link),
+.block-set .step-to-join__link,
+.block-set .support-and-feedback__link:is(:active, :visited, :hover, :link),
+.block-set .covered-section-hero__link {
+  font-size: 18px !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   2. ШРИФТЫ — HEADINGS (line-height 1.3+)
+   ════════════════════════════════════════════════════════════════ */
+
+.block-set .custom-columns .custom-title p {
+  line-height: 1.15 !important; /* Display heading — допустимо для крупных */
+}
+
+.block-set .grid-container__title,
+.block-set .workshop-program__title,
+.block-set .step-to-join__title,
+.block-set .achive__title,
+.block-set .instructor__title,
+.block-set .support-and-feedback__title,
+.block-set .work-examples__title,
+.block-set .faq__title,
+.block-set .covered-section-hero__title {
+  line-height: 1.2 !important; /* Section headings — uppercase, tight OK */
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   3. ШРИФТЫ — НАВИГАЦИЯ (16px+ , line-height fix)
+   ════════════════════════════════════════════════════════════════ */
+
+/* Header nav links — были clamp(12px,...), line-height: 1 */
+.header__nav-link:is(:link, :visited, :hover, :active),
+.gc-user-logined .header__nav-link:is(:link, :visited, :hover, :active) {
+  font-size: clamp(16px, 1.6vw, 18px) !important;
+  line-height: 1.4 !important;
+}
+
+/* Submenu links */
+.header__submenu-link:is(:active, :visited, :hover, :link) {
+  font-size: 18px !important;
+  line-height: 1.4 !important;
+}
+
+/* Auth button — был clamp(12px, 1.6vw, 14px), на 576px: 14px */
+.header__auth-button {
+  font-size: 16px !important;
+  line-height: 1.3 !important;
+  min-height: 48px !important;
+  padding: 12px 20px !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   4. ШРИФТЫ — КНОПКИ & CTA (18px+, 48px touch target)
+   ════════════════════════════════════════════════════════════════ */
+
+/* Все основные кнопки лендинга */
+.block-set .global-custom-btn .f-btn,
+.block-set .custom-columns .custom-btn .f-btn,
+.block-set .custom-form .custom-btn .btn.f-btn,
+.block-set .tariff-plans .button .btn.f-btn,
+.block-set .show-popup {
+  font-size: 18px !important;
+  min-height: 48px !important;
+  line-height: 1.3 !important;
+}
+
+/* Ссылки-кнопки — были 16px, padding min 30px */
+.block-set .grid-cotainer__link:is(:active, :visited, :hover, :link),
+.block-set .step-to-join__link:is(:active, :visited, :hover, :link),
+.block-set .support-and-feedback__link:is(:active, :visited, :hover, :link),
+.block-set .covered-section-hero__link:is(:active, :visited, :hover, :link) {
+  font-size: 18px !important;
+  min-height: 48px !important;
+  padding: 14px 24px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+/* Show popup button — padding был min 28px */
+.block-set .show-popup {
+  padding: 16px clamp(40px, 6vw, 60px) !important;
+}
+
+/* Корзина — кнопки */
+.lt-basket .btn {
+  font-size: 18px !important;
+  min-height: 48px !important;
+}
+.lt-basket .buttons .btn {
+  font-size: 16px !important;
+  min-height: 48px !important;
+}
+
+/* Корзина — текст позиций — был clamp(14px,...) */
+.lt-basket .positions-table .offer-title,
+.lt-basket .positions-table .total-row .offer-title,
+.lt-basket .positions-table .total-row .total-price {
+  font-size: 18px !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   5. ШРИФТЫ — ФОРМЫ (18px input, 16px checkbox)
+   ════════════════════════════════════════════════════════════════ */
+
+/* Input fields — оригинал 16px */
+.block-set .custom-form .custom-input .f-input {
+  font-size: 18px !important;
+  min-height: 48px !important;
+  line-height: 1.4 !important;
+}
+
+/* Checkbox consent — был 14px */
+.block-set .custom-form .checkbox-text {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+/* Countdown timer text — был 16px */
+.block-set .custom-title-countdown .f-header p {
+  font-size: 18px !important;
+  line-height: 1.4 !important;
+}
+
+/* Позиции в форме — offer title */
+.block-set .custom-form .custom-positions .form-position .offer-title {
+  font-size: 18px !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   6. ШРИФТЫ — МОДАЛЬНЫЕ ОКНА
+   ════════════════════════════════════════════════════════════════ */
+
+/* Modal input — был 14px на оригинале! */
+.gc-modal-content .lt-form .f-input {
+  font-size: 18px !important;
+  min-height: 48px !important;
+  line-height: 1.4 !important;
+}
+
+/* Modal button — был clamp(14px, 1vw, 16px) */
+.gc-modal .modal-content .form-content .btn.f-btn {
+  font-size: 18px !important;
+  min-height: 48px !important;
+}
+
+/* Modal checkbox — был 13px! */
+.gc-modal .global-confirm-checkbox-block {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   7. ШРИФТЫ — FOOTER
+   ════════════════════════════════════════════════════════════════ */
+
+/* Footer основной текст — был clamp(15px,...), line-height: 1 */
+html .footer-item__text {
+  font-size: clamp(16px, 2vw, 20px) !important;
+  line-height: 1.5 !important;
+}
+
+/* Footer мелкий текст — был clamp(14px,...) */
+html .footer-item__text--sm {
+  font-size: clamp(16px, 1.7vw, 18px) !important;
+  line-height: 1.5 !important;
+}
+
+/* Footer подзаголовки — был clamp(12px,...) min 12px! */
+.footer-item__subtitle {
+  font-size: clamp(16px, 2vw, 18px) !important;
+  line-height: 1.4 !important;
+  color: rgba(255, 255, 255, 0.75) !important; /* Повышаем с 0.5 для контраста */
+}
+
+/* Footer заголовки — line-height: 1 */
+.footer-item__title {
+  line-height: 1.2 !important;
+}
+
+/* Footer ссылки — были clamp(14px,...) */
+.footer-item-list__link:is(:active, :visited, :hover, :link) {
+  font-size: clamp(16px, 1.8vw, 18px) !important;
+  line-height: 1.4 !important;
+}
+
+/* Footer форма */
+.footer-main .my-container .lt-form .part-userField .f-input,
+.footer-main .my-container .lt-form .custom-btn .f-btn {
+  font-size: 16px !important;
+  min-height: 48px !important;
+}
+
+/* Footer checkbox */
+.footer-main .my-container .flex-column .global-confirm-checkbox-block {
+  font-size: 16px !important;
+  line-height: 1.5 !important;
+}
+
+/* Basket collapsed text — был 15px на 576px */
+.lt-basket.basket-collapsed .collapsed-view .collapsed-info__text {
+  font-size: 16px !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   8. ШРИФТЫ — INSTRUCTOR (art-instructor)
+   ════════════════════════════════════════════════════════════════ */
+
+.block-set .art-instructor__badge {
+  font-size: 18px !important;
+  line-height: 1.4 !important; /* Был 1 */
+}
+
+.block-set .art-instructor__credential,
+.block-set .art-instructor__credential-text {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+}
+
+.block-set .art-instructor__name {
+  font-size: 34px !important;
+  line-height: 1.2 !important;
+}
+
+.block-set .art-instructor__quote {
+  font-size: 20px !important;
+  line-height: 1.7 !important;
+}
+
+.block-set .art-instructor__accent {
+  font-size: 28px !important;
+  line-height: 1.3 !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   9. ШРИФТЫ — ARTEFACTO БЛОКИ (af-)
+   ════════════════════════════════════════════════════════════════ */
+
+.block-set .af-hero-splitr__btn,
+.block-set .af-segments__tab {
+  font-size: 18px !important;
+  min-height: 48px !important;
+}
+
+.block-set .af-accordion__tag {
+  font-size: 16px !important;
+  line-height: 1.4 !important;
+}
+
+.block-set .af-accordion__item summary {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+}
+
+.block-set .af-accordion__item p,
+.block-set .af-accordion__body p {
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+}
+
+.block-set .af-video-play__sub {
+  font-size: 20px !important;
+  line-height: 1.6 !important;
+}
+
+.block-set .af-before-after__label {
+  font-size: 18px !important;
+}
+
+/* Safety net: все af- и art- блоки */
+[class^="af-"] p, [class*=" af-"] p,
+[class^="art-"] p, [class*=" art-"] p,
+[class^="art-"] span {
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+}
+
+[class^="af-"] li, [class*=" af-"] li,
+[class^="art-"] li {
+  font-size: 18px !important;
+  line-height: 1.65 !important;
+}
+
+[class^="af-"] summary, [class*=" af-"] summary {
+  font-size: 20px !important;
+  line-height: 1.5 !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   10. КОНТРАСТ — WCAG AAA 7:1
+   ════════════════════════════════════════════════════════════════ */
+
+/*
+   Проблема: --grey-color-07 = rgba(59,59,59,0.7) на белом → ~#767676 → 4.6:1 FAIL
+   Проблема: --grey-color-08 = rgba(59,59,59,0.8) на белом → ~#626262 → 6.3:1 FAIL
+   Решение: заменяем прозрачные цвета на solid с контрастом 7:1+
+*/
+
+/* Body text с opacity — переводим в solid #3b3b3b (9:1 на белом) */
+.block-set .program-card__list-item,
+.block-set .step-to-goin__list-descr,
+.block-set .achive-card__descr,
+.block-set .grid-wrapper-card__descr,
+.block-set .support-and-feedback-card__list-item,
+.block-set .instructor__list-item {
+  color: #3b3b3b !important;
+}
+
+/* Footer subtitle — был rgba(255,255,255,0.5) на #3b3b3b → ~4.2:1 FAIL */
+.footer-item__subtitle {
+  color: rgba(255, 255, 255, 0.8) !important; /* → ~7.7:1 PASS */
+}
+
+/* Footer links/text — rgba(255,255,255,0.8) на #3b3b3b → ~7.7:1 PASS — OK */
+
+/* Nav links color — rgba(59,59,59,0.8) → 6.3:1 FAIL на page-bg #f4efe9 */
+.header__nav-link:is(:link, :visited) {
+  color: #3b3b3b !important; /* Solid → ~8.5:1 на #f4efe9 */
+}
+
+/* Submenu links */
+.header__submenu-link:is(:link, :visited) {
+  color: #3b3b3b !important;
+}
+
+/* Modal checkbox text — rgba opacity */
+.gc-modal .global-confirm-checkbox-block {
+  color: #555555 !important; /* 7.46:1 на белом — PASS AAA */
+}
+
+/* Form checkbox text */
+.block-set .custom-form .checkbox-text {
+  color: #555555 !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   11. TOUCH TARGETS — 48x48px minimum
+   ════════════════════════════════════════════════════════════════ */
+
+/* Hamburger — был 40x40 */
+.header__burger {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* Footer ссылки — не было padding, чистый текст */
+.footer-item-list__link:is(:active, :visited, :hover, :link) {
+  display: inline-block !important;
+  min-height: 44px !important;
+  padding: 10px 0 !important;
+}
+
+/* Footer ссылки gap — был 5px */
+.footer-item-list__link:not(:last-child) {
+  margin-bottom: 4px !important;
+}
+
+/* FAQ items — межкарточный gap был 5px */
+.block-set .faq-grid {
+  gap: clamp(10px, 2vw, 14px) !important;
+}
+
+/* Swiper кнопки навигации — были 40px на 576px */
+.block-set .work-examples__wrapper .swiper-button-prev,
+.block-set .work-examples__wrapper .swiper-button-next {
+  width: 48px !important;
+  height: 48px !important;
+}
+
+/* Accordion summary touch target */
+.block-set .af-accordion__item summary {
+  min-height: 48px !important;
+  padding: clamp(20px, 2.5vw, 28px) !important;
+}
+
+/* FAQ buttons */
+.block-set .faq-item__btn {
+  min-height: 48px !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   12. SPACING — Единый ритм секций
+   ════════════════════════════════════════════════════════════════ */
+
+/* --- Секции: 56-80px между блоками --- */
+.block-set .custom-columns,
+.block-set .grid-container,
+.block-set .workshop-program,
+.block-set .step-to-join,
+.block-set .achive,
+.block-set .instructor,
+.block-set .support-and-feedback,
+.block-set .work-examples,
+.block-set .faq,
+.block-set .faq--alt,
+.block-set .covered-section,
+.block-set .tariff-plans,
+.block-set .art-instructor,
+.block-set .artist-slider {
+  margin-bottom: clamp(56px, 8vw, 80px) !important;
+}
+
+/* --- Заголовок секции → контент: 24-40px --- */
+.block-set .grid-container__title,
+.block-set .workshop-program__title,
+.block-set .step-to-join__title,
+.block-set .achive__title,
+.block-set .instructor__title,
+.block-set .support-and-feedback__title,
+.block-set .work-examples__title,
+.block-set .faq__title,
+.block-set .tariff-plans .tsr-header,
+.block-set .custom-title p {
+  margin-bottom: clamp(24px, 3vw, 40px) !important;
+}
+
+/* --- Подзаголовок → контент: 20-32px --- */
+.block-set .support-and-feedback__descr,
+.block-set .work-examples__descr,
+.block-set .custom-columns .custom-subtitle p {
+  margin-bottom: clamp(20px, 3vw, 32px) !important;
+}
+
+/* --- Карточки gap: 12-16px --- */
+.block-set .workshop-program__main,
+.block-set .achive__grid,
+.block-set .support-and-feedback__wrapper,
+.block-set .faq-col,
+.block-set .tariff-plans .flex-row {
+  gap: clamp(12px, 2vw, 16px) !important;
+}
+
+/* --- Внутри карточек: 24-32px padding --- */
+.block-set .grid-wrapper-card,
+.block-set .achive-card,
+.block-set .program-card__item:not(.program-card__item-media),
+.block-set .support-and-feedback-card__item:not(.support-and-feedback-card__item--img-box),
+.block-set .tariff-plans .lt-tsr-block {
+  padding: clamp(24px, 3vw, 32px) !important;
+}
+
+/* --- Заголовок карточки → текст: 8-14px --- */
+.block-set .grid-wrapper-card__title,
+.block-set .achive-card__title,
+.block-set .program-card__title,
+.block-set .support-and-feedback-card__title,
+.block-set .tariff-plans .tariff-plans__title {
+  margin-bottom: clamp(8px, 1.5vw, 14px) !important;
+}
+
+/* --- Номер → заголовок: 20-28px --- */
+.block-set .grid-wrapper-card__number,
+.block-set .achive-card__number,
+.block-set .support-and-feedback-card__number {
+  margin-bottom: clamp(20px, 2.5vw, 28px) !important;
+}
+
+/* --- Список элементов gap: 8-12px --- */
+.block-set .program-card__list-item:not(:last-child),
+.block-set .faq-item__list-item:not(:last-child),
+.block-set .support-and-feedback-card__list-item:not(:last-child),
+.block-set .tariff-plans ul > li:not(:last-child) {
+  margin-bottom: clamp(8px, 1.5vw, 12px) !important;
+}
+
+/* --- Program list → label: 16-20px --- */
+.block-set .program-card__list {
+  margin-bottom: clamp(16px, 2vw, 20px) !important;
+}
+
+/* --- FAQ panel padding: 24-32px --- */
+.block-set .faq-item__btn,
+.block-set .faq-item__panel {
+  padding: clamp(24px, 3vw, 32px) !important;
+}
+
+/* --- Steps gap: 40-60px --- */
+.block-set .step-to-join__list {
+  gap: clamp(40px, 6vw, 60px) !important;
+}
+.block-set .step-to-join__list-title {
+  margin-bottom: clamp(6px, 1vw, 10px) !important;
+}
+.block-set .step-to-join__list-img-box {
+  margin-bottom: clamp(16px, 2vw, 20px) !important;
+}
+
+/* --- Instructor spacing --- */
+.block-set .art-instructor__name {
+  margin-bottom: clamp(24px, 3vw, 32px) !important;
+}
+.block-set .art-instructor__credentials {
+  margin-bottom: clamp(28px, 3vw, 36px) !important;
+  gap: clamp(16px, 2vw, 20px) !important;
+}
+.block-set .art-instructor__content {
+  padding: clamp(36px, 4vw, 48px) clamp(32px, 4vw, 44px) !important;
+}
+
+/* --- Instructor work row --- */
+.block-set .instructor__main-item:not(.instructor__main-item--img-box) {
+  padding: clamp(24px, 3vw, 32px) clamp(32px, 5vw, 60px) !important;
+}
+.block-set .instructor__list-item:not(:last-child) {
+  margin-bottom: clamp(14px, 2vw, 20px) !important;
+}
+
+/* --- Covered section hero --- */
+.block-set .covered-section-hero__title {
+  margin-bottom: clamp(10px, 1.5vw, 16px) !important;
+}
+.block-set .covered-section-hero__descr {
+  margin-bottom: clamp(20px, 3vw, 28px) !important;
+}
+
+/* --- Tariff spacing --- */
+.block-set .tariff-plans .header {
+  margin-bottom: clamp(16px, 2vw, 24px) !important;
+  padding-bottom: clamp(16px, 2vw, 24px) !important;
+}
+.block-set .tariff-plans .description {
+  margin-bottom: clamp(20px, 3vw, 28px) !important;
+}
+.block-set .tariff-plans ul {
+  margin-bottom: clamp(16px, 2vw, 20px) !important;
+}
+.block-set .tariff-plans .tariff-plans-wrapper {
+  margin-bottom: clamp(20px, 3vw, 28px) !important;
+  padding: clamp(20px, 2.5vw, 24px) !important;
+}
+.block-set .tariff-plans .tariff-plans-wrapper__title {
+  margin-bottom: clamp(10px, 1.5vw, 14px) !important;
+}
+.block-set .tariff-plans .tariff-plans-price {
+  margin-bottom: clamp(8px, 1.5vw, 12px) !important;
+}
+
+/* --- Custom columns spacing --- */
+.block-set .custom-columns .custom-title p {
+  margin-bottom: clamp(16px, 2vw, 24px) !important;
+}
+.block-set .custom-columns .custom-descr p {
+  margin-bottom: clamp(20px, 2.5vw, 28px) !important;
+}
+
+/* --- Work examples --- */
+.block-set .work-examples__title {
+  margin-bottom: clamp(10px, 1.5vw, 16px) !important;
+}
+
+/* --- Form spacing --- */
+.block-set .custom-form .lt-form {
+  padding: clamp(24px, 3vw, 36px) !important;
+}
+/* Form input gap — был min 6px, слишком мало */
+.block-set .custom-form .custom-input {
+  margin-bottom: clamp(10px, 1.5vw, 14px) !important;
+}
+.block-set .custom-form .custom-input-last {
+  margin-bottom: clamp(16px, 2vw, 24px) !important;
+}
+.block-set .custom-title-countdown .f-header p {
+  margin-bottom: clamp(16px, 2vw, 20px) !important;
+}
+
+/* --- Accordion spacing --- */
+.block-set .af-accordion__heading {
+  margin-bottom: clamp(24px, 3vw, 32px) !important;
+}
+.block-set .af-accordion__list {
+  gap: clamp(10px, 1.5vw, 14px) !important;
+}
+.block-set .af-accordion__body {
+  padding: 0 clamp(20px, 2.5vw, 28px) clamp(20px, 2.5vw, 28px) !important;
+}
+.block-set .af-accordion__body p {
+  margin-bottom: clamp(10px, 1.5vw, 14px) !important;
+}
+.block-set .af-accordion__img {
+  margin-bottom: clamp(14px, 2vw, 18px) !important;
+}
+
+/* --- Bigquote --- */
+.block-set .af-bigquote__text {
+  margin-bottom: clamp(24px, 3vw, 36px) !important;
+}
+
+/* --- Before-after --- */
+.block-set .af-before-after__heading {
+  margin-bottom: clamp(8px, 1.5vw, 14px) !important;
+}
+.block-set .af-before-after__sub {
+  margin-bottom: clamp(28px, 4vw, 40px) !important;
+}
+
+/* --- Video play --- */
+.block-set .af-video-play__heading {
+  margin-bottom: clamp(8px, 1.5vw, 14px) !important;
+}
+.block-set .af-video-play__sub {
+  margin-bottom: clamp(28px, 4vw, 40px) !important;
+}
+
+/* --- FAQ Artefacto --- */
+.block-set .af-faq__heading {
+  margin-bottom: clamp(28px, 4vw, 40px) !important;
+}
+.block-set .af-faq__list {
+  gap: clamp(10px, 1.5vw, 14px) !important;
+}
+
+/* --- Segments --- */
+.block-set .af-segments__question {
+  margin-bottom: clamp(20px, 3vw, 32px) !important;
+}
+.block-set .af-segments__tabs {
+  margin-bottom: clamp(28px, 4vw, 40px) !important;
+}
+
+/* --- Textblock --- */
+.block-set .af-textblock__heading {
+  margin-bottom: clamp(20px, 2.5vw, 32px) !important;
+}
+.block-set .af-textblock__text p {
+  margin-bottom: clamp(14px, 2vw, 20px) !important;
+}
+
+/* --- CTA image --- */
+.block-set .af-cta-img__content {
+  gap: clamp(16px, 2.5vw, 24px) !important;
+}
+
+/* --- Cols3img --- */
+.block-set .af-cols3img__heading {
+  margin-bottom: clamp(28px, 4vw, 48px) !important;
+}
+.block-set .af-cols3img__card-title {
+  margin-bottom: clamp(8px, 1.5vw, 12px) !important;
+}
+
+/* --- Footer spacing --- */
+.footer-item__title {
+  margin-bottom: clamp(10px, 2vw, 18px) !important;
+}
+html .footer-item__text {
+  margin-bottom: clamp(24px, 3vw, 36px) !important;
+}
+.footer-item__subtitle {
+  margin-bottom: clamp(8px, 1.5vw, 16px) !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   13. CTA CENTERING — кнопки всегда по центру
+   ════════════════════════════════════════════════════════════════ */
+
+/* Global CTA buttons — center wrapper */
+.block-set .global-custom-btn,
+.block-set .custom-columns .custom-btn,
+.block-set .step-to-join__item,
+.block-set .covered-section-hero__content {
+  text-align: center !important;
+}
+
+/* Кнопки-ссылки — margin auto для центровки */
+.block-set .grid-cotainer__link,
+.block-set .step-to-join__link,
+.block-set .support-and-feedback__link,
+.block-set .covered-section-hero__link {
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   14. FOCUS INDICATORS — видимый фокус для keyboard nav
+   ════════════════════════════════════════════════════════════════ */
+
+.block-set a:focus-visible,
+.block-set button:focus-visible,
+.block-set input:focus-visible,
+.block-set select:focus-visible,
+.block-set textarea:focus-visible,
+.block-set summary:focus-visible,
+.block-set [role="button"]:focus-visible,
+.header__nav-link:focus-visible,
+.header__auth-button:focus-visible,
+.footer-item-list__link:focus-visible {
+  outline: 3px solid #1A5276 !important;
+  outline-offset: 3px !important;
+  border-radius: 4px !important;
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   15. MOBILE OVERRIDES (≤576px)
+   ════════════════════════════════════════════════════════════════ */
+
+@media (max-width: 576px) {
+  /* Auth button — был 14px на 576px */
+  .header__auth-button {
+    font-size: 16px !important;
+    padding: 12px 16px !important;
+    min-height: 48px !important;
+  }
+
+  /* Basket collapsed text — был 15px */
+  .lt-basket.basket-collapsed .collapsed-view .collapsed-info__text,
+  .total-cost-str {
+    font-size: 16px !important;
+  }
+
+  /* Swiper buttons — были 40px */
+  .block-set .work-examples__wrapper .swiper-button-prev,
+  .block-set .work-examples__wrapper .swiper-button-next {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  /* Mobile hero — text-align center */
+  .block-set .custom-columns .custom-title p,
+  .block-set .custom-columns .custom-subtitle p,
+  .block-set .custom-columns .custom-descr p {
+    text-align: center !important;
+  }
+
+  /* CTA full-width on mobile */
+  .block-set .global-custom-btn .f-btn,
+  .block-set .custom-form .custom-btn .f-btn,
+  .block-set .grid-cotainer__link,
+  .block-set .step-to-join__link,
+  .block-set .support-and-feedback__link,
+  .block-set .covered-section-hero__link {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   16. REDUCED MOTION — уважаем настройки пользователя
+   ════════════════════════════════════════════════════════════════ */
+
+@media (prefers-reduced-motion: reduce) {
+  .block-set *,
+  .block-set *::before,
+  .block-set *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+
+/* ════════════════════════════════════════════════════════════════
+   17. PAGE TRUNCATION FIX — страница показывает все блоки
+   ════════════════════════════════════════════════════════════════
+   Баг: GetCourse JS/виджеты иногда ставят overflow:hidden или
+   фиксированный height на body/wrapper до рендера всех блоков,
+   из-за чего видно только первый экран.
+   ════════════════════════════════════════════════════════════════ */
+
+html,
+body,
+.t-body,
+.t-records,
+.t-site-wrapper {
+  overflow: visible !important;
+  height: auto !important;
+  min-height: 100vh !important;
+}
+
+.t-rec,
+.t-rec-inner,
+.block-set {
+  display: block !important;
+  overflow: visible !important;
+  height: auto !important;
+}
+</style>
+
+<!-- Page truncation fix: снимаем inline height/overflow после загрузки -->
+<script>
+(function() {
+  function fixPageTruncation() {
+    var selectors = ['html', 'body', '.t-body', '.t-records', '.t-site-wrapper'];
+    selectors.forEach(function(sel) {
+      var els = document.querySelectorAll(sel);
+      els.forEach(function(el) {
+        el.style.overflow = 'visible';
+        el.style.height = 'auto';
+        el.style.minHeight = '100vh';
+      });
+    });
+
+    var blocks = document.querySelectorAll('.t-rec, .t-rec-inner, .block-set');
+    blocks.forEach(function(el) {
+      el.style.overflow = 'visible';
+      el.style.height = 'auto';
+    });
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', fixPageTruncation);
+  } else {
+    fixPageTruncation();
+  }
+
+  window.addEventListener('load', fixPageTruncation);
+})();
+</script>

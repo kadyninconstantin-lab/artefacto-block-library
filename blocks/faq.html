@@ -1,0 +1,113 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: FAQ — вопросы и ответы (аккордеон) -->
+<style>
+
+    .af-faq {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-card-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 12px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-faq__inner {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .af-faq__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+
+    .af-faq__list {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(8px, 1.5vw, 12px);
+    }
+
+    .af-faq__item {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        overflow: hidden;
+    }
+
+    .af-faq__item summary {
+        padding: clamp(16px, 2.5vw, 24px);
+        font-size: clamp(18px, 1.6vw, 20px);
+        font-weight: 700;
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        transition: color 0.2s;
+    }
+
+    .af-faq__item summary::-webkit-details-marker { display: none; }
+
+    .af-faq__item summary::after {
+        content: '+';
+        font-size: 24px;
+        font-weight: 400;
+        color: var(--af-primary);
+        flex-shrink: 0;
+        transition: transform 0.3s ease;
+    }
+
+    .af-faq__item[open] summary::after {
+        transform: rotate(45deg);
+    }
+
+    .af-faq__item summary:hover {
+        color: var(--af-primary);
+    }
+
+    .af-faq__answer {
+        padding: 0 clamp(16px, 2.5vw, 24px) clamp(16px, 2.5vw, 24px);
+        font-size: clamp(18px, 1.5vw, 20px);
+        line-height: 1.7;
+        color: var(--af-text-light);
+    }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+
+<div class="af-faq">
+    <div class="af-faq__inner">
+        <h2 class="af-faq__heading">Frequently asked questions</h2>
+        <div class="af-faq__list">
+            <details class="af-faq__item">
+                <summary>Do I need any painting experience?</summary>
+                <div class="af-faq__answer">No prior experience is required. The intensive is designed for all levels — from complete beginners to experienced painters looking for fresh perspectives.</div>
+            </details>
+            <details class="af-faq__item">
+                <summary>What materials do I need?</summary>
+                <div class="af-faq__answer">You'll receive a detailed materials list after registration. Basic watercolor supplies are sufficient — professional-grade materials are not required to participate.</div>
+            </details>
+            <details class="af-faq__item">
+                <summary>Will sessions be recorded?</summary>
+                <div class="af-faq__answer">Yes! All sessions are recorded and you'll have lifetime access to the recordings, so you can rewatch and practice at your own pace.</div>
+            </details>
+            <details class="af-faq__item">
+                <summary>What if I miss a live session?</summary>
+                <div class="af-faq__answer">No worries — recordings are available within hours after each session. You can catch up at any time and still participate in the community discussion.</div>
+            </details>
+            <details class="af-faq__item">
+                <summary>Is there a refund policy?</summary>
+                <div class="af-faq__answer">Yes, we offer a full refund within 24 hours of purchase if you haven't accessed the course materials. Contact us at info@artefactoschool.online.</div>
+            </details>
+        </div>
+    </div>
+</div>

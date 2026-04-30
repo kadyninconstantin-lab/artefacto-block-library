@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Timeline Vertical — шаги / программа -->
+<style>
+
+    .af-timeline {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-timeline__inner { max-width: 720px; margin: 0 auto; }
+    .af-timeline__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-timeline__list {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        position: relative;
+        padding-left: clamp(36px, 6vw, 48px);
+    }
+    .af-timeline__list::before {
+        content: '';
+        position: absolute;
+        left: 18px;
+        top: 8px;
+        bottom: 8px;
+        width: 2px;
+        background: #e5ddd0;
+    }
+    .af-timeline__item {
+        position: relative;
+        padding-bottom: clamp(28px, 4vw, 40px);
+    }
+    .af-timeline__item:last-child { padding-bottom: 0; }
+    .af-timeline__dot {
+        position: absolute;
+        left: -34px;
+        top: 4px;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: var(--af-primary);
+        border: 3px solid #fff;
+        box-shadow: 0 0 0 2px var(--af-primary);
+    }
+    .af-timeline__step {
+        font-size: clamp(16px, 1.2vw, 18px);
+        font-weight: 700;
+        color: var(--af-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        margin-bottom: 4px;
+    }
+    .af-timeline__title {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 700;
+        margin-bottom: 8px;
+    }
+    .af-timeline__text {
+        font-size: clamp(16px, 1.4vw, 18px);
+        line-height: 1.7;
+        color: var(--af-text-light);
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-timeline">
+    <div class="af-timeline__inner">
+        <h2 class="af-timeline__heading">Course program</h2>
+        <div class="af-timeline__list">
+            <div class="af-timeline__item">
+                <div class="af-timeline__dot"></div>
+                <div class="af-timeline__step">Day 1</div>
+                <h3 class="af-timeline__title">Foundation: Water & Color</h3>
+                <p class="af-timeline__text">Understanding how water behaves on paper. Basic washes, color mixing, and finding your first brushstrokes.</p>
+            </div>
+            <div class="af-timeline__item">
+                <div class="af-timeline__dot"></div>
+                <div class="af-timeline__step">Day 2</div>
+                <h3 class="af-timeline__title">Technique: Light & Shadow</h3>
+                <p class="af-timeline__text">Layering, glazing, and creating depth. Painting a landscape from reference with live guidance.</p>
+            </div>
+            <div class="af-timeline__item">
+                <div class="af-timeline__dot"></div>
+                <div class="af-timeline__step">Day 3</div>
+                <h3 class="af-timeline__title">Expression: Your Own Voice</h3>
+                <p class="af-timeline__text">Bringing it all together. Paint your own composition with personal feedback from Nicolás.</p>
+            </div>
+        </div>
+    </div>
+</div>

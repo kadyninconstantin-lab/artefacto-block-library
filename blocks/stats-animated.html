@@ -1,0 +1,123 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Stats Animated — анимированные счётчики по скроллу -->
+<style>
+
+    .af-stats-anim {
+        --af-primary: #de6518;
+        --af-bg: #3b3b3b;
+        --af-text: #ffffff;
+        --af-text-light: rgba(255,255,255,0.85);
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-stats-anim__inner { max-width: 1100px; margin: 0 auto; }
+    .af-stats-anim__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700; text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-stats-anim__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(16px, 3vw, 32px);
+        text-align: center;
+    }
+    .af-stats-anim__item {
+        padding: clamp(20px, 3vw, 32px) clamp(12px, 2vw, 20px);
+        border-radius: 16px;
+        background: rgba(255,255,255,0.05);
+    }
+    .af-stats-anim__icon {
+        font-size: clamp(29px, 3vw, 38px);
+        margin-bottom: 12px;
+    }
+    .af-stats-anim__number {
+        font-family: var(--af-font-heading);
+        font-size: clamp(35px, 5vw, 54px);
+        font-weight: 700; color: var(--af-primary);
+        line-height: 1.1; margin-bottom: 8px;
+    }
+    .af-stats-anim__label {
+        font-size: clamp(16px, 1.3vw, 18px);
+        color: var(--af-text-light); font-weight: 500;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+        .af-stats-anim__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 400px) {
+        .af-stats-anim__grid { grid-template-columns: 1fr; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-stats-anim">
+    <div class="af-stats-anim__inner">
+        <h2 class="af-stats-anim__heading">Our results speak for themselves</h2>
+        <div class="af-stats-anim__grid" id="af-stats-anim-grid">
+            <div class="af-stats-anim__item">
+                <div class="af-stats-anim__icon">&#127891;</div>
+                <div class="af-stats-anim__number" data-target="5200" data-suffix="+">0</div>
+                <div class="af-stats-anim__label">Students graduated</div>
+            </div>
+            <div class="af-stats-anim__item">
+                <div class="af-stats-anim__icon">&#11088;</div>
+                <div class="af-stats-anim__number" data-target="4.9" data-decimals="1">0</div>
+                <div class="af-stats-anim__label">Average rating</div>
+            </div>
+            <div class="af-stats-anim__item">
+                <div class="af-stats-anim__icon">&#127758;</div>
+                <div class="af-stats-anim__number" data-target="34" data-suffix="">0</div>
+                <div class="af-stats-anim__label">Countries</div>
+            </div>
+            <div class="af-stats-anim__item">
+                <div class="af-stats-anim__icon">&#128188;</div>
+                <div class="af-stats-anim__number" data-target="87" data-suffix="%">0</div>
+                <div class="af-stats-anim__label">Got hired within 3 months</div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+    var grid = document.getElementById('af-stats-anim-grid');
+    if (!grid) return;
+    var animated = false;
+    function animateCounters(){
+        if (animated) return;
+        animated = true;
+        var els = grid.querySelectorAll('.af-stats-anim__number');
+        els.forEach(function(el){
+            var target = parseFloat(el.getAttribute('data-target'));
+            var suffix = el.getAttribute('data-suffix') || '';
+            var decimals = parseInt(el.getAttribute('data-decimals')) || 0;
+            var duration = 2000;
+            var start = performance.now();
+            function step(now){
+                var progress = Math.min((now - start) / duration, 1);
+                var ease = 1 - Math.pow(1 - progress, 3);
+                var current = target * ease;
+                el.textContent = (decimals > 0 ? current.toFixed(decimals) : Math.floor(current).toLocaleString()) + suffix;
+                if (progress < 1) requestAnimationFrame(step);
+            }
+            requestAnimationFrame(step);
+        });
+    }
+    var observer = new IntersectionObserver(function(entries){
+        entries.forEach(function(e){ if (e.isIntersecting) animateCounters(); });
+    }, {threshold: 0.3});
+    observer.observe(grid);
+})();
+</script>

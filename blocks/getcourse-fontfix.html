@@ -1,0 +1,60 @@
+<!-- Artefacto Utility: GetCourse Font Fix — предотвращает блокировку рендера из-за загрузки шрифтов -->
+<!--
+  ВАЖНО: Вставьте этот блок ПЕРВЫМ на любом GetCourse лендинге,
+  который использует блоки Artefacto. Он загружает шрифты неблокирующе
+  и гарантирует, что страница полностью прокручивается даже при медленной сети.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+    /* Fix GetCourse base font-size override */
+    html {
+        font-size: 16px !important;
+    }
+    body, .lt-block-wrapper, .lt-block-inner {
+        font-size: 16px !important;
+    }
+    /* Fallback: ensure Artefacto blocks are visible even before fonts load */
+    [class^="af-"], [class*=" af-"] {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    /* Prevent body scroll lock */
+    body {
+        overflow-y: auto !important;
+    }
+    /* Ensure GetCourse block containers don't collapse */
+    .lite-page.block-set {
+        min-height: auto !important;
+        overflow: visible !important;
+    }
+    .lt-block-wrapper {
+        overflow: visible !important;
+    }
+</style>
+<script>
+(function() {
+    // Force layout recalculation after fonts and styles load
+    function forceRelayout() {
+        document.body.style.display = 'none';
+        document.body.offsetHeight; // trigger reflow
+        document.body.style.display = '';
+        window.dispatchEvent(new Event('resize'));
+    }
+
+    // Run after DOM is ready
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(forceRelayout, 100);
+        });
+    }
+
+    // Run after all resources (including async CSS) are loaded
+    window.addEventListener('load', function() {
+        setTimeout(forceRelayout, 200);
+        // Second pass for slow connections
+        setTimeout(forceRelayout, 1500);
+    });
+})();
+</script>

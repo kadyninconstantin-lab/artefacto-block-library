@@ -1,0 +1,499 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<style>
+    .af-zoom-schedule {
+        --af-primary: #de6518;
+        --af-primary-hover: #c4580f;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #5a5a5a;
+        --af-radius: 14px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(40px, 8vw, 80px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-zoom-schedule__inner {
+        max-width: 900px;
+        margin: 0 auto;
+    }
+
+    .af-zoom-schedule__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(26px, 3.5vw, 38px);
+        font-weight: 700;
+        text-align: center;
+        margin: 0 0 8px 0;
+        color: var(--af-text);
+    }
+
+    .af-zoom-schedule__subtitle {
+        font-size: clamp(18px, 2vw, 20px);
+        text-align: center;
+        color: var(--af-text-light);
+        margin: 0 0 clamp(24px, 4vw, 40px) 0;
+        line-height: 1.5;
+    }
+
+    /* ── Filter tabs ── */
+    .af-zoom-schedule__filters {
+        display: flex;
+        justify-content: center;
+        gap: 8px;
+        margin: 0 0 clamp(20px, 3vw, 32px) 0;
+        flex-wrap: wrap;
+    }
+
+    .af-zoom-schedule__filter-btn {
+        font-family: var(--af-font-body);
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 20px;
+        border: 2px solid transparent;
+        border-radius: 30px;
+        background: var(--af-card-bg);
+        color: var(--af-text-light);
+        cursor: pointer;
+        transition: all 0.2s ease;
+        min-height: 48px;
+        min-width: 48px;
+    }
+
+    .af-zoom-schedule__filter-btn:hover {
+        border-color: var(--af-primary);
+        color: var(--af-primary);
+    }
+
+    .af-zoom-schedule__filter-btn--active {
+        background: var(--af-primary);
+        color: #fff;
+        border-color: var(--af-primary);
+    }
+
+    .af-zoom-schedule__filter-btn--active:hover {
+        background: var(--af-primary-hover);
+        border-color: var(--af-primary-hover);
+        color: #fff;
+    }
+
+    /* ── Desktop table ── */
+    .af-zoom-schedule__table {
+        width: 100%;
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        border-collapse: separate;
+        border-spacing: 0;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    .af-zoom-schedule__table thead th {
+        font-family: var(--af-font-body);
+        font-size: 18px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--af-text-light);
+        background: var(--af-card-bg);
+        padding: 14px 20px;
+        text-align: left;
+        border-bottom: 2px solid var(--af-bg);
+    }
+
+    .af-zoom-schedule__table thead th:last-child {
+        text-align: center;
+    }
+
+    .af-zoom-schedule__table tbody td {
+        font-size: 18px;
+        padding: 14px 20px;
+        border-bottom: 1px solid #f0ebe5;
+        vertical-align: middle;
+        line-height: 1.5;
+    }
+
+    .af-zoom-schedule__table tbody tr:last-child td {
+        border-bottom: none;
+    }
+
+    .af-zoom-schedule__table tbody tr:hover {
+        background: #faf7f3;
+    }
+
+    .af-zoom-schedule__table tbody tr[hidden] {
+        display: none;
+    }
+
+    .af-zoom-schedule__session-name {
+        font-weight: 700;
+        color: var(--af-text);
+        display: block;
+        margin-bottom: 2px;
+    }
+
+    .af-zoom-schedule__session-desc {
+        font-size: 18px;
+        color: var(--af-text-light);
+    }
+
+    .af-zoom-schedule__badge {
+        display: inline-block;
+        font-size: 18px;
+        font-weight: 600;
+        padding: 3px 12px;
+        border-radius: 20px;
+        background: #fef0e5;
+        color: #a04b10;
+        white-space: nowrap;
+    }
+
+    .af-zoom-schedule__badge--pro {
+        background: #f3e8ff;
+        color: #6b21a8;
+    }
+
+    .af-zoom-schedule__date {
+        white-space: nowrap;
+        font-weight: 500;
+    }
+
+    .af-zoom-schedule__date-tbd {
+        color: var(--af-text-light);
+        font-style: italic;
+        font-weight: 400;
+    }
+
+    /* ── Zoom link button ── */
+    .af-zoom-schedule__link {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 6px;
+        font-family: var(--af-font-body);
+        font-size: 18px;
+        font-weight: 600;
+        padding: 10px 22px;
+        border-radius: 30px;
+        background: var(--af-primary);
+        color: #fff;
+        text-decoration: none;
+        transition: background 0.2s ease, transform 0.15s ease;
+        min-height: 48px;
+        min-width: 48px;
+        white-space: nowrap;
+    }
+
+    .af-zoom-schedule__link:hover {
+        background: var(--af-primary-hover);
+        transform: translateY(-1px);
+    }
+
+    .af-zoom-schedule__link--disabled {
+        background: #d5cfc8;
+        color: #999;
+        pointer-events: none;
+    }
+
+    .af-zoom-schedule__link-cell {
+        text-align: center;
+    }
+
+    /* ── Mobile cards ── */
+    .af-zoom-schedule__cards {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .af-zoom-schedule__table {
+            display: none;
+        }
+
+        .af-zoom-schedule__cards {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .af-zoom-schedule__card {
+            background: var(--af-card-bg);
+            border-radius: var(--af-radius);
+            padding: clamp(16px, 4vw, 24px);
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+        }
+
+        .af-zoom-schedule__card[hidden] {
+            display: none;
+        }
+
+        .af-zoom-schedule__card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 8px;
+            margin-bottom: 10px;
+        }
+
+        .af-zoom-schedule__card-title {
+            font-family: var(--af-font-heading);
+            font-size: clamp(20px, 2.5vw, 22px);
+            font-weight: 700;
+            margin: 0;
+            color: var(--af-text);
+        }
+
+        .af-zoom-schedule__card-meta {
+            font-size: 18px;
+            color: var(--af-text-light);
+            line-height: 1.5;
+            margin: 0 0 4px;
+        }
+
+        .af-zoom-schedule__card-date {
+            font-size: 18px;
+            font-weight: 600;
+            color: var(--af-text);
+            margin: 0 0 14px;
+        }
+
+        .af-zoom-schedule__card-cta {
+            text-align: center;
+        }
+
+        .af-zoom-schedule__link--card {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    /* ── 55+ mode ── */
+    .af-zoom-schedule.senior-mode .af-zoom-schedule__heading {
+        font-size: clamp(28px, 4vw, 44px);
+    }
+
+    .af-zoom-schedule.senior-mode .af-zoom-schedule__subtitle {
+        font-size: clamp(20px, 2.2vw, 22px);
+    }
+
+    .af-zoom-schedule.senior-mode .af-zoom-schedule__table thead th,
+    .af-zoom-schedule.senior-mode .af-zoom-schedule__table tbody td {
+        font-size: 20px;
+        padding: 18px 24px;
+    }
+
+    .af-zoom-schedule.senior-mode .af-zoom-schedule__link {
+        font-size: 20px;
+        padding: 12px 28px;
+    }
+
+    .af-zoom-schedule.senior-mode .af-zoom-schedule__filter-btn {
+        font-size: 20px;
+        padding: 12px 24px;
+    }
+
+    @media (max-width: 768px) {
+        .af-zoom-schedule.senior-mode .af-zoom-schedule__card-title {
+            font-size: clamp(22px, 3vw, 26px);
+        }
+
+        .af-zoom-schedule.senior-mode .af-zoom-schedule__card-meta,
+        .af-zoom-schedule.senior-mode .af-zoom-schedule__card-date {
+            font-size: 20px;
+        }
+    }
+
+    /* ── Focus ── */
+    *:focus-visible {
+        outline: 3px solid var(--af-primary);
+        outline-offset: 3px;
+    }
+</style>
+
+<div class="af-zoom-schedule">
+    <div class="af-zoom-schedule__inner">
+        <h2 class="af-zoom-schedule__heading">Расписание Zoom-встреч</h2>
+        <p class="af-zoom-schedule__subtitle">Живые сессии с&nbsp;преподавателями и&nbsp;кураторами</p>
+
+        <!-- Filter tabs -->
+        <div class="af-zoom-schedule__filters">
+            <button class="af-zoom-schedule__filter-btn af-zoom-schedule__filter-btn--active" data-filter="all">Все</button>
+            <button class="af-zoom-schedule__filter-btn" data-filter="andy">С преподавателем</button>
+            <button class="af-zoom-schedule__filter-btn" data-filter="curator">С куратором</button>
+            <button class="af-zoom-schedule__filter-btn" data-filter="practice">Практика</button>
+        </div>
+
+        <!-- Desktop: table -->
+        <table class="af-zoom-schedule__table">
+            <thead>
+                <tr>
+                    <th>Сессия</th>
+                    <th>Тариф</th>
+                    <th>Дата и время</th>
+                    <th>Ссылка</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr data-type="andy">
+                    <td>
+                        <span class="af-zoom-schedule__session-name">Zoom with Andy #1</span>
+                        <span class="af-zoom-schedule__session-desc">Demo + feedback on&nbsp;final project</span>
+                    </td>
+                    <td><span class="af-zoom-schedule__badge">Premium</span> <span class="af-zoom-schedule__badge af-zoom-schedule__badge--pro">Premium Pro</span></td>
+                    <td class="af-zoom-schedule__date">23 июля, 16:00 CEST / 10:00 EST</td>
+                    <td class="af-zoom-schedule__link-cell"><a href="#zoom-link" class="af-zoom-schedule__link" target="_blank" rel="noopener">Войти</a></td>
+                </tr>
+                <tr data-type="andy">
+                    <td>
+                        <span class="af-zoom-schedule__session-name">Zoom with Andy #2</span>
+                        <span class="af-zoom-schedule__session-desc">Demo + feedback on&nbsp;final project</span>
+                    </td>
+                    <td><span class="af-zoom-schedule__badge">Premium</span> <span class="af-zoom-schedule__badge af-zoom-schedule__badge--pro">Premium Pro</span></td>
+                    <td class="af-zoom-schedule__date af-zoom-schedule__date-tbd">TBD</td>
+                    <td class="af-zoom-schedule__link-cell"><span class="af-zoom-schedule__link af-zoom-schedule__link--disabled">Скоро</span></td>
+                </tr>
+                <tr data-type="curator">
+                    <td>
+                        <span class="af-zoom-schedule__session-name">Zoom with Curator — Group #1</span>
+                        <span class="af-zoom-schedule__session-desc">Demo + feedback on&nbsp;your work</span>
+                    </td>
+                    <td><span class="af-zoom-schedule__badge">Premium</span> <span class="af-zoom-schedule__badge af-zoom-schedule__badge--pro">Premium Pro</span></td>
+                    <td class="af-zoom-schedule__date">10 июля, 16:00 CEST / 10:00 EST</td>
+                    <td class="af-zoom-schedule__link-cell"><a href="#zoom-link" class="af-zoom-schedule__link" target="_blank" rel="noopener">Войти</a></td>
+                </tr>
+                <tr data-type="curator">
+                    <td>
+                        <span class="af-zoom-schedule__session-name">Zoom with Curator — Group #2</span>
+                        <span class="af-zoom-schedule__session-desc">Demo + feedback on&nbsp;your work</span>
+                    </td>
+                    <td><span class="af-zoom-schedule__badge">Premium</span> <span class="af-zoom-schedule__badge af-zoom-schedule__badge--pro">Premium Pro</span></td>
+                    <td class="af-zoom-schedule__date">4 августа, 16:00 CEST / 10:00 EST</td>
+                    <td class="af-zoom-schedule__link-cell"><a href="#zoom-link" class="af-zoom-schedule__link" target="_blank" rel="noopener">Войти</a></td>
+                </tr>
+                <tr data-type="practice">
+                    <td>
+                        <span class="af-zoom-schedule__session-name">Deep Practice #1</span>
+                        <span class="af-zoom-schedule__session-desc">Paint together + real-time guidance</span>
+                    </td>
+                    <td><span class="af-zoom-schedule__badge af-zoom-schedule__badge--pro">Premium Pro</span></td>
+                    <td class="af-zoom-schedule__date">17 июля, 16:00 CEST / 10:00 EST</td>
+                    <td class="af-zoom-schedule__link-cell"><a href="#zoom-link" class="af-zoom-schedule__link" target="_blank" rel="noopener">Войти</a></td>
+                </tr>
+                <tr data-type="practice">
+                    <td>
+                        <span class="af-zoom-schedule__session-name">Deep Practice #2</span>
+                        <span class="af-zoom-schedule__session-desc">Paint together + real-time guidance</span>
+                    </td>
+                    <td><span class="af-zoom-schedule__badge af-zoom-schedule__badge--pro">Premium Pro</span></td>
+                    <td class="af-zoom-schedule__date">10 августа, 16:00 CEST / 10:00 EST</td>
+                    <td class="af-zoom-schedule__link-cell"><a href="#zoom-link" class="af-zoom-schedule__link" target="_blank" rel="noopener">Войти</a></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- Mobile: cards -->
+        <div class="af-zoom-schedule__cards">
+            <div class="af-zoom-schedule__card" data-type="andy">
+                <div class="af-zoom-schedule__card-header">
+                    <h3 class="af-zoom-schedule__card-title">Zoom with Andy #1</h3>
+                    <span class="af-zoom-schedule__badge">Premium</span>
+                </div>
+                <p class="af-zoom-schedule__card-meta">Demo + feedback on final project</p>
+                <p class="af-zoom-schedule__card-date">23 июля, 16:00 CEST / 10:00 EST</p>
+                <div class="af-zoom-schedule__card-cta">
+                    <a href="#zoom-link" class="af-zoom-schedule__link af-zoom-schedule__link--card" target="_blank" rel="noopener">Войти в Zoom</a>
+                </div>
+            </div>
+
+            <div class="af-zoom-schedule__card" data-type="andy">
+                <div class="af-zoom-schedule__card-header">
+                    <h3 class="af-zoom-schedule__card-title">Zoom with Andy #2</h3>
+                    <span class="af-zoom-schedule__badge">Premium</span>
+                </div>
+                <p class="af-zoom-schedule__card-meta">Demo + feedback on final project</p>
+                <p class="af-zoom-schedule__card-date af-zoom-schedule__date-tbd">Дата уточняется</p>
+                <div class="af-zoom-schedule__card-cta">
+                    <span class="af-zoom-schedule__link af-zoom-schedule__link--card af-zoom-schedule__link--disabled">Скоро</span>
+                </div>
+            </div>
+
+            <div class="af-zoom-schedule__card" data-type="curator">
+                <div class="af-zoom-schedule__card-header">
+                    <h3 class="af-zoom-schedule__card-title">Zoom with Curator — Group #1</h3>
+                    <span class="af-zoom-schedule__badge">Premium</span>
+                </div>
+                <p class="af-zoom-schedule__card-meta">Demo + feedback on your work</p>
+                <p class="af-zoom-schedule__card-date">10 июля, 16:00 CEST / 10:00 EST</p>
+                <div class="af-zoom-schedule__card-cta">
+                    <a href="#zoom-link" class="af-zoom-schedule__link af-zoom-schedule__link--card" target="_blank" rel="noopener">Войти в Zoom</a>
+                </div>
+            </div>
+
+            <div class="af-zoom-schedule__card" data-type="curator">
+                <div class="af-zoom-schedule__card-header">
+                    <h3 class="af-zoom-schedule__card-title">Zoom with Curator — Group #2</h3>
+                    <span class="af-zoom-schedule__badge">Premium</span>
+                </div>
+                <p class="af-zoom-schedule__card-meta">Demo + feedback on your work</p>
+                <p class="af-zoom-schedule__card-date">4 августа, 16:00 CEST / 10:00 EST</p>
+                <div class="af-zoom-schedule__card-cta">
+                    <a href="#zoom-link" class="af-zoom-schedule__link af-zoom-schedule__link--card" target="_blank" rel="noopener">Войти в Zoom</a>
+                </div>
+            </div>
+
+            <div class="af-zoom-schedule__card" data-type="practice">
+                <div class="af-zoom-schedule__card-header">
+                    <h3 class="af-zoom-schedule__card-title">Deep Practice #1</h3>
+                    <span class="af-zoom-schedule__badge af-zoom-schedule__badge--pro">Premium Pro</span>
+                </div>
+                <p class="af-zoom-schedule__card-meta">Paint together + real-time guidance</p>
+                <p class="af-zoom-schedule__card-date">17 июля, 16:00 CEST / 10:00 EST</p>
+                <div class="af-zoom-schedule__card-cta">
+                    <a href="#zoom-link" class="af-zoom-schedule__link af-zoom-schedule__link--card" target="_blank" rel="noopener">Войти в Zoom</a>
+                </div>
+            </div>
+
+            <div class="af-zoom-schedule__card" data-type="practice">
+                <div class="af-zoom-schedule__card-header">
+                    <h3 class="af-zoom-schedule__card-title">Deep Practice #2</h3>
+                    <span class="af-zoom-schedule__badge af-zoom-schedule__badge--pro">Premium Pro</span>
+                </div>
+                <p class="af-zoom-schedule__card-meta">Paint together + real-time guidance</p>
+                <p class="af-zoom-schedule__card-date">10 августа, 16:00 CEST / 10:00 EST</p>
+                <div class="af-zoom-schedule__card-cta">
+                    <a href="#zoom-link" class="af-zoom-schedule__link af-zoom-schedule__link--card" target="_blank" rel="noopener">Войти в Zoom</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var root = document.querySelector('.af-zoom-schedule');
+    if (!root) return;
+
+    var buttons = root.querySelectorAll('.af-zoom-schedule__filter-btn');
+    var rows = root.querySelectorAll('.af-zoom-schedule__table tbody tr[data-type]');
+    var cards = root.querySelectorAll('.af-zoom-schedule__card[data-type]');
+
+    buttons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            var filter = btn.getAttribute('data-filter');
+
+            buttons.forEach(function(b) { b.classList.remove('af-zoom-schedule__filter-btn--active'); });
+            btn.classList.add('af-zoom-schedule__filter-btn--active');
+
+            rows.forEach(function(row) {
+                row.hidden = filter !== 'all' && row.getAttribute('data-type') !== filter;
+            });
+
+            cards.forEach(function(card) {
+                card.hidden = filter !== 'all' && card.getAttribute('data-type') !== filter;
+            });
+        });
+    });
+})();
+</script>

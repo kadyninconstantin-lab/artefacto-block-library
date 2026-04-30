@@ -1,0 +1,278 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Pricing 1 Plan with Modal Registration -->
+<style>
+    .af-pricing1 {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-card-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+        position: relative;
+    }
+    .af-pricing1__inner { max-width: 480px; margin: 0 auto; }
+    .af-pricing1__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(32px, 5vw, 56px);
+    }
+    .af-pricing1__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(32px, 4vw, 48px);
+        display: flex;
+        flex-direction: column;
+        border: 2px solid var(--af-primary);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        position: relative;
+    }
+    .af-pricing1__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .af-pricing1__badge {
+        position: absolute; top: -12px; left: 50%; transform: translateX(-50%);
+        background: var(--af-primary); color: #fff; font-size: 16px; font-weight: 700;
+        text-transform: uppercase; padding: 4px 16px; border-radius: 20px; white-space: nowrap;
+    }
+    .af-pricing1__name {
+        font-family: var(--af-font-heading);
+        font-size: clamp(19px, 2.2vw, 24px);
+        font-weight: 700;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+    .af-pricing1__price {
+        font-family: var(--af-font-heading);
+        font-size: clamp(40px, 5vw, 56px);
+        font-weight: 700;
+        margin-bottom: 4px;
+        text-align: center;
+    }
+    .af-pricing1__price span { font-size: 0.45em; color: var(--af-text-light); font-weight: 500; }
+    .af-pricing1__period {
+        font-size: clamp(16px, 1.2vw, 18px);
+        color: var(--af-text-light);
+        margin-bottom: clamp(20px, 3vw, 28px);
+        text-align: center;
+    }
+    .af-pricing1__features { list-style: none; padding: 0; margin-bottom: clamp(24px, 3vw, 32px); }
+    .af-pricing1__features li {
+        font-size: clamp(16px, 1.4vw, 18px);
+        padding: 8px 0 8px 24px;
+        position: relative;
+        border-bottom: 1px solid rgba(0,0,0,0.06);
+        line-height: 1.6;
+    }
+    .af-pricing1__features li:last-child { border-bottom: none; }
+    .af-pricing1__features li::before { content: '✓'; position: absolute; left: 0; color: var(--af-primary); font-weight: 700; }
+    .af-pricing1__btn {
+        min-height: 48px;
+        display: block;
+        text-align: center;
+        padding: clamp(14px, 2vw, 18px);
+        border-radius: 50px;
+        font-family: var(--af-font-body);
+        font-size: clamp(18px, 1.4vw, 20px);
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: var(--af-primary);
+        color: #fff;
+        border: 2px solid var(--af-primary);
+    }
+    .af-pricing1__btn:hover { background: var(--af-primary); border-color: var(--af-primary); filter: brightness(0.85); transform: translateY(-2px); }
+
+    /* Modal */
+    .af-pricing1--modal-open { overflow: hidden; }
+    .af-pricing1__overlay {
+        display: none;
+        position: absolute;
+        inset: 0;
+        background: rgba(0, 0, 0, 0.6);
+        z-index: 9999;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        animation: af-pricing1-fadeIn 0.3s ease;
+    }
+    .af-pricing1__overlay--open { display: flex; }
+    @keyframes af-pricing1-fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    .af-pricing1__modal {
+        background: var(--af-card-bg, #f4efe9);
+        border-radius: var(--af-radius, 16px);
+        padding: clamp(32px, 5vw, 48px);
+        max-width: 480px;
+        width: 100%;
+        position: relative;
+        animation: af-pricing1-slideUp 0.3s ease;
+        max-height: 90vh;
+        overflow-y: auto;
+    }
+    @keyframes af-pricing1-slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .af-pricing1__modal-close {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        width: 48px;
+        height: 48px;
+        border: none;
+        background: transparent;
+        font-size: 28px;
+        color: var(--af-text-light, #4a4a4a);
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        transition: background 0.2s;
+    }
+    .af-pricing1__modal-close:hover { background: rgba(0,0,0,0.08); }
+    .af-pricing1__modal-title {
+        font-family: var(--af-font-heading, 'Source Serif 4', serif);
+        font-size: clamp(22px, 3vw, 30px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(20px, 3vw, 28px);
+        padding-right: 36px;
+    }
+    .af-pricing1__form { display: flex; flex-direction: column; gap: 16px; }
+    .af-pricing1__label {
+        font-size: clamp(16px, 1.2vw, 18px);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 4px;
+    }
+    .af-pricing1__input {
+        width: 100%;
+        padding: 14px 16px;
+        border: 2px solid rgba(0,0,0,0.12);
+        border-radius: 12px;
+        font-family: var(--af-font-body, 'Manrope', sans-serif);
+        font-size: 18px;
+        background: #fff;
+        transition: border-color 0.2s;
+        box-sizing: border-box;
+        min-height: 48px;
+    }
+    .af-pricing1__input:focus { border-color: var(--af-primary, #de6518); outline: none; }
+    .af-pricing1__submit {
+        min-height: 48px;
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: clamp(14px, 2vw, 18px);
+        border-radius: 50px;
+        font-family: var(--af-font-body, 'Manrope', sans-serif);
+        font-size: clamp(18px, 1.4vw, 20px);
+        font-weight: 700;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: var(--af-primary, #de6518);
+        color: #fff;
+        border: 2px solid var(--af-primary, #de6518);
+        margin-top: 8px;
+    }
+    .af-pricing1__submit:hover { background: var(--af-primary, #de6518); border-color: var(--af-primary, #de6518); filter: brightness(0.85); transform: translateY(-2px); }
+    .af-pricing1__note {
+        font-size: 14px;
+        color: var(--af-text-light, #4a4a4a);
+        text-align: center;
+        line-height: 1.5;
+    }
+
+    .af-pricing1 :focus-visible { outline: 3px solid var(--af-primary); outline-offset: 3px; border-radius: 4px; }
+</style>
+
+<div class="af-pricing1">
+    <div class="af-pricing1__inner">
+        <h2 class="af-pricing1__heading">Choose your plan</h2>
+        <div class="af-pricing1__card">
+            <div class="af-pricing1__badge">Best Value</div>
+            <div class="af-pricing1__name">Live + Recording</div>
+            <div class="af-pricing1__price">€89 <span>EUR</span></div>
+            <div class="af-pricing1__period">one-time</div>
+            <ul class="af-pricing1__features">
+                <li>3 live sessions</li>
+                <li>Live Q&amp;A</li>
+                <li>Lifetime access to recordings</li>
+                <li>Materials list</li>
+            </ul>
+            <button type="button" class="af-pricing1__btn">Choose</button>
+        </div>
+    </div>
+
+    <!-- Modal with Registration Form -->
+    <div class="af-pricing1__overlay" id="af-pricing1-modal">
+        <div class="af-pricing1__modal" role="dialog" aria-modal="true" aria-label="Registration form">
+            <button type="button" class="af-pricing1__modal-close" aria-label="Close">&times;</button>
+            <div class="af-pricing1__modal-title">Register for the workshop</div>
+            <form class="af-pricing1__form" action="#" method="POST" onsubmit="return false;">
+                <div>
+                    <label class="af-pricing1__label" for="af-pricing1-name">Your name</label>
+                    <input class="af-pricing1__input" type="text" id="af-pricing1-name" name="name" placeholder="Jane Smith" required>
+                </div>
+                <div>
+                    <label class="af-pricing1__label" for="af-pricing1-email">Email</label>
+                    <input class="af-pricing1__input" type="email" id="af-pricing1-email" name="email" placeholder="jane@example.com" required>
+                </div>
+                <button type="submit" class="af-pricing1__submit">Register</button>
+                <p class="af-pricing1__note">By registering you agree to receive workshop-related emails.</p>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var overlay = document.getElementById('af-pricing1-modal');
+    var wrapper = overlay.closest('.af-pricing1');
+
+    function openModal() {
+        overlay.classList.add('af-pricing1__overlay--open');
+        document.body.style.overflow = 'hidden';
+    }
+    function closeModal() {
+        overlay.classList.remove('af-pricing1__overlay--open');
+        document.body.style.overflow = '';
+    }
+
+    // Position overlay to cover viewport via JS (workaround for no position:fixed in GetCourse)
+    function positionOverlay() {
+        if (!overlay.classList.contains('af-pricing1__overlay--open')) return;
+        var rect = wrapper.getBoundingClientRect();
+        var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        overlay.style.top = (-rect.top) + 'px';
+        overlay.style.left = (-rect.left) + 'px';
+        overlay.style.width = window.innerWidth + 'px';
+        overlay.style.height = window.innerHeight + 'px';
+    }
+
+    // Expose open for inline onclick
+    wrapper.querySelector('.af-pricing1__btn').addEventListener('click', function() {
+        openModal();
+        positionOverlay();
+    });
+    wrapper.querySelector('.af-pricing1__modal-close').addEventListener('click', closeModal);
+
+    window.addEventListener('scroll', positionOverlay);
+    window.addEventListener('resize', positionOverlay);
+
+    // Close on overlay click (outside modal)
+    overlay.addEventListener('click', function(e) {
+        if (e.target === overlay) closeModal();
+    });
+    // Close on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('af-pricing1__overlay--open')) {
+            closeModal();
+        }
+    });
+})();
+</script>

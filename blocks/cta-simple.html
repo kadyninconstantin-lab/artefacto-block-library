@@ -1,0 +1,79 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: CTA Simple — заголовок + подзаголовок + кнопка по центру -->
+<style>
+    .af-cta-simple {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #5a5a5a;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(32px, 6vw, 64px) clamp(16px, 4vw, 48px);
+        text-align: center;
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-cta-simple__inner {
+        max-width: 680px;
+        margin: 0 auto;
+    }
+
+    .af-cta-simple__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 38px);
+        font-weight: 700;
+        line-height: 1.25;
+        margin-bottom: clamp(12px, 2vw, 20px);
+    }
+
+    .af-cta-simple__desc {
+        font-size: clamp(18px, 1.5vw, 20px);
+        line-height: 1.6;
+        color: var(--af-text-light);
+        margin-bottom: clamp(20px, 3vw, 32px);
+    }
+
+    .af-cta-simple__btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 48px;
+        padding: clamp(14px, 2vw, 18px) clamp(32px, 5vw, 48px);
+        border-radius: 50px;
+        background: var(--af-primary);
+        color: #fff;
+        font-family: var(--af-font-body);
+        font-size: clamp(18px, 1.5vw, 20px);
+        font-weight: 700;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 4px 14px rgba(222, 101, 24, 0.3);
+    }
+
+    .af-cta-simple__btn:hover {
+        background: var(--af-primary-hover);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(222, 101, 24, 0.4);
+    }
+
+    .af-cta-simple__btn:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(222, 101, 24, 0.2);
+    }
+
+    :focus-visible { outline: 3px solid #de6518; outline-offset: 3px; border-radius: 4px; }
+</style>
+
+<section class="af-cta-simple">
+    <div class="af-cta-simple__inner">
+        <h2 class="af-cta-simple__heading">Готовы начать рисовать?</h2>
+        <p class="af-cta-simple__desc">Присоединяйтесь к курсу и откройте для себя мир акварели.</p>
+        <a href="#form" class="af-cta-simple__btn">Записаться на курс</a>
+    </div>
+</section>

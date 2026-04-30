@@ -1,0 +1,130 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Before/After — слайдер сравнения до/после -->
+<style>
+
+    .af-before-after {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-before-after__inner { max-width: 900px; margin: 0 auto; }
+    .af-before-after__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700; text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-before-after__sub {
+        text-align: center; color: var(--af-text-light);
+        font-size: clamp(18px, 1.5vw, 20px);
+        margin-bottom: clamp(32px, 5vw, 48px);
+        line-height: 1.6;
+    }
+    .af-before-after__slider {
+        position: relative;
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        cursor: col-resize;
+        user-select: none;
+        -webkit-user-select: none;
+        aspect-ratio: 16/10;
+    }
+    .af-before-after__img {
+        position: absolute; top: 0; left: 0;
+        width: 100%; height: 100%;
+        object-fit: cover; display: block;
+        pointer-events: none;
+    }
+    .af-before-after__img--after { clip-path: inset(0 0 0 50%); }
+    .af-before-after__handle {
+        position: absolute; top: 0; bottom: 0;
+        left: 50%; width: 4px;
+        background: #fff;
+        box-shadow: 0 0 8px rgba(0,0,0,0.3);
+        transform: translateX(-50%);
+        z-index: 2;
+    }
+    .af-before-after__handle::after {
+        content: '';
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        width: 44px; height: 44px;
+        background: #fff;
+        border-radius: 50%;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.2);
+    }
+    .af-before-after__handle::before {
+        content: '\2039\00a0\00a0\203a';
+        position: absolute; top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 3; font-size: 20px; font-weight: 700;
+        color: var(--af-text); letter-spacing: -2px;
+    }
+    .af-before-after__label {
+        position: absolute; bottom: 16px;
+        background: rgba(0,0,0,0.6); color: #fff;
+        padding: 6px 14px; border-radius: 20px;
+        font-size: 16px; font-weight: 600;
+        z-index: 1; pointer-events: none;
+        text-transform: uppercase; letter-spacing: 0.05em;
+    }
+    .af-before-after__label--before { left: 16px; }
+    .af-before-after__label--after { right: 16px; }
+
+    @media (max-width: 768px) {
+        .af-before-after__slider { aspect-ratio: 4/3; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-before-after">
+    <div class="af-before-after__inner">
+        <h2 class="af-before-after__heading">See the transformation</h2>
+        <p class="af-before-after__sub">Drag the slider to compare student progress from first lesson to final project</p>
+        <div class="af-before-after__slider" id="ba-slider">
+            <img class="af-before-after__img af-before-after__img--before" src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&h=560&fit=crop" alt="Before">
+            <img class="af-before-after__img af-before-after__img--after" src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=900&h=560&fit=crop" alt="After">
+            <div class="af-before-after__handle"></div>
+            <span class="af-before-after__label af-before-after__label--before">Before</span>
+            <span class="af-before-after__label af-before-after__label--after">After</span>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+    const slider = document.getElementById('ba-slider');
+    if (!slider) return;
+    const handle = slider.querySelector('.af-before-after__handle');
+    const after = slider.querySelector('.af-before-after__img--after');
+    let dragging = false;
+
+    function move(x) {
+        const rect = slider.getBoundingClientRect();
+        let pct = ((x - rect.left) / rect.width) * 100;
+        pct = Math.max(2, Math.min(98, pct));
+        handle.style.left = pct + '%';
+        after.style.clipPath = 'inset(0 0 0 ' + pct + '%)';
+    }
+
+    slider.addEventListener('mousedown', function(e){ dragging = true; move(e.clientX); });
+    window.addEventListener('mousemove', function(e){ if (dragging) move(e.clientX); });
+    window.addEventListener('mouseup', function(){ dragging = false; });
+    slider.addEventListener('touchstart', function(e){ dragging = true; move(e.touches[0].clientX); }, {passive: true});
+    window.addEventListener('touchmove', function(e){ if (dragging) move(e.touches[0].clientX); }, {passive: true});
+    window.addEventListener('touchend', function(){ dragging = false; });
+})();
+</script>

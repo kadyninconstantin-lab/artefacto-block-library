@@ -1,0 +1,62 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Text Block — заголовок + текст -->
+<style>
+
+    .af-textblock {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-textblock__inner {
+        max-width: 780px;
+        margin: 0 auto;
+    }
+    .af-textblock__eyebrow {
+        font-size: clamp(16px, 1.3vw, 18px);
+        font-weight: 700;
+        color: var(--af-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        margin-bottom: clamp(8px, 1.5vw, 16px);
+    }
+    .af-textblock__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        line-height: 1.2;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-textblock__text {
+        font-size: clamp(18px, 1.7vw, 20px);
+        line-height: 1.8;
+        color: var(--af-text-light);
+    }
+    .af-textblock__text p { margin-bottom: clamp(12px, 2vw, 20px); }
+    .af-textblock__text p:last-child { margin-bottom: 0; }
+    .af-textblock__text strong { color: var(--af-text); font-weight: 700; }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-textblock">
+    <div class="af-textblock__inner">
+        <div class="af-textblock__eyebrow">Our philosophy</div>
+        <h2 class="af-textblock__heading">Why we start with what water wants to do</h2>
+        <div class="af-textblock__text">
+            <p>Most watercolor teaching begins with technique: how to hold the brush, how to mix colors, how to control the wash. <strong>We start differently.</strong></p>
+            <p>Water has its own intelligence. When you learn to observe how it moves on paper — how it pools, spreads, and dries — you begin to work <strong>with</strong> the medium rather than against it.</p>
+            <p>This shift in perspective is what transforms a technical exercise into genuine art. It's the difference between painting by numbers and painting from the heart.</p>
+        </div>
+    </div>
+</div>

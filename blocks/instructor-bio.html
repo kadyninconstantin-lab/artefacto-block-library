@@ -1,0 +1,142 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Instructor Bio — подробная карточка преподавателя -->
+<style>
+
+    .af-instructor {
+        --af-primary: #de6518;
+        --af-bg: #ffffff;
+        --af-card-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(40px, 6vw, 64px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-instructor__inner { max-width: 1100px; margin: 0 auto; }
+    .af-instructor__label {
+        text-align: center; font-size: clamp(16px, 1.2vw, 18px);
+        font-weight: 600; color: var(--af-primary);
+        text-transform: uppercase; letter-spacing: 0.08em;
+        margin-bottom: 8px;
+    }
+    .af-instructor__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700; text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-instructor__card {
+        display: grid;
+        grid-template-columns: clamp(200px, 30%, 360px) 1fr;
+        gap: clamp(24px, 4vw, 48px);
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        overflow: hidden;
+    }
+    .af-instructor__photo {
+        width: 100%; height: 100%;
+        object-fit: cover; display: block;
+        min-height: 400px;
+    }
+    .af-instructor__info {
+        padding: clamp(24px, 4vw, 40px) clamp(16px, 3vw, 40px) clamp(24px, 4vw, 40px) 0;
+        display: flex; flex-direction: column; justify-content: center;
+    }
+    .af-instructor__name {
+        font-family: var(--af-font-heading);
+        font-size: clamp(22px, 2.8vw, 32px);
+        font-weight: 700; margin-bottom: 4px;
+    }
+    .af-instructor__role {
+        font-size: clamp(18px, 1.3vw, 20px);
+        color: var(--af-primary); font-weight: 600;
+        margin-bottom: 16px;
+    }
+    .af-instructor__bio {
+        font-size: clamp(18px, 1.4vw, 20px);
+        line-height: 1.7; color: var(--af-text-light);
+        margin-bottom: 20px;
+    }
+    .af-instructor__stats {
+        display: flex; flex-wrap: wrap;
+        gap: clamp(16px, 3vw, 28px);
+        margin-bottom: 24px;
+    }
+    .af-instructor__stat-value {
+        font-family: var(--af-font-heading);
+        font-size: clamp(21px, 2.4vw, 29px);
+        font-weight: 700; color: var(--af-primary);
+    }
+    .af-instructor__stat-label {
+        font-size: clamp(16px, 1.1vw, 18px);
+        color: var(--af-text-light);
+    }
+    .af-instructor__social {
+        display: flex; gap: 12px;
+    }
+    .af-instructor__social a {
+        width: 40px; height: 40px;
+        border-radius: 10px;
+        background: rgba(222,101,24,0.1);
+        display: flex; align-items: center; justify-content: center;
+        text-decoration: none; font-size: 18px;
+        transition: background 0.3s;
+    }
+    .af-instructor__social a:hover { background: rgba(222,101,24,0.2); }
+
+    @media (max-width: 768px) {
+        .af-instructor__card { grid-template-columns: 1fr; }
+        .af-instructor__photo { min-height: 280px; max-height: 360px; }
+        .af-instructor__info { padding: clamp(20px, 4vw, 32px); text-align: center; }
+        .af-instructor__stats { justify-content: center; }
+        .af-instructor__social { justify-content: center; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-instructor">
+    <div class="af-instructor__inner">
+        <div class="af-instructor__label">Your instructor</div>
+        <h2 class="af-instructor__heading">Learn from the best</h2>
+        <div class="af-instructor__card">
+            <img class="af-instructor__photo" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop" alt="Instructor photo">
+            <div class="af-instructor__info">
+                <div class="af-instructor__name">Nicolás López</div>
+                <div class="af-instructor__role">Watercolor Master & Course Creator</div>
+                <p class="af-instructor__bio">With over 20 years of professional experience, Nicolás has taught thousands of students across three continents. His work has been exhibited in Madrid, Berlin, and Buenos Aires. He brings a warm, structured approach that makes complex techniques accessible to beginners while challenging advanced artists.</p>
+                <div class="af-instructor__stats">
+                    <div>
+                        <div class="af-instructor__stat-value">20+</div>
+                        <div class="af-instructor__stat-label">Years experience</div>
+                    </div>
+                    <div>
+                        <div class="af-instructor__stat-value">5,200</div>
+                        <div class="af-instructor__stat-label">Students taught</div>
+                    </div>
+                    <div>
+                        <div class="af-instructor__stat-value">4.9/5</div>
+                        <div class="af-instructor__stat-label">Average rating</div>
+                    </div>
+                    <div>
+                        <div class="af-instructor__stat-value">12</div>
+                        <div class="af-instructor__stat-label">Exhibitions</div>
+                    </div>
+                </div>
+                <div class="af-instructor__social">
+                    <a href="#" aria-label="Instagram">&#128247;</a>
+                    <a href="#" aria-label="YouTube">&#9654;</a>
+                    <a href="#" aria-label="Website">&#127760;</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

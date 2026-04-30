@@ -1,0 +1,249 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Slider Testimonials — слайдер отзывов с автопрокруткой -->
+<style>
+
+    .af-slider {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+        overflow: hidden;
+    }
+
+    .af-slider__inner {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .af-slider__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+
+    .af-slider__track {
+        position: relative;
+        overflow: hidden;
+        border-radius: var(--af-radius);
+    }
+
+    .af-slider__slides {
+        display: flex;
+        transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .af-slider__slide {
+        min-width: 100%;
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(28px, 4vw, 48px);
+        box-sizing: border-box;
+    }
+
+    .af-slider__quote {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 2vw, 22px);
+        font-style: italic;
+        line-height: 1.7;
+        color: var(--af-text);
+        margin-bottom: clamp(16px, 3vw, 24px);
+        position: relative;
+    }
+
+    .af-slider__quote::before {
+        content: '\201C';
+        font-size: 48px;
+        color: var(--af-primary);
+        position: absolute;
+        top: -16px;
+        left: -4px;
+        line-height: 1;
+        opacity: 0.3;
+    }
+
+    .af-slider__author {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+    }
+
+    .af-slider__avatar {
+        width: 48px;
+        height: 48px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+
+    .af-slider__name {
+        font-weight: 700;
+        font-size: clamp(18px, 1.4vw, 20px);
+    }
+
+    .af-slider__role {
+        font-size: clamp(16px, 1.2vw, 18px);
+        color: var(--af-text-light);
+    }
+
+    .af-slider__stars {
+        color: var(--af-primary);
+        font-size: 16px;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+    }
+
+    .af-slider__controls {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 16px;
+        margin-top: clamp(20px, 3vw, 32px);
+    }
+
+    .af-slider__arrow {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 2px solid var(--af-primary);
+        background: transparent;
+        color: var(--af-primary);
+        font-size: 19px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .af-slider__arrow:hover {
+        background: var(--af-primary);
+        color: #fff;
+        transform: scale(1.08);
+        box-shadow: 0 4px 16px rgba(222, 101, 24, 0.3);
+    }
+
+    .af-slider__dots {
+        display: flex;
+        gap: 8px;
+    }
+
+    .af-slider__dot {
+        width: 10px;
+        height: 10px;
+        border-radius: 50%;
+        background: #d5cfc7;
+        border: none;
+        cursor: pointer;
+        transition: all 0.3s;
+        padding: 0;
+    }
+
+    .af-slider__dot.active {
+        background: var(--af-primary);
+        transform: scale(1.2);
+    }
+
+    .af-slider__dot:hover {
+        background: var(--af-primary);
+    }
+
+    @media (max-width: 768px) {
+        .af-slider__slide { padding: clamp(20px, 4vw, 28px); }
+        .af-slider__quote::before { display: none; }
+    }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+
+<div class="af-slider">
+    <div class="af-slider__inner">
+        <h2 class="af-slider__heading">What our students say</h2>
+        <div class="af-slider__track">
+            <div class="af-slider__slides" id="afSliderSlides">
+                <div class="af-slider__slide">
+                    <div class="af-slider__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="af-slider__quote">I've tried many watercolor courses, but this was the first time I truly understood how water and pigment interact. Nicolás has an incredible gift for explaining complex concepts simply.</p>
+                    <div class="af-slider__author">
+                        <img class="af-slider__avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face" alt="Maria">
+                        <div>
+                            <div class="af-slider__name">Maria Gonzalez</div>
+                            <div class="af-slider__role">Art teacher, Madrid</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="af-slider__slide">
+                    <div class="af-slider__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="af-slider__quote">The live sessions felt personal even in a group setting. I painted more in 3 days than I had in the previous month. The recordings are a great bonus too.</p>
+                    <div class="af-slider__author">
+                        <img class="af-slider__avatar" src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face" alt="Thomas">
+                        <div>
+                            <div class="af-slider__name">Thomas Weber</div>
+                            <div class="af-slider__role">Retired architect, Berlin</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="af-slider__slide">
+                    <div class="af-slider__stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+                    <p class="af-slider__quote">As a complete beginner, I was nervous. But Nicolás created such a warm atmosphere — by day 2 I was experimenting fearlessly. Now painting is my daily meditation.</p>
+                    <div class="af-slider__author">
+                        <img class="af-slider__avatar" src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&h=96&fit=crop&crop=face" alt="Elena">
+                        <div>
+                            <div class="af-slider__name">Elena Petrova</div>
+                            <div class="af-slider__role">Designer, Amsterdam</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="af-slider__controls">
+            <button class="af-slider__arrow" onclick="afSliderGo(-1)" aria-label="Previous">&#8592;</button>
+            <div class="af-slider__dots" id="afSliderDots"></div>
+            <button class="af-slider__arrow" onclick="afSliderGo(1)" aria-label="Next">&#8594;</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    const slides = document.getElementById('afSliderSlides');
+    const dotsWrap = document.getElementById('afSliderDots');
+    const total = slides.children.length;
+    let current = 0;
+    let autoTimer;
+
+    // Create dots
+    for (let i = 0; i < total; i++) {
+        const dot = document.createElement('button');
+        dot.className = 'af-slider__dot' + (i === 0 ? ' active' : '');
+        dot.onclick = () => goTo(i);
+        dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+        dotsWrap.appendChild(dot);
+    }
+
+    function goTo(idx) {
+        current = ((idx % total) + total) % total;
+        slides.style.transform = 'translateX(-' + (current * 100) + '%)';
+        dotsWrap.querySelectorAll('.af-slider__dot').forEach((d, i) => d.classList.toggle('active', i === current));
+        resetAuto();
+    }
+
+    window.afSliderGo = function(dir) { goTo(current + dir); };
+
+    function resetAuto() {
+        clearInterval(autoTimer);
+        autoTimer = setInterval(() => goTo(current + 1), 5000);
+    }
+    resetAuto();
+})();
+</script>

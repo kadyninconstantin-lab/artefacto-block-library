@@ -1,0 +1,124 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Sticky CTA — фиксированная панель с CTA при скролле -->
+<style>
+
+    .af-sticky-cta {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #2c2c2c;
+        --af-text: #ffffff;
+        --af-text-light: rgba(255,255,255,0.8);
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        position: fixed; bottom: 0; left: 0; right: 0;
+        z-index: 9999;
+        background: var(--af-bg);
+        border-top: 1px solid rgba(255,255,255,0.1);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+        transform: translateY(100%);
+        transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+    .af-sticky-cta--visible { transform: translateY(0); }
+    .af-sticky-cta__inner {
+        max-width: 1200px; margin: 0 auto;
+        padding: 12px clamp(16px, 4vw, 48px);
+        display: flex; align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+    }
+    .af-sticky-cta__text {
+        font-size: clamp(18px, 1.4vw, 20px);
+        font-weight: 500; color: var(--af-text-light);
+    }
+    .af-sticky-cta__text strong {
+        color: #fff; font-weight: 700;
+    }
+    .af-sticky-cta__right {
+        display: flex; align-items: center; gap: 16px;
+        flex-shrink: 0;
+    }
+    .af-sticky-cta__price {
+        font-size: clamp(18px, 2vw, 22px);
+        font-weight: 800; white-space: nowrap;
+    }
+    .af-sticky-cta__price-old {
+        font-size: clamp(16px, 1.2vw, 18px);
+        color: rgba(255,255,255,0.5);
+        text-decoration: line-through;
+        font-weight: 500; margin-right: 6px;
+    }
+    .af-sticky-cta__btn {
+    min-height: 48px;
+        display: inline-block;
+        background: var(--af-primary); color: #fff;
+        padding: clamp(10px, 1.5vw, 14px) clamp(20px, 3vw, 32px);
+        border-radius: 80px; font-weight: 700;
+        font-size: clamp(16px, 1.3vw, 18px);
+        text-decoration: none; border: none; cursor: pointer;
+        transition: background 0.3s, transform 0.2s;
+        white-space: nowrap;
+    }
+    .af-sticky-cta__btn:hover {
+        background: var(--af-primary-hover);
+        transform: translateY(-1px);
+    }
+    .af-sticky-cta__close {
+        background: none; border: none; cursor: pointer;
+        color: rgba(255,255,255,0.5); font-size: 20px;
+        padding: 4px 8px; transition: color 0.3s;
+    }
+    .af-sticky-cta__close:hover { color: #fff; }
+
+    @media (max-width: 768px) {
+        .af-sticky-cta__text { display: none; }
+        .af-sticky-cta__inner { justify-content: center; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<!-- Demo spacer to show scroll behavior -->
+<div style="padding: 80px 24px; text-align: center; font-family: 'Manrope', sans-serif; color: #888;">
+    <p style="font-size: 18px;">&#8595; Scroll down to see the sticky CTA bar appear &#8595;</p>
+    <div style="height: 600px;"></div>
+    <p style="font-size: 16px; color: #aaa;">The sticky bar appears after scrolling past the hero section</p>
+</div>
+
+<div class="af-sticky-cta" id="af-sticky-cta">
+    <div class="af-sticky-cta__inner">
+        <div class="af-sticky-cta__text"><strong>Watercolor Masterclass</strong> — Enrollment open, limited spots</div>
+        <div class="af-sticky-cta__right">
+            <div class="af-sticky-cta__price">
+                <span class="af-sticky-cta__price-old">$199</span>$99
+            </div>
+            <a href="#" class="af-sticky-cta__btn">Enroll now</a>
+            <button class="af-sticky-cta__close" id="af-sticky-cta-close" aria-label="Close">&times;</button>
+        </div>
+    </div>
+</div>
+
+<script>
+(function(){
+    var bar = document.getElementById('af-sticky-cta');
+    var close = document.getElementById('af-sticky-cta-close');
+    if (!bar) return;
+    var dismissed = false;
+    function onScroll(){
+        if (dismissed) return;
+        if (window.scrollY > 400) bar.classList.add('af-sticky-cta--visible');
+        else bar.classList.remove('af-sticky-cta--visible');
+    }
+    window.addEventListener('scroll', onScroll, {passive: true});
+    onScroll();
+    if (close) close.addEventListener('click', function(){
+        dismissed = true;
+        bar.classList.remove('af-sticky-cta--visible');
+    });
+})();
+</script>

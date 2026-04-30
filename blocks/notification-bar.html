@@ -1,0 +1,84 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Notification Bar — баннер-уведомление сверху страницы -->
+<style>
+
+    .af-notif-bar {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: var(--af-primary);
+        --af-text: #ffffff;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+        position: relative;
+    }
+    .af-notif-bar__inner {
+        max-width: 1200px; margin: 0 auto;
+        padding: 10px clamp(16px, 4vw, 48px);
+        display: flex; align-items: center;
+        justify-content: center; gap: 12px;
+        text-align: center;
+        flex-wrap: wrap;
+    }
+    .af-notif-bar__icon {
+        font-size: 1.1em;
+    }
+    .af-notif-bar__text {
+        font-size: clamp(16px, 1.3vw, 18px);
+        font-weight: 500;
+    }
+    .af-notif-bar__text strong { font-weight: 700; }
+    .af-notif-bar__link {
+        color: #fff;
+        font-weight: 700;
+        font-size: clamp(16px, 1.3vw, 18px);
+        text-decoration: underline;
+        text-underline-offset: 3px;
+        transition: opacity 0.3s;
+    }
+    .af-notif-bar__link:hover { opacity: 0.85; }
+    .af-notif-bar__close {
+        position: absolute;
+        right: clamp(8px, 2vw, 20px);
+        top: 50%; transform: translateY(-50%);
+        background: none; border: none;
+        color: rgba(255,255,255,0.7);
+        font-size: 18px; cursor: pointer;
+        padding: 4px 8px;
+        transition: color 0.3s;
+    }
+    .af-notif-bar__close:hover { color: #fff; }
+
+    /* Dark variant */
+    .af-notif-bar--dark {
+        --af-bg: #2c2c2c;
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-notif-bar" id="af-notif-bar">
+    <div class="af-notif-bar__inner">
+        <span class="af-notif-bar__icon">&#127881;</span>
+        <span class="af-notif-bar__text"><strong>New cohort starts April 15</strong> — Early bird pricing: save 40%</span>
+        <a href="#" class="af-notif-bar__link">Reserve your spot &rarr;</a>
+    </div>
+    <button class="af-notif-bar__close" id="af-notif-bar-close" aria-label="Close">&times;</button>
+</div>
+
+<script>
+(function(){
+    var bar = document.getElementById('af-notif-bar');
+    var close = document.getElementById('af-notif-bar-close');
+    if (bar && close) {
+        close.addEventListener('click', function(){
+            bar.style.display = 'none';
+        });
+    }
+})();
+</script>

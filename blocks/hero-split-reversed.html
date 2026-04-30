@@ -1,0 +1,177 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Hero Split Reversed — картинка слева, текст справа -->
+<style>
+
+    .af-hero-splitr {
+        --af-primary: #de6518;
+        --af-primary-hover: #c55a15;
+        --af-bg: #f4efe9;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(32px, 5vw, 72px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-hero-splitr__inner {
+        max-width: 1200px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: clamp(24px, 4vw, 64px);
+        align-items: center;
+    }
+
+    .af-hero-splitr__image {
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        order: -1;
+    }
+
+    .af-hero-splitr__image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        border-radius: var(--af-radius);
+    }
+
+    .af-hero-splitr__content {
+        display: flex;
+        flex-direction: column;
+        gap: clamp(16px, 2vw, 24px);
+    }
+
+    .af-hero-splitr__eyebrow {
+        font-size: clamp(16px, 1.5vw, 18px);
+        font-weight: 600;
+        color: var(--af-primary);
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+    }
+
+    .af-hero-splitr__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(29px, 4vw, 51px);
+        font-weight: 700;
+        line-height: 1.15;
+        color: var(--af-text);
+    }
+
+    .af-hero-splitr__heading strong {
+        color: var(--af-primary);
+    }
+
+    .af-hero-splitr__desc {
+        font-size: clamp(18px, 1.8vw, 20px);
+        line-height: 1.7;
+        color: var(--af-text-light);
+    }
+
+    .af-hero-splitr__buttons {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+        margin-top: 8px;
+        justify-content: center;
+    }
+
+    .af-hero-splitr__btn {
+    min-height: 48px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: clamp(12px, 2vw, 16px) clamp(24px, 3vw, 40px);
+        border-radius: 50px;
+        font-family: var(--af-font-body);
+        font-size: clamp(18px, 1.5vw, 20px);
+        font-weight: 700;
+        text-decoration: none;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        border: 2px solid transparent;
+    }
+
+    .af-hero-splitr__btn--primary {
+        background: var(--af-primary);
+        color: #fff;
+        border-color: var(--af-primary);
+        box-shadow: 0 4px 14px rgba(222, 101, 24, 0.25);
+    }
+
+    .af-hero-splitr__btn--primary:hover {
+        background: var(--af-primary-hover);
+        border-color: var(--af-primary-hover);
+        transform: translateY(-3px);
+        box-shadow: 0 8px 28px rgba(222, 101, 24, 0.4);
+    }
+
+    .af-hero-splitr__btn--primary:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 8px rgba(222, 101, 24, 0.2);
+    }
+
+    .af-hero-splitr__btn--ghost {
+        background: transparent;
+        color: var(--af-text);
+        border-color: var(--af-text);
+    }
+
+    .af-hero-splitr__btn--ghost:hover {
+        background: var(--af-text);
+        color: #fff;
+    }
+
+    @media (max-width: 768px) {
+        .af-hero-splitr {
+            padding: 24px 16px 32px;
+            text-align: center;
+        }
+        .af-hero-splitr__inner {
+            grid-template-columns: 1fr;
+            gap: 16px;
+        }
+        .af-hero-splitr__content {
+            gap: 16px;
+            align-items: center;
+        }
+        .af-hero-splitr__image img {
+            aspect-ratio: 16/9;
+            max-height: 200px;
+        }
+        .af-hero-splitr__heading {
+            font-size: 24px;
+        }
+        .af-hero-splitr__desc {
+            font-size: 16px;
+        }
+    }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+
+<div class="af-hero-splitr">
+    <div class="af-hero-splitr__inner">
+        <div class="af-hero-splitr__image">
+            <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=600&fit=crop" alt="Painting artwork">
+        </div>
+        <div class="af-hero-splitr__content">
+            <div class="af-hero-splitr__eyebrow">3-day painting intensive</div>
+            <h1 class="af-hero-splitr__heading">
+                Discover the <strong>art of watercolor</strong> with Nicolás López
+            </h1>
+            <p class="af-hero-splitr__desc">
+                Three days of live sessions. Small groups. Personal feedback from a master painter with 20 years of experience.
+            </p>
+            <div class="af-hero-splitr__buttons">
+                <a href="#form" class="af-hero-splitr__btn af-hero-splitr__btn--primary">Join the intensive</a>
+                <a href="#program" class="af-hero-splitr__btn af-hero-splitr__btn--ghost">Learn more</a>
+            </div>
+        </div>
+    </div>
+</div>

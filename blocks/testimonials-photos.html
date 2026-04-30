@@ -1,0 +1,64 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Testimonials + Photos — отзывы с фото и звёздами -->
+<style>
+
+    .af-testphotos {
+        --af-primary: #de6518; --af-bg: #ffffff; --af-card-bg: #f4efe9;
+        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body); color: var(--af-text);
+    }
+    .af-testphotos__inner { max-width: 1200px; margin: 0 auto; }
+    .af-testphotos__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; text-align: center; margin-bottom: clamp(24px, 4vw, 48px); }
+    .af-testphotos__grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 24px); }
+    .af-testphotos__card { background: var(--af-card-bg); border-radius: var(--af-radius); overflow: hidden; }
+    .af-testphotos__card img { width: 100%; aspect-ratio: 4/3; object-fit: cover; display: block; }
+    .af-testphotos__body { padding: clamp(16px, 2.5vw, 24px); }
+    .af-testphotos__stars { color: var(--af-primary); font-size: 16px; margin-bottom: 8px; letter-spacing: 2px; }
+    .af-testphotos__quote { font-family: var(--af-font-heading); font-size: clamp(18px, 1.5vw, 20px); font-style: italic; line-height: 1.6; margin-bottom: 12px; }
+    .af-testphotos__name { font-weight: 700; font-size: clamp(16px, 1.2vw, 18px); }
+    .af-testphotos__role { font-size: clamp(16px, 1.1vw, 18px); color: var(--af-text-light); }
+    @media (max-width: 768px) { .af-testphotos__grid { grid-template-columns: 1fr; max-width: 400px; margin: 0 auto; } }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+<div class="af-testphotos">
+    <div class="af-testphotos__inner">
+        <h2 class="af-testphotos__heading">Student results</h2>
+        <div class="af-testphotos__grid">
+            <div class="af-testphotos__card">
+                <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=500&h=375&fit=crop" alt="Student work">
+                <div class="af-testphotos__body">
+                    <div class="af-testphotos__stars">★★★★★</div>
+                    <p class="af-testphotos__quote">"My first watercolor ever! I can't believe I painted this."</p>
+                    <div class="af-testphotos__name">Sarah M.</div>
+                    <div class="af-testphotos__role">Complete beginner</div>
+                </div>
+            </div>
+            <div class="af-testphotos__card">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=375&fit=crop" alt="Student work">
+                <div class="af-testphotos__body">
+                    <div class="af-testphotos__stars">★★★★★</div>
+                    <p class="af-testphotos__quote">"Finally found my own style after years of copying tutorials."</p>
+                    <div class="af-testphotos__name">Viktor K.</div>
+                    <div class="af-testphotos__role">5 years of painting</div>
+                </div>
+            </div>
+            <div class="af-testphotos__card">
+                <img src="https://images.unsplash.com/photo-1549490349-8643362247b5?w=500&h=375&fit=crop" alt="Student work">
+                <div class="af-testphotos__body">
+                    <div class="af-testphotos__stars">★★★★★</div>
+                    <p class="af-testphotos__quote">"The wet-on-wet technique opened a whole new world for me."</p>
+                    <div class="af-testphotos__name">Lisa W.</div>
+                    <div class="af-testphotos__role">Hobbyist painter</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

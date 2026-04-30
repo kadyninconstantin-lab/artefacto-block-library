@@ -1,0 +1,39 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Cards Grid 2×2 -->
+<style>
+
+    .af-cards2x2 {
+        --af-primary: #de6518; --af-bg: #f4efe9; --af-card-bg: #ffffff;
+        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body); color: var(--af-text);
+    }
+    .af-cards2x2__inner { max-width: 1000px; margin: 0 auto; }
+    .af-cards2x2__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; text-align: center; margin-bottom: clamp(32px, 5vw, 48px); }
+    .af-cards2x2__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(16px, 2.5vw, 24px); }
+    .af-cards2x2__card { background: var(--af-card-bg); border-radius: var(--af-radius); padding: clamp(24px, 3vw, 36px); transition: transform 0.3s, box-shadow 0.3s; }
+    .af-cards2x2__card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,0.08); }
+    .af-cards2x2__icon { font-size: clamp(32px, 3vw, 40px); margin-bottom: 12px; }
+    .af-cards2x2__card-title { font-family: var(--af-font-heading); font-size: clamp(18px, 2vw, 22px); font-weight: 700; margin-bottom: 8px; }
+    .af-cards2x2__card-text { font-size: clamp(16px, 1.4vw, 18px); line-height: 1.7; color: var(--af-text-light); }
+    @media (max-width: 640px) { .af-cards2x2__grid { grid-template-columns: 1fr; } }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+<div class="af-cards2x2">
+    <div class="af-cards2x2__inner">
+        <h2 class="af-cards2x2__heading">What's included</h2>
+        <div class="af-cards2x2__grid">
+            <div class="af-cards2x2__card"><div class="af-cards2x2__icon">🎥</div><h3 class="af-cards2x2__card-title">Live Sessions</h3><p class="af-cards2x2__card-text">3 days of live painting with real-time guidance from Nicolás López himself.</p></div>
+            <div class="af-cards2x2__card"><div class="af-cards2x2__icon">📹</div><h3 class="af-cards2x2__card-title">Recordings</h3><p class="af-cards2x2__card-text">Lifetime access to all session recordings. Rewatch and practice at your pace.</p></div>
+            <div class="af-cards2x2__card"><div class="af-cards2x2__icon">💬</div><h3 class="af-cards2x2__card-title">Q&A Sessions</h3><p class="af-cards2x2__card-text">Ask questions live and get personal answers from the master.</p></div>
+            <div class="af-cards2x2__card"><div class="af-cards2x2__icon">📋</div><h3 class="af-cards2x2__card-title">Materials Guide</h3><p class="af-cards2x2__card-text">Complete list of recommended materials with budget-friendly alternatives.</p></div>
+        </div>
+    </div>
+</div>

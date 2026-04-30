@@ -1,0 +1,63 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Pricing Horizontal — тарифы горизонтально -->
+<style>
+
+    .af-pricingh {
+        --af-primary: #de6518; --af-bg: #ffffff; --af-card-bg: #f4efe9;
+        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body); color: var(--af-text);
+    }
+    .af-pricingh__inner { max-width: 900px; margin: 0 auto; }
+    .af-pricingh__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; text-align: center; margin-bottom: clamp(24px, 4vw, 48px); }
+    .af-pricingh__list { display: flex; flex-direction: column; gap: clamp(12px, 2vw, 16px); }
+    .af-pricingh__card {
+        background: var(--af-card-bg); border-radius: var(--af-radius); padding: clamp(20px, 3vw, 28px);
+        display: grid; grid-template-columns: 1fr auto auto; align-items: center; gap: clamp(16px, 3vw, 32px);
+        border: 2px solid transparent; transition: all 0.3s;
+    }
+    .af-pricingh__card:hover { transform: translateX(4px); box-shadow: 0 6px 20px rgba(0,0,0,0.06); }
+    .af-pricingh__card--featured { border-color: var(--af-primary); background: #fff; }
+    .af-pricingh__name { font-family: var(--af-font-heading); font-size: clamp(18px, 1.8vw, 21px); font-weight: 700; }
+    .af-pricingh__desc { font-size: clamp(16px, 1.2vw, 18px); color: var(--af-text-light); margin-top: 4px; }
+    .af-pricingh__price { font-family: var(--af-font-heading); font-size: clamp(24px, 2.5vw, 32px); font-weight: 700; white-space: nowrap; }
+    .af-pricingh__btn {
+    min-height: 48px;
+        padding: clamp(10px, 1.5vw, 12px) clamp(20px, 2.5vw, 28px); border-radius: 50px;
+        font-family: var(--af-font-body); font-size: clamp(16px, 1.2vw, 18px); font-weight: 700;
+        text-decoration: none; border: 2px solid var(--af-primary); cursor: pointer; transition: all 0.3s; white-space: nowrap;
+    }
+    .af-pricingh__btn--primary { background: var(--af-primary); color: #fff; }
+    .af-pricingh__btn--primary:hover { background: #c55a15; }
+    .af-pricingh__btn--outline { background: transparent; color: var(--af-primary); }
+    .af-pricingh__btn--outline:hover { background: var(--af-primary); color: #fff; }
+    @media (max-width: 640px) {
+        .af-pricingh__card { grid-template-columns: 1fr; text-align: center; }
+        .af-pricingh__btn { justify-self: center; }
+    }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+<div class="af-pricingh">
+    <div class="af-pricingh__inner">
+        <h2 class="af-pricingh__heading">Plans & pricing</h2>
+        <div class="af-pricingh__list">
+            <div class="af-pricingh__card">
+                <div><div class="af-pricingh__name">Recording Only</div><div class="af-pricingh__desc">Watch at your own pace</div></div>
+                <div class="af-pricingh__price">€49</div>
+                <a href="#form" class="af-pricingh__btn af-pricingh__btn--outline">Choose</a>
+            </div>
+            <div class="af-pricingh__card af-pricingh__card--featured">
+                <div><div class="af-pricingh__name">Live + Recording</div><div class="af-pricingh__desc">Join live sessions with Q&A</div></div>
+                <div class="af-pricingh__price">€89</div>
+                <a href="#form" class="af-pricingh__btn af-pricingh__btn--primary">Choose</a>
+            </div>
+            <div class="af-pricingh__card">
+                <div><div class="af-pricingh__name">VIP Experience</div><div class="af-pricingh__desc">Everything + personal feedback</div></div>
+                <div class="af-pricingh__price">€149</div>
+                <a href="#form" class="af-pricingh__btn af-pricingh__btn--outline">Choose</a>
+            </div>
+        </div>
+    </div>
+</div>

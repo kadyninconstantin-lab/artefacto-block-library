@@ -1,0 +1,109 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Stats + Images — цифры с картинками -->
+<style>
+
+    .af-statsimg {
+        --af-primary: #de6518;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+    .af-statsimg__inner { max-width: 1200px; margin: 0 auto; }
+    .af-statsimg__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+    .af-statsimg__grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: clamp(12px, 2vw, 20px);
+    }
+    .af-statsimg__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        overflow: hidden;
+        text-align: center;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .af-statsimg__card:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 32px rgba(0,0,0,0.08);
+    }
+    .af-statsimg__card img {
+        width: 100%;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+        display: block;
+    }
+    .af-statsimg__body {
+        padding: clamp(16px, 2vw, 24px);
+    }
+    .af-statsimg__number {
+        font-family: var(--af-font-heading);
+        font-size: clamp(26px, 3vw, 35px);
+        font-weight: 700;
+        color: var(--af-primary);
+        line-height: 1.1;
+        margin-bottom: 4px;
+    }
+    .af-statsimg__label {
+        font-size: clamp(16px, 1.2vw, 18px);
+        color: var(--af-text-light);
+        font-weight: 500;
+    }
+    @media (max-width: 768px) { .af-statsimg__grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 400px) { .af-statsimg__grid { grid-template-columns: 1fr; max-width: 300px; margin: 0 auto; } }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-statsimg">
+    <div class="af-statsimg__inner">
+        <h2 class="af-statsimg__heading">Our results</h2>
+        <div class="af-statsimg__grid">
+            <div class="af-statsimg__card">
+                <img src="https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=300&fit=crop" alt="Students">
+                <div class="af-statsimg__body">
+                    <div class="af-statsimg__number">2,500+</div>
+                    <div class="af-statsimg__label">Students worldwide</div>
+                </div>
+            </div>
+            <div class="af-statsimg__card">
+                <img src="https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop" alt="Experience">
+                <div class="af-statsimg__body">
+                    <div class="af-statsimg__number">7 years</div>
+                    <div class="af-statsimg__label">Teaching experience</div>
+                </div>
+            </div>
+            <div class="af-statsimg__card">
+                <img src="https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=300&fit=crop" alt="Countries">
+                <div class="af-statsimg__body">
+                    <div class="af-statsimg__number">30+</div>
+                    <div class="af-statsimg__label">Countries</div>
+                </div>
+            </div>
+            <div class="af-statsimg__card">
+                <img src="https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=400&h=300&fit=crop" alt="Rating">
+                <div class="af-statsimg__body">
+                    <div class="af-statsimg__number">4.9/5</div>
+                    <div class="af-statsimg__label">Average rating</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

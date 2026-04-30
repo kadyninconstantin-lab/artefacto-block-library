@@ -1,0 +1,72 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Footer -->
+<style>
+
+    .af-footer {
+        --af-primary: #de6518; --af-bg: #2b2b2b; --af-text: #ffffff;
+        --af-text-light: rgba(255,255,255,0.85); --af-border: rgba(255,255,255,0.1);
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg); padding: clamp(40px, 6vw, 64px) clamp(16px, 4vw, 48px) clamp(20px, 3vw, 32px);
+        font-family: var(--af-font-body); color: var(--af-text);
+    }
+    .af-footer__inner { max-width: 1200px; margin: 0 auto; }
+    .af-footer__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: clamp(24px, 4vw, 48px); margin-bottom: clamp(32px, 4vw, 48px); }
+    .af-footer__brand-name { font-size: clamp(19px, 2vw, 24px); font-weight: 700; margin-bottom: 12px; }
+    .af-footer__brand-name span { color: var(--af-primary); }
+    .af-footer__brand-desc { font-size: clamp(16px, 1.2vw, 18px); color: var(--af-text-light); line-height: 1.6; }
+    .af-footer__col-title { font-size: clamp(16px, 1.2vw, 18px); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 16px; }
+    .af-footer__links { list-style: none; padding: 0; }
+    .af-footer__links li { margin-bottom: 10px; }
+    .af-footer__links a { color: var(--af-text-light); text-decoration: none; font-size: clamp(16px, 1.2vw, 18px); transition: color 0.2s; }
+    .af-footer__links a:hover { color: var(--af-primary); }
+    .af-footer__bottom { border-top: 1px solid var(--af-border); padding-top: clamp(16px, 2vw, 24px); display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; }
+    .af-footer__copy { font-size: clamp(16px, 1.1vw, 18px); color: var(--af-text-light); }
+    .af-footer__socials { display: flex; gap: 12px; }
+    .af-footer__socials a { color: var(--af-text-light); text-decoration: none; font-size: 16px; transition: color 0.2s; }
+    .af-footer__socials a:hover { color: var(--af-primary); }
+    @media (max-width: 768px) { .af-footer__grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 480px) { .af-footer__grid { grid-template-columns: 1fr; } }
+    :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
+</style>
+<div class="af-footer">
+    <div class="af-footer__inner">
+        <div class="af-footer__grid">
+            <div>
+                <div class="af-footer__brand-name"><span>Artefacto</span> School</div>
+                <p class="af-footer__brand-desc">Online art school. Live sessions with professional artists from around the world.</p>
+            </div>
+            <div>
+                <div class="af-footer__col-title">Courses</div>
+                <ul class="af-footer__links">
+                    <li><a href="#">Watercolor</a></li>
+                    <li><a href="#">Oil Painting</a></li>
+                    <li><a href="#">Drawing</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="af-footer__col-title">Company</div>
+                <ul class="af-footer__links">
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Teachers</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <div class="af-footer__col-title">Legal</div>
+                <ul class="af-footer__links">
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms of Service</a></li>
+                    <li><a href="#">Refund Policy</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="af-footer__bottom">
+            <div class="af-footer__copy">&copy; 2026 Artefacto School. All rights reserved.</div>
+            <div class="af-footer__socials">
+                <a href="#">Instagram</a>
+                <a href="#">Telegram</a>
+                <a href="#">YouTube</a>
+            </div>
+        </div>
+    </div>
+</div>

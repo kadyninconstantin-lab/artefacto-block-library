@@ -1,0 +1,60 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Timeline Horizontal — шаги горизонтально -->
+<style>
+
+    .af-timelineh {
+        --af-primary: #de6518; --af-bg: #f4efe9;
+        --af-text: #3b3b3b; --af-text-light: #4a4a4a; --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+        background: var(--af-bg); padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body); color: var(--af-text);
+    }
+    .af-timelineh__inner { max-width: 1200px; margin: 0 auto; }
+    .af-timelineh__heading { font-family: var(--af-font-heading); font-size: clamp(24px, 3.5vw, 40px); font-weight: 700; text-align: center; margin-bottom: clamp(24px, 4vw, 48px); }
+    .af-timelineh__steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: clamp(16px, 2vw, 24px); position: relative; }
+    .af-timelineh__step { text-align: center; position: relative; }
+    .af-timelineh__number {
+        width: clamp(40px, 5vw, 56px); height: clamp(40px, 5vw, 56px); border-radius: 50%;
+        background: var(--af-primary); color: #fff; display: flex; align-items: center; justify-content: center;
+        font-family: var(--af-font-heading); font-size: clamp(18px, 1.8vw, 21px); font-weight: 700;
+        margin: 0 auto clamp(12px, 2vw, 20px);
+    }
+    .af-timelineh__step-title { font-family: var(--af-font-heading); font-size: clamp(18px, 1.7vw, 19px); font-weight: 700; margin-bottom: 8px; }
+    .af-timelineh__step-text { font-size: clamp(16px, 1.3vw, 18px); line-height: 1.6; color: var(--af-text-light); }
+    @media (max-width: 768px) { .af-timelineh__steps { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 480px) { .af-timelineh__steps { grid-template-columns: 1fr; } }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+<div class="af-timelineh">
+    <div class="af-timelineh__inner">
+        <h2 class="af-timelineh__heading">How to get started</h2>
+        <div class="af-timelineh__steps">
+            <div class="af-timelineh__step">
+                <div class="af-timelineh__number">1</div>
+                <h3 class="af-timelineh__step-title">Register</h3>
+                <p class="af-timelineh__step-text">Fill out the form and choose your plan</p>
+            </div>
+            <div class="af-timelineh__step">
+                <div class="af-timelineh__number">2</div>
+                <h3 class="af-timelineh__step-title">Get materials</h3>
+                <p class="af-timelineh__step-text">We'll send you a list of what you'll need</p>
+            </div>
+            <div class="af-timelineh__step">
+                <div class="af-timelineh__number">3</div>
+                <h3 class="af-timelineh__step-title">Join live</h3>
+                <p class="af-timelineh__step-text">Connect to the session at the scheduled time</p>
+            </div>
+            <div class="af-timelineh__step">
+                <div class="af-timelineh__number">4</div>
+                <h3 class="af-timelineh__step-title">Create art</h3>
+                <p class="af-timelineh__step-text">Paint along with Nicolás and share your results</p>
+            </div>
+        </div>
+    </div>
+</div>

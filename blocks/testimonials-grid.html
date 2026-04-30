@@ -1,0 +1,147 @@
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap">
+<!-- Artefacto Block: Testimonials Grid — отзывы сеткой 2 колонки -->
+<style>
+
+    .af-testgrid {
+        --af-primary: #de6518;
+        --af-bg: #f4efe9;
+        --af-card-bg: #ffffff;
+        --af-text: #3b3b3b;
+        --af-text-light: #4a4a4a;
+        --af-radius: 16px;
+        --af-font-heading: 'Source Serif 4', 'Georgia', serif;
+        --af-font-body: 'Manrope', 'Helvetica Neue', sans-serif;
+
+        background: var(--af-bg);
+        padding: clamp(56px, 10vw, 120px) clamp(16px, 4vw, 48px);
+        font-family: var(--af-font-body);
+        color: var(--af-text);
+    }
+
+    .af-testgrid__inner {
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .af-testgrid__heading {
+        font-family: var(--af-font-heading);
+        font-size: clamp(24px, 3.5vw, 40px);
+        font-weight: 700;
+        text-align: center;
+        margin-bottom: clamp(24px, 4vw, 48px);
+    }
+
+    .af-testgrid__grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: clamp(16px, 2.5vw, 24px);
+    }
+
+    .af-testgrid__card {
+        background: var(--af-card-bg);
+        border-radius: var(--af-radius);
+        padding: clamp(24px, 3vw, 36px);
+    }
+
+    .af-testgrid__stars {
+        color: var(--af-primary);
+        font-size: clamp(18px, 1.4vw, 20px);
+        margin-bottom: 16px;
+        letter-spacing: 2px;
+    }
+
+    .af-testgrid__quote {
+        font-family: var(--af-font-heading);
+        font-size: clamp(18px, 1.8vw, 20px);
+        font-weight: 400;
+        font-style: italic;
+        line-height: 1.6;
+        margin-bottom: clamp(16px, 2.5vw, 24px);
+    }
+
+    .af-testgrid__author {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .af-testgrid__avatar {
+        width: clamp(40px, 5vw, 48px);
+        height: clamp(40px, 5vw, 48px);
+        border-radius: 50%;
+        object-fit: cover;
+        background: var(--af-bg);
+    }
+
+    .af-testgrid__name {
+        font-weight: 700;
+        font-size: clamp(16px, 1.3vw, 18px);
+    }
+
+    .af-testgrid__role {
+        font-size: clamp(16px, 1.2vw, 18px);
+        color: var(--af-text-light);
+    }
+
+    @media (max-width: 640px) {
+        .af-testgrid__grid { grid-template-columns: 1fr; }
+    }
+
+    *:focus-visible {
+      outline: 3px solid var(--af-primary, #de6518);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+  </style>
+
+<div class="af-testgrid">
+    <div class="af-testgrid__inner">
+        <h2 class="af-testgrid__heading">What our students say</h2>
+        <div class="af-testgrid__grid">
+            <div class="af-testgrid__card">
+                <div class="af-testgrid__stars">★★★★★</div>
+                <p class="af-testgrid__quote">"This intensive completely changed how I approach watercolor. Nicolás teaches you to trust the process, not fight it."</p>
+                <div class="af-testgrid__author">
+                    <img class="af-testgrid__avatar" src="https://i.pravatar.cc/96?img=1" alt="Avatar">
+                    <div>
+                        <div class="af-testgrid__name">Maria K.</div>
+                        <div class="af-testgrid__role">Student, Spring 2025</div>
+                    </div>
+                </div>
+            </div>
+            <div class="af-testgrid__card">
+                <div class="af-testgrid__stars">★★★★★</div>
+                <p class="af-testgrid__quote">"I've taken many online courses but this was different. The live format and personal feedback made all the difference."</p>
+                <div class="af-testgrid__author">
+                    <img class="af-testgrid__avatar" src="https://i.pravatar.cc/96?img=5" alt="Avatar">
+                    <div>
+                        <div class="af-testgrid__name">Dmitry R.</div>
+                        <div class="af-testgrid__role">Student, Autumn 2024</div>
+                    </div>
+                </div>
+            </div>
+            <div class="af-testgrid__card">
+                <div class="af-testgrid__stars">★★★★★</div>
+                <p class="af-testgrid__quote">"After years of painting the same way, Nicolás helped me break through my plateau. My paintings finally feel alive."</p>
+                <div class="af-testgrid__author">
+                    <img class="af-testgrid__avatar" src="https://i.pravatar.cc/96?img=3" alt="Avatar">
+                    <div>
+                        <div class="af-testgrid__name">Anna S.</div>
+                        <div class="af-testgrid__role">Artist, 10 years experience</div>
+                    </div>
+                </div>
+            </div>
+            <div class="af-testgrid__card">
+                <div class="af-testgrid__stars">★★★★★</div>
+                <p class="af-testgrid__quote">"I'm retired and this was my first art course ever. The warm atmosphere and patient teaching made me feel welcome from day one."</p>
+                <div class="af-testgrid__author">
+                    <img class="af-testgrid__avatar" src="https://i.pravatar.cc/96?img=8" alt="Avatar">
+                    <div>
+                        <div class="af-testgrid__name">Robert L.</div>
+                        <div class="af-testgrid__role">Creative Retiree</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
