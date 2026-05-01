@@ -24,13 +24,13 @@
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: clamp(24px, 4vw, 64px);
-        align-items: center;
+        align-items: start;
     }
 
     .af-hero-split__content {
         display: flex;
         flex-direction: column;
-        gap: clamp(16px, 2vw, 24px);
+        gap: clamp(8px, 1.4vw, 16px);
     }
 
     .af-hero-split__eyebrow {
@@ -43,20 +43,38 @@
 
     .af-hero-split__heading {
         font-family: var(--af-font-heading);
-        font-size: clamp(29px, 4vw, 51px);
+        font-size: clamp(28px, 3.4vw, 44px);
         font-weight: 700;
         line-height: 1.15;
         color: var(--af-text);
+        text-wrap: balance;
+        margin: 0;
     }
 
     .af-hero-split__heading strong {
         color: var(--af-primary);
     }
 
-    .af-hero-split__desc {
-        font-size: clamp(18px, 1.8vw, 20px);
-        line-height: 1.7;
+    .af-hero-split__attribution {
+        font-style: italic;
+        font-size: clamp(15px, 1.3vw, 17px);
         color: var(--af-text-light);
+        margin: 0;
+        line-height: 1.4;
+    }
+
+    .af-hero-split__desc {
+        font-size: clamp(17px, 1.6vw, 19px);
+        line-height: 1.6;
+        color: var(--af-text-light);
+        margin: 0;
+    }
+
+    .af-hero-split__desc p {
+        margin: 0 0 0.5em;
+    }
+    .af-hero-split__desc p:last-child {
+        margin-bottom: 0;
     }
 
     .af-hero-split__highlight {
@@ -169,9 +187,10 @@
             <h1 class="af-hero-split__heading">
                 Most watercolor teaching starts with technique. <strong>We start with what water wants to do.</strong>
             </h1>
-            <p class="af-hero-split__desc">
+            <p class="af-hero-split__attribution">That's what attendees say every time the instructor paints.</p>
+            <div class="af-hero-split__desc">
                 Join Nicolás López for 3 days of live painting sessions. Learn to see color, feel the brush, and trust the process.
-            </p>
+            </div>
             <p class="af-hero-split__highlight">
                 You will get lifetime access to all event recordings.
             </p>
