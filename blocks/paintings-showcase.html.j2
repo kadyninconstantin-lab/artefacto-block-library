@@ -101,7 +101,7 @@
     @media (min-width: 769px) {
         .af-paintings__lesson--vertical {
             grid-template-columns: minmax(0, 5fr) minmax(0, 4fr);
-            align-items: center;
+            align-items: start;
         }
 
         /* Alternate left/right placement: even-indexed lessons get image on the right */
@@ -136,17 +136,26 @@
     <div class="af-paintings__inner">
         <h2 class="af-paintings__heading">What you'll learn</h2>
         {% for item in items %}
-        <div class="af-paintings__lesson af-paintings__lesson--{{ item.orientation | default('horizontal') }}">
+        {% set orient = item.orientation | default('horizontal') %}
+        <div class="af-paintings__lesson af-paintings__lesson--{{ orient }}">
+            {% if orient == 'horizontal' %}
+            <div class="af-paintings__text-wrap">
+                <h3 class="af-paintings__title">{{ item.title }}</h3>
+                <p class="af-paintings__text">{{ item.text }}</p>
+            </div>
+            {% endif %}
             <div class="af-paintings__image-wrap">
                 <img class="af-paintings__image"
                      src="{{ item.image_url }}"
                      alt="{{ item.image_alt | default(item.title) }}"
                      loading="lazy">
             </div>
+            {% if orient != 'horizontal' %}
             <div class="af-paintings__text-wrap">
                 <h3 class="af-paintings__title">{{ item.title }}</h3>
                 <p class="af-paintings__text">{{ item.text }}</p>
             </div>
+            {% endif %}
         </div>
         {% endfor %}
     </div>
