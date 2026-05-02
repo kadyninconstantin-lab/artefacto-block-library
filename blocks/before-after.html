@@ -80,8 +80,27 @@
     .af-before-after__label--before { left: 16px; }
     .af-before-after__label--after { right: 16px; }
 
+    .af-before-after__cta {
+        text-align: center;
+        margin-top: clamp(20px, 3vw, 32px);
+    }
+    .af-before-after__cta-btn {
+        display: inline-block;
+        background: var(--af-primary);
+        color: #fff;
+        font-family: var(--af-font-body);
+        font-size: clamp(16px, 1.4vw, 18px);
+        font-weight: 700;
+        padding: 14px 36px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+    .af-before-after__cta-btn:hover { opacity: 0.88; }
+
     @media (max-width: 768px) {
         .af-before-after__slider { aspect-ratio: 4/3; }
+        .af-before-after__cta-btn { width: 100%; text-align: center; box-sizing: border-box; }
     }
 
     *:focus-visible {
@@ -101,6 +120,9 @@
             <div class="af-before-after__handle"></div>
             <span class="af-before-after__label af-before-after__label--before">Before</span>
             <span class="af-before-after__label af-before-after__label--after">After</span>
+        </div>
+        <div class="af-before-after__cta">
+            <a class="af-before-after__cta-btn" href="#form">Register for free →</a>
         </div>
     </div>
 </div>

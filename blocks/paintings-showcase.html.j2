@@ -125,6 +125,28 @@
         }
     }
 
+    .af-paintings__cta {
+        text-align: center;
+        margin-top: clamp(40px, 6vw, 64px);
+    }
+    .af-paintings__cta-btn {
+        display: inline-block;
+        background: var(--af-primary);
+        color: #fff;
+        font-family: var(--af-font-body);
+        font-size: clamp(16px, 1.4vw, 18px);
+        font-weight: 700;
+        padding: 14px 36px;
+        border-radius: 8px;
+        text-decoration: none;
+        transition: opacity 0.2s;
+    }
+    .af-paintings__cta-btn:hover { opacity: 0.88; }
+
+    @media (max-width: 768px) {
+        .af-paintings__cta-btn { width: 100%; text-align: center; box-sizing: border-box; }
+    }
+
     *:focus-visible {
       outline: 3px solid var(--af-primary, #de6518);
       outline-offset: 3px;
@@ -158,5 +180,8 @@
             {% endif %}
         </div>
         {% endfor %}
+        <div class="af-paintings__cta">
+            <a class="af-paintings__cta-btn" href="#form">Register for free →</a>
+        </div>
     </div>
 </section>
