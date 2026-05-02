@@ -91,40 +91,7 @@
         justify-content: center;
     }
 
-    .af-hero-split__btn {
-    min-height: 48px;
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        padding: clamp(12px, 2vw, 16px) clamp(24px, 3vw, 40px);
-        border-radius: 50px;
-        font-family: var(--af-font-body);
-        font-size: clamp(18px, 1.5vw, 20px);
-        font-weight: 700;
-        text-decoration: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        border: 2px solid transparent;
-    }
-
-    .af-hero-split__btn--primary {
-        background: var(--af-primary);
-        color: #fff;
-        border-color: var(--af-primary);
-        box-shadow: 0 4px 14px rgba(222, 101, 24, 0.25);
-    }
-
-    .af-hero-split__btn--primary:hover {
-        background: var(--af-primary-hover);
-        border-color: var(--af-primary-hover);
-        transform: translateY(-3px);
-        box-shadow: 0 8px 28px rgba(222, 101, 24, 0.4);
-    }
-
-    .af-hero-split__btn--primary:active {
-        transform: translateY(0);
-        box-shadow: 0 2px 8px rgba(222, 101, 24, 0.2);
-    }
+    .af-hero-split__btn { border: 2px solid transparent; }
 
     .af-hero-split__image {
         border-radius: var(--af-radius);
@@ -184,7 +151,7 @@
                 You will get lifetime access to all event recordings.
             </p>
             <div class="af-hero-split__buttons">
-                <a href="#form" class="af-hero-split__btn af-hero-split__btn--primary">Take part in the intensive</a>
+                <a href="#form" class="af-hero-split__btn af-cta-btn">Take part in the intensive</a>
             </div>
         </div>
         <div class="af-hero-split__image">

@@ -88,28 +88,8 @@
     }
 
     .af-checklist__btn {
-    min-height: 48px;
         display: block;
-        width: fit-content;
         margin: clamp(24px, 4vw, 36px) auto 0;
-        padding: clamp(14px, 2vw, 18px) clamp(32px, 5vw, 48px);
-        border-radius: 50px;
-        background: var(--af-primary);
-        color: #fff;
-        font-family: var(--af-font-body);
-        font-size: clamp(18px, 1.5vw, 20px);
-        font-weight: 700;
-        text-decoration: none;
-        border: none;
-        cursor: pointer;
-        transition: all 0.3s ease;
-        text-align: center;
-    }
-
-    .af-checklist__btn:hover {
-        background: var(--af-primary-hover);
-        transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(222, 101, 24, 0.3);
     }
     :focus-visible{outline:3px solid #de6518;outline-offset:3px;border-radius:4px;}
 </style>
@@ -144,6 +124,6 @@
                 <div class="af-checklist__text"><strong>Bonus reference sheets</strong> — color mixing & brush technique guides</div>
             </div>
         </div>
-        <a href="#form" class="af-checklist__btn">Sign up now</a>
+        <a href="#form" class="af-checklist__btn af-cta-btn">Sign up now</a>
     </div>
 </div>
