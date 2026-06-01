@@ -1,0 +1,4880 @@
+{
+  "version": 1,
+  "font_css_url": "https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400&display=swap",
+  "categories": [
+    "hero",
+    "content",
+    "columns",
+    "cards",
+    "pricing",
+    "social",
+    "interactive",
+    "conversion",
+    "utility"
+  ],
+  "blocks": [
+    {
+      "id": "hero-split",
+      "name": "Hero Split",
+      "category": "hero",
+      "desc": "Текст слева, картинка справа",
+      "file": "blocks/hero-split.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-hero-split__image img",
+          "default": "https://placehold.co/800x600/de6518/fff?text=Hero"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-hero-split__eyebrow",
+          "type": "text",
+          "default": "3-day painting intensive"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-hero-split__heading",
+          "type": "html",
+          "default": "Most watercolor teaching starts with technique. <strong>We start with what water wants to do.</strong>"
+        },
+        {
+          "key": "quote_attribution",
+          "selector": ".af-hero-split__attribution",
+          "type": "text",
+          "default": "That's what attendees say every time the instructor paints."
+        },
+        {
+          "key": "desc",
+          "selector": ".af-hero-split__desc",
+          "type": "html",
+          "default": "Join Nicolás López for 3 days of live painting sessions. Learn to see color, feel the brush, and trust the process."
+        },
+        {
+          "key": "highlight",
+          "selector": ".af-hero-split__highlight",
+          "type": "text",
+          "default": "You will get lifetime access to all event recordings."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-hero-split__btn--primary",
+          "type": "text",
+          "default": "Take part in the intensive"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-hero-split__btn--primary",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "img_src",
+          "selector": ".af-hero-split__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=600&fit=crop"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-hero-split__image img",
+          "type": "attr:alt",
+          "default": "Painting artwork"
+        }
+      ],
+      "recommended_next": [
+        "columns-3-icons",
+        "testimonials-grid",
+        "form"
+      ]
+    },
+    {
+      "id": "hero-split-reversed",
+      "name": "Hero Split Reversed",
+      "category": "hero",
+      "desc": "Картинка слева, текст справа",
+      "file": "blocks/hero-split-reversed.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-hero-splitr__image img",
+          "default": "https://placehold.co/800x600/de6518/fff?text=Hero"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-hero-splitr__eyebrow",
+          "type": "text",
+          "default": "Online watercolor course"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-hero-splitr__heading",
+          "type": "html",
+          "default": "Paint with confidence. <strong>Start from the very first lesson.</strong>"
+        },
+        {
+          "key": "desc",
+          "selector": ".af-hero-splitr__desc",
+          "type": "text",
+          "default": "A structured 8-week programme that takes you from blank page to finished artwork — with live feedback every step of the way."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-hero-splitr__btn--primary",
+          "type": "text",
+          "default": "Join the course"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-hero-splitr__btn--primary",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "ghost_text",
+          "selector": ".af-hero-splitr__btn--ghost",
+          "type": "text",
+          "default": "See the programme"
+        },
+        {
+          "key": "ghost_href",
+          "selector": ".af-hero-splitr__btn--ghost",
+          "type": "attr:href",
+          "default": "#programme"
+        },
+        {
+          "key": "img_src",
+          "selector": ".af-hero-splitr__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=600&fit=crop"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-hero-splitr__image img",
+          "type": "attr:alt",
+          "default": "Watercolor painting"
+        }
+      ],
+      "recommended_next": [
+        "columns-3-icons",
+        "testimonials-grid",
+        "form"
+      ]
+    },
+    {
+      "id": "hero-centered",
+      "name": "Hero Centered",
+      "category": "hero",
+      "desc": "Всё по центру, картинка снизу",
+      "file": "blocks/hero-centered.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-hero-center__image img",
+          "default": "https://placehold.co/1200x675/de6518/fff?text=Hero"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-hero-center__eyebrow",
+          "type": "text",
+          "default": "Online painting school"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-hero-center__heading",
+          "type": "html",
+          "default": "Learn to paint with <strong>world-class artists</strong>"
+        },
+        {
+          "key": "desc",
+          "selector": ".af-hero-center__desc",
+          "type": "text",
+          "default": "Join live painting sessions, get personal feedback, and develop your unique artistic voice — all from the comfort of your home."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-hero-center__btn--primary",
+          "type": "text",
+          "default": "Start learning today"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-hero-center__btn--primary",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "img_src",
+          "selector": ".af-hero-center__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1200&h=675&fit=crop"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-hero-center__image img",
+          "type": "attr:alt",
+          "default": "Art studio"
+        }
+      ],
+      "recommended_next": [
+        "columns-3-icons",
+        "testimonials-grid",
+        "form"
+      ]
+    },
+    {
+      "id": "hero-mosaic",
+      "name": "Hero Mosaic 2x2",
+      "category": "hero",
+      "desc": "Сетка картинок 2×2 + текст + CTA",
+      "file": "blocks/hero-mosaic.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-hero-mosaic__grid img:nth-child(1)",
+          "default": "https://placehold.co/400x300/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-hero-mosaic__grid img:nth-child(2)",
+          "default": "https://placehold.co/400x300/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-hero-mosaic__grid img:nth-child(3)",
+          "default": "https://placehold.co/400x300/de6518/fff?text=3"
+        },
+        {
+          "selector": ".af-hero-mosaic__grid img:nth-child(4)",
+          "default": "https://placehold.co/400x300/de6518/fff?text=4"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-hero-mosaic__eyebrow",
+          "type": "text",
+          "default": "3-day painting intensive"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-hero-mosaic__heading",
+          "type": "html",
+          "default": "Most watercolor teaching starts with technique. <strong>We start with what water wants to do.</strong>"
+        },
+        {
+          "key": "meta",
+          "selector": ".af-hero-mosaic__meta",
+          "type": "html",
+          "default": "<span>📅 12–14 May</span><span>⏱ 3 days</span><span>🖥 Online</span>"
+        },
+        {
+          "key": "highlight",
+          "selector": ".af-hero-mosaic__highlight",
+          "type": "text",
+          "default": "You will get lifetime access to all event recordings."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-hero-mosaic__btn",
+          "type": "text",
+          "default": "Take part in the intensive"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-hero-mosaic__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "img1_src",
+          "selector": ".af-hero-mosaic__grid img:nth-child(1)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "img1_alt",
+          "selector": ".af-hero-mosaic__grid img:nth-child(1)",
+          "type": "attr:alt",
+          "default": "Watercolor artwork 1"
+        },
+        {
+          "key": "img2_src",
+          "selector": ".af-hero-mosaic__grid img:nth-child(2)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "img2_alt",
+          "selector": ".af-hero-mosaic__grid img:nth-child(2)",
+          "type": "attr:alt",
+          "default": "Watercolor artwork 2"
+        },
+        {
+          "key": "img3_src",
+          "selector": ".af-hero-mosaic__grid img:nth-child(3)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "img3_alt",
+          "selector": ".af-hero-mosaic__grid img:nth-child(3)",
+          "type": "attr:alt",
+          "default": "Watercolor artwork 3"
+        },
+        {
+          "key": "img4_src",
+          "selector": ".af-hero-mosaic__grid img:nth-child(4)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "img4_alt",
+          "selector": ".af-hero-mosaic__grid img:nth-child(4)",
+          "type": "attr:alt",
+          "default": "Watercolor artwork 4"
+        }
+      ],
+      "recommended_next": [
+        "columns-3-icons",
+        "testimonials-grid",
+        "form"
+      ]
+    },
+    {
+      "id": "hero-mosaic-strip",
+      "name": "Hero Mosaic Strip",
+      "category": "hero",
+      "desc": "4 картинки в ряд + текст (компактный)",
+      "file": "blocks/hero-mosaic-strip.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-hero-strip__photos img:nth-child(1)",
+          "default": "https://placehold.co/300x200/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-hero-strip__photos img:nth-child(2)",
+          "default": "https://placehold.co/300x200/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-hero-strip__photos img:nth-child(3)",
+          "default": "https://placehold.co/300x200/de6518/fff?text=3"
+        },
+        {
+          "selector": ".af-hero-strip__photos img:nth-child(4)",
+          "default": "https://placehold.co/300x200/de6518/fff?text=4"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-hero-strip__eyebrow",
+          "type": "text",
+          "default": "3-day painting intensive"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-hero-strip__heading",
+          "type": "html",
+          "default": "Most watercolor teaching starts with technique. <strong>We start with what water wants to do.</strong>"
+        },
+        {
+          "key": "meta",
+          "selector": ".af-hero-strip__meta",
+          "type": "html",
+          "default": "<span>📅 12–14 May</span><span>⏱ 3 days</span><span>🖥 Online</span>"
+        },
+        {
+          "key": "highlight",
+          "selector": ".af-hero-strip__highlight",
+          "type": "text",
+          "default": "You will get lifetime access to all event recordings."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-hero-strip__btn",
+          "type": "text",
+          "default": "Take part in the intensive"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-hero-strip__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "img1_src",
+          "selector": ".af-hero-strip__photos img:nth-child(1)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=300&h=200&fit=crop"
+        },
+        {
+          "key": "img1_alt",
+          "selector": ".af-hero-strip__photos img:nth-child(1)",
+          "type": "attr:alt",
+          "default": "Artwork 1"
+        },
+        {
+          "key": "img2_src",
+          "selector": ".af-hero-strip__photos img:nth-child(2)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=300&h=200&fit=crop"
+        },
+        {
+          "key": "img2_alt",
+          "selector": ".af-hero-strip__photos img:nth-child(2)",
+          "type": "attr:alt",
+          "default": "Artwork 2"
+        },
+        {
+          "key": "img3_src",
+          "selector": ".af-hero-strip__photos img:nth-child(3)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=300&h=200&fit=crop"
+        },
+        {
+          "key": "img3_alt",
+          "selector": ".af-hero-strip__photos img:nth-child(3)",
+          "type": "attr:alt",
+          "default": "Artwork 3"
+        },
+        {
+          "key": "img4_src",
+          "selector": ".af-hero-strip__photos img:nth-child(4)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=300&h=200&fit=crop"
+        },
+        {
+          "key": "img4_alt",
+          "selector": ".af-hero-strip__photos img:nth-child(4)",
+          "type": "attr:alt",
+          "default": "Artwork 4"
+        }
+      ],
+      "recommended_next": [
+        "columns-3-icons",
+        "testimonials-grid",
+        "form"
+      ]
+    },
+    {
+      "id": "hero-mosaic-collage",
+      "name": "Hero Mosaic Collage",
+      "category": "hero",
+      "desc": "Наложенные картинки-коллаж + текст сбоку",
+      "file": "blocks/hero-mosaic-collage.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-hero-collage__photos img:nth-child(1)",
+          "default": "https://placehold.co/400x300/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-hero-collage__photos img:nth-child(2)",
+          "default": "https://placehold.co/400x300/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-hero-collage__photos img:nth-child(3)",
+          "default": "https://placehold.co/400x300/de6518/fff?text=3"
+        },
+        {
+          "selector": ".af-hero-collage__photos img:nth-child(4)",
+          "default": "https://placehold.co/400x300/de6518/fff?text=4"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-hero-collage__eyebrow",
+          "type": "text",
+          "default": "3-day painting intensive"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-hero-collage__heading",
+          "type": "html",
+          "default": "Most watercolor teaching starts with technique. <strong>We start with what water wants to do.</strong>"
+        },
+        {
+          "key": "meta",
+          "selector": ".af-hero-collage__meta",
+          "type": "html",
+          "default": "<span>📅 12–14 May</span><span>⏱ 3 days</span><span>🖥 Online</span>"
+        },
+        {
+          "key": "highlight",
+          "selector": ".af-hero-collage__highlight",
+          "type": "text",
+          "default": "You will get lifetime access to all event recordings."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-hero-collage__btn",
+          "type": "text",
+          "default": "Take part in the intensive"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-hero-collage__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "img1_src",
+          "selector": ".af-hero-collage__photos img:nth-child(1)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "img1_alt",
+          "selector": ".af-hero-collage__photos img:nth-child(1)",
+          "type": "attr:alt",
+          "default": "Artwork 1"
+        },
+        {
+          "key": "img2_src",
+          "selector": ".af-hero-collage__photos img:nth-child(2)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "img2_alt",
+          "selector": ".af-hero-collage__photos img:nth-child(2)",
+          "type": "attr:alt",
+          "default": "Artwork 2"
+        },
+        {
+          "key": "img3_src",
+          "selector": ".af-hero-collage__photos img:nth-child(3)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1541367777708-7905fe3296c0?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "img3_alt",
+          "selector": ".af-hero-collage__photos img:nth-child(3)",
+          "type": "attr:alt",
+          "default": "Artwork 3"
+        },
+        {
+          "key": "img4_src",
+          "selector": ".af-hero-collage__photos img:nth-child(4)",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "img4_alt",
+          "selector": ".af-hero-collage__photos img:nth-child(4)",
+          "type": "attr:alt",
+          "default": "Artwork 4"
+        }
+      ],
+      "recommended_next": [
+        "columns-3-icons",
+        "testimonials-grid",
+        "form"
+      ]
+    },
+    {
+      "id": "hero-fullbg",
+      "name": "Hero Full Background",
+      "category": "hero",
+      "desc": "Текст поверх фоновой картинки",
+      "file": "blocks/hero-fullbg.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-hero-bg__bg img",
+          "default": "https://placehold.co/1600x900/de6518/fff?text=Hero"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-hero-bg__eyebrow",
+          "type": "text",
+          "default": "3-day intensive"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-hero-bg__heading",
+          "type": "text",
+          "default": "Watercolor Masterclass with Nicolás López"
+        },
+        {
+          "key": "desc",
+          "selector": ".af-hero-bg__desc",
+          "type": "text",
+          "default": "Three days of live painting, personal guidance, and artistic transformation. April 2–4, 2026."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-hero-bg__btn",
+          "type": "text",
+          "default": "Reserve your spot"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-hero-bg__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "img_src",
+          "selector": ".af-hero-bg__bg img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1600&h=900&fit=crop"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-hero-bg__bg img",
+          "type": "attr:alt",
+          "default": "Background"
+        }
+      ],
+      "recommended_next": [
+        "columns-3-icons",
+        "testimonials-grid",
+        "form"
+      ]
+    },
+    {
+      "id": "image-text-left",
+      "name": "Image Left + Text",
+      "category": "content",
+      "desc": "Картинка слева, текст справа",
+      "file": "blocks/image-text-left.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-imgtxt-l__image img",
+          "default": "https://placehold.co/800x600/de6518/fff?text=Image"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-imgtxt-l__eyebrow",
+          "type": "text",
+          "default": "About the course"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-imgtxt-l__heading",
+          "type": "text",
+          "default": "What you'll learn in 3 days"
+        },
+        {
+          "key": "text",
+          "selector": ".af-imgtxt-l__text",
+          "type": "text",
+          "default": "Each session builds on the previous one, guiding you from fundamentals to your own artistic expression."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-imgtxt-l__btn",
+          "type": "text",
+          "default": "Join now"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-imgtxt-l__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "img_src",
+          "selector": ".af-imgtxt-l__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&h=600&fit=crop"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-imgtxt-l__image img",
+          "type": "attr:alt",
+          "default": "Art studio"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "image-text-right",
+      "name": "Image Right + Text",
+      "category": "content",
+      "desc": "Текст слева, картинка справа",
+      "file": "blocks/image-text-right.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-imgtxt-r__image img",
+          "default": "https://placehold.co/800x600/de6518/fff?text=Image"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-imgtxt-r__eyebrow",
+          "type": "text",
+          "default": "About the instructor"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-imgtxt-r__heading",
+          "type": "text",
+          "default": "Nicolás López — master of watercolor landscapes"
+        },
+        {
+          "key": "text1",
+          "selector": ".af-imgtxt-r__text:nth-of-type(1)",
+          "type": "text",
+          "default": "With over 20 years of painting experience and students across 30 countries, Nicolás brings a unique philosophy: listen to the water first, then guide it."
+        },
+        {
+          "key": "text2",
+          "selector": ".af-imgtxt-r__text:nth-of-type(2)",
+          "type": "text",
+          "default": "His work has been exhibited in galleries in Madrid, Buenos Aires, and Berlin."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-imgtxt-r__btn",
+          "type": "text",
+          "default": "Learn more"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-imgtxt-r__btn",
+          "type": "attr:href",
+          "default": "#about"
+        },
+        {
+          "key": "img_src",
+          "selector": ".af-imgtxt-r__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=800&h=600&fit=crop"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-imgtxt-r__image img",
+          "type": "attr:alt",
+          "default": "Instructor"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "image-top-text",
+      "name": "Image Top + Text",
+      "category": "content",
+      "desc": "Картинка сверху, текст снизу",
+      "file": "blocks/image-top-text.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-imgtop__image img",
+          "default": "https://placehold.co/1000x562/de6518/fff?text=Image"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "img_src",
+          "selector": ".af-imgtop__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=1000&h=562&fit=crop"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-imgtop__image img",
+          "type": "attr:alt",
+          "default": "Art workshop"
+        },
+        {
+          "key": "eyebrow",
+          "selector": ".af-imgtop__eyebrow",
+          "type": "text",
+          "default": "Our studio"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-imgtop__heading",
+          "type": "text",
+          "default": "A space where creativity flows"
+        },
+        {
+          "key": "text",
+          "selector": ".af-imgtop__text",
+          "type": "text",
+          "default": "Our online studio recreates the warmth and intimacy of a real atelier. Small groups, personal attention, and a community of artists who support each other's growth."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "text-block",
+      "name": "Text Block",
+      "category": "content",
+      "desc": "Заголовок + текст, без картинки",
+      "file": "blocks/text-block.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "eyebrow",
+          "selector": ".af-textblock__eyebrow",
+          "type": "text",
+          "default": "Our philosophy"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-textblock__heading",
+          "type": "text",
+          "default": "Why we start with what water wants to do"
+        },
+        {
+          "key": "text",
+          "selector": ".af-textblock__text",
+          "type": "html",
+          "default": "<p>Most watercolor teaching begins with technique: how to hold the brush, how to mix colors, how to control the wash. <strong>We start differently.</strong></p><p>Water has its own intelligence. When you learn to observe how it moves on paper — how it pools, spreads, and dries — you begin to work <strong>with</strong> the medium rather than against it.</p><p>This shift in perspective is what transforms a technical exercise into genuine art. It's the difference between painting by numbers and painting from the heart.</p>"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "columns-2-icons",
+      "name": "2 Columns + Icons",
+      "category": "columns",
+      "desc": "Две колонки с иконками",
+      "file": "blocks/columns-2-icons.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cols2i__heading",
+          "type": "text",
+          "default": "Two paths to mastery"
+        },
+        {
+          "key": "col1_icon",
+          "selector": ".af-cols2i__card:nth-child(1) .af-cols2i__icon",
+          "type": "text",
+          "default": "🎯"
+        },
+        {
+          "key": "col1_title",
+          "selector": ".af-cols2i__card:nth-child(1) .af-cols2i__card-title",
+          "type": "text",
+          "default": "For Beginners"
+        },
+        {
+          "key": "col1_text",
+          "selector": ".af-cols2i__card:nth-child(1) .af-cols2i__card-text",
+          "type": "text",
+          "default": "Start your artistic journey with guided exercises. No experience needed — just curiosity and willingness to explore color and water."
+        },
+        {
+          "key": "col2_icon",
+          "selector": ".af-cols2i__card:nth-child(2) .af-cols2i__icon",
+          "type": "text",
+          "default": "🚀"
+        },
+        {
+          "key": "col2_title",
+          "selector": ".af-cols2i__card:nth-child(2) .af-cols2i__card-title",
+          "type": "text",
+          "default": "For Experienced Painters"
+        },
+        {
+          "key": "col2_text",
+          "selector": ".af-cols2i__card:nth-child(2) .af-cols2i__card-text",
+          "type": "text",
+          "default": "Break through your plateau with advanced techniques and Nicolás's unique philosophy of \"listening to the water.\""
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "columns-3-icons",
+      "name": "3 Columns + Icons",
+      "category": "columns",
+      "desc": "Три колонки с иконками",
+      "file": "blocks/columns-3-icons.html.j2",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cols3i__heading",
+          "type": "text",
+          "default": "What you'll discover"
+        }
+      ],
+      "recommended_next": [
+        "testimonials-grid",
+        "cta-simple",
+        "form"
+      ],
+      "template_engine": "jinja2",
+      "min_items": 2,
+      "max_items": 4,
+      "repeater_item_schema": [
+        {
+          "key": "icon",
+          "type": "text",
+          "required": false,
+          "default": "⭐",
+          "description": "Emoji or short icon"
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Column title"
+        },
+        {
+          "key": "text",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Column body text"
+        }
+      ]
+    },
+    {
+      "id": "paintings-showcase",
+      "name": "Paintings Showcase",
+      "category": "value-prop",
+      "desc": "Sequential full-width painting + caption sections; orientation-aware (vertical: image|text side-by-side on desktop; horizontal: image above text)",
+      "file": "blocks/paintings-showcase.html.j2",
+      "has_form": false,
+      "has_script": false,
+      "singleton": true,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-paintings__heading",
+          "type": "text",
+          "default": "What you'll learn"
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-cta-btn",
+          "type": "text",
+          "default": "Register for free →"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-cta-btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": [
+        "instructor-bio",
+        "checklist",
+        "testimonials-grid",
+        "cta-simple"
+      ],
+      "template_engine": "jinja2",
+      "min_items": 2,
+      "max_items": 6,
+      "repeater_item_schema": [
+        {
+          "key": "image_url",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Absolute URL to the painting image"
+        },
+        {
+          "key": "image_alt",
+          "type": "text",
+          "required": false,
+          "default": "",
+          "description": "Alt text; falls back to title if empty"
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Lesson title (e.g. 'Linear perspective, simplified')"
+        },
+        {
+          "key": "text",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "One-paragraph caption describing what this painting / lesson teaches"
+        },
+        {
+          "key": "orientation",
+          "type": "text",
+          "required": false,
+          "default": "horizontal",
+          "description": "Image orientation hint for layout: 'vertical' (portrait, desktop = image|text side-by-side) or 'horizontal' (landscape, image above text). Default horizontal."
+        }
+      ]
+    },
+    {
+      "id": "columns-4-icons",
+      "name": "4 Columns + Icons",
+      "category": "columns",
+      "desc": "Четыре колонки с иконками",
+      "file": "blocks/columns-4-icons.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cols4i__heading",
+          "type": "text",
+          "default": "What makes us different"
+        },
+        {
+          "key": "col1_icon",
+          "selector": ".af-cols4i__card:nth-child(1) .af-cols4i__icon",
+          "type": "text",
+          "default": "🎨"
+        },
+        {
+          "key": "col1_title",
+          "selector": ".af-cols4i__card:nth-child(1) .af-cols4i__card-title",
+          "type": "text",
+          "default": "Live Sessions"
+        },
+        {
+          "key": "col1_text",
+          "selector": ".af-cols4i__card:nth-child(1) .af-cols4i__card-text",
+          "type": "text",
+          "default": "Real-time painting with a master artist"
+        },
+        {
+          "key": "col2_icon",
+          "selector": ".af-cols4i__card:nth-child(2) .af-cols4i__icon",
+          "type": "text",
+          "default": "💬"
+        },
+        {
+          "key": "col2_title",
+          "selector": ".af-cols4i__card:nth-child(2) .af-cols4i__card-title",
+          "type": "text",
+          "default": "Personal Feedback"
+        },
+        {
+          "key": "col2_text",
+          "selector": ".af-cols4i__card:nth-child(2) .af-cols4i__card-text",
+          "type": "text",
+          "default": "Individual critique of your work"
+        },
+        {
+          "key": "col3_icon",
+          "selector": ".af-cols4i__card:nth-child(3) .af-cols4i__icon",
+          "type": "text",
+          "default": "📹"
+        },
+        {
+          "key": "col3_title",
+          "selector": ".af-cols4i__card:nth-child(3) .af-cols4i__card-title",
+          "type": "text",
+          "default": "Recordings"
+        },
+        {
+          "key": "col3_text",
+          "selector": ".af-cols4i__card:nth-child(3) .af-cols4i__card-text",
+          "type": "text",
+          "default": "Lifetime access to all sessions"
+        },
+        {
+          "key": "col4_icon",
+          "selector": ".af-cols4i__card:nth-child(4) .af-cols4i__icon",
+          "type": "text",
+          "default": "🤝"
+        },
+        {
+          "key": "col4_title",
+          "selector": ".af-cols4i__card:nth-child(4) .af-cols4i__card-title",
+          "type": "text",
+          "default": "Community"
+        },
+        {
+          "key": "col4_text",
+          "selector": ".af-cols4i__card:nth-child(4) .af-cols4i__card-text",
+          "type": "text",
+          "default": "Join a group of like-minded artists"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "columns-2-images",
+      "name": "2 Columns + Images",
+      "category": "columns",
+      "desc": "Две колонки с картинками",
+      "file": "blocks/columns-2-images.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-cols2img__card:nth-child(1) img",
+          "default": "https://placehold.co/600x375/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-cols2img__card:nth-child(2) img",
+          "default": "https://placehold.co/600x375/de6518/fff?text=2"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cols2img__heading",
+          "type": "text",
+          "default": "Our courses"
+        },
+        {
+          "key": "card1_img_src",
+          "selector": ".af-cols2img__card:nth-child(1) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=375&fit=crop"
+        },
+        {
+          "key": "card1_img_alt",
+          "selector": ".af-cols2img__card:nth-child(1) img",
+          "type": "attr:alt",
+          "default": "Watercolor"
+        },
+        {
+          "key": "card1_title",
+          "selector": ".af-cols2img__card:nth-child(1) .af-cols2img__card-title",
+          "type": "text",
+          "default": "Watercolor Fundamentals"
+        },
+        {
+          "key": "card1_text",
+          "selector": ".af-cols2img__card:nth-child(1) .af-cols2img__card-text",
+          "type": "text",
+          "default": "Master the basics of watercolor painting — from color mixing to wet-on-wet techniques."
+        },
+        {
+          "key": "card2_img_src",
+          "selector": ".af-cols2img__card:nth-child(2) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=375&fit=crop"
+        },
+        {
+          "key": "card2_img_alt",
+          "selector": ".af-cols2img__card:nth-child(2) img",
+          "type": "attr:alt",
+          "default": "Oil painting"
+        },
+        {
+          "key": "card2_title",
+          "selector": ".af-cols2img__card:nth-child(2) .af-cols2img__card-title",
+          "type": "text",
+          "default": "Oil Painting Masterclass"
+        },
+        {
+          "key": "card2_text",
+          "selector": ".af-cols2img__card:nth-child(2) .af-cols2img__card-text",
+          "type": "text",
+          "default": "Learn classical oil painting techniques from still life to landscapes with professional guidance."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "columns-3-images",
+      "name": "3 Columns + Images",
+      "category": "columns",
+      "desc": "Три колонки с картинками",
+      "file": "blocks/columns-3-images.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-cols3img__card:nth-child(1) img",
+          "default": "https://placehold.co/500x375/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-cols3img__card:nth-child(2) img",
+          "default": "https://placehold.co/500x375/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-cols3img__card:nth-child(3) img",
+          "default": "https://placehold.co/500x375/de6518/fff?text=3"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cols3img__heading",
+          "type": "text",
+          "default": "Student galleries"
+        },
+        {
+          "key": "card1_img_src",
+          "selector": ".af-cols3img__card:nth-child(1) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=500&h=375&fit=crop"
+        },
+        {
+          "key": "card1_img_alt",
+          "selector": ".af-cols3img__card:nth-child(1) img",
+          "type": "attr:alt",
+          "default": "Landscape"
+        },
+        {
+          "key": "card1_title",
+          "selector": ".af-cols3img__card:nth-child(1) .af-cols3img__card-title",
+          "type": "text",
+          "default": "Landscapes"
+        },
+        {
+          "key": "card1_text",
+          "selector": ".af-cols3img__card:nth-child(1) .af-cols3img__card-text",
+          "type": "text",
+          "default": "Moody skies, reflections, and atmospheric depth."
+        },
+        {
+          "key": "card2_img_src",
+          "selector": ".af-cols3img__card:nth-child(2) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=375&fit=crop"
+        },
+        {
+          "key": "card2_img_alt",
+          "selector": ".af-cols3img__card:nth-child(2) img",
+          "type": "attr:alt",
+          "default": "Abstract"
+        },
+        {
+          "key": "card2_title",
+          "selector": ".af-cols3img__card:nth-child(2) .af-cols3img__card-title",
+          "type": "text",
+          "default": "Abstracts"
+        },
+        {
+          "key": "card2_text",
+          "selector": ".af-cols3img__card:nth-child(2) .af-cols3img__card-text",
+          "type": "text",
+          "default": "Color exploration and experimental techniques."
+        },
+        {
+          "key": "card3_img_src",
+          "selector": ".af-cols3img__card:nth-child(3) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=500&h=375&fit=crop"
+        },
+        {
+          "key": "card3_img_alt",
+          "selector": ".af-cols3img__card:nth-child(3) img",
+          "type": "attr:alt",
+          "default": "Portraits"
+        },
+        {
+          "key": "card3_title",
+          "selector": ".af-cols3img__card:nth-child(3) .af-cols3img__card-title",
+          "type": "text",
+          "default": "Portraits"
+        },
+        {
+          "key": "card3_text",
+          "selector": ".af-cols3img__card:nth-child(3) .af-cols3img__card-text",
+          "type": "text",
+          "default": "Capturing emotion through watercolor portraits."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "cards-paintings",
+      "name": "Cards with Paintings",
+      "category": "cards",
+      "desc": "Три карточки с картинами сверху и текстом",
+      "file": "blocks/cards-paintings.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-cards-paint__card:nth-child(1) .af-cards-paint__img",
+          "default": "https://placehold.co/500x375/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-cards-paint__card:nth-child(2) .af-cards-paint__img",
+          "default": "https://placehold.co/500x375/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-cards-paint__card:nth-child(3) .af-cards-paint__img",
+          "default": "https://placehold.co/500x375/de6518/fff?text=3"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cards-paint__heading",
+          "type": "text",
+          "default": "What you'll discover"
+        },
+        {
+          "key": "card1_img_src",
+          "selector": ".af-cards-paint__card:nth-child(1) .af-cards-paint__img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=500&h=375&fit=crop"
+        },
+        {
+          "key": "card1_img_alt",
+          "selector": ".af-cards-paint__card:nth-child(1) .af-cards-paint__img",
+          "type": "attr:alt",
+          "default": "Watercolor landscape with atmospheric sky and soft reflections"
+        },
+        {
+          "key": "card1_title",
+          "selector": ".af-cards-paint__card:nth-child(1) .af-cards-paint__title",
+          "type": "text",
+          "default": "A new way of seeing"
+        },
+        {
+          "key": "card1_text",
+          "selector": ".af-cards-paint__card:nth-child(1) .af-cards-paint__text",
+          "type": "text",
+          "default": "Learn what matters in a scene and what to let go of. See light, shapes, and color like an artist."
+        },
+        {
+          "key": "card2_img_src",
+          "selector": ".af-cards-paint__card:nth-child(2) .af-cards-paint__img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=375&fit=crop"
+        },
+        {
+          "key": "card2_img_alt",
+          "selector": ".af-cards-paint__card:nth-child(2) .af-cards-paint__img",
+          "type": "attr:alt",
+          "default": "Colorful watercolor painting with expressive brushstrokes"
+        },
+        {
+          "key": "card2_title",
+          "selector": ".af-cards-paint__card:nth-child(2) .af-cards-paint__title",
+          "type": "text",
+          "default": "A painting of your own"
+        },
+        {
+          "key": "card2_text",
+          "selector": ".af-cards-paint__card:nth-child(2) .af-cards-paint__text",
+          "type": "text",
+          "default": "Paint a complete scene live, from start to finish. Follow along and create something you're proud of."
+        },
+        {
+          "key": "card3_img_src",
+          "selector": ".af-cards-paint__card:nth-child(3) .af-cards-paint__img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=500&h=375&fit=crop"
+        },
+        {
+          "key": "card3_img_alt",
+          "selector": ".af-cards-paint__card:nth-child(3) .af-cards-paint__img",
+          "type": "attr:alt",
+          "default": "Detailed watercolor artwork showing refined technique"
+        },
+        {
+          "key": "card3_title",
+          "selector": ".af-cards-paint__card:nth-child(3) .af-cards-paint__title",
+          "type": "text",
+          "default": "Feedback from Andy on your work"
+        },
+        {
+          "key": "card3_text",
+          "selector": ".af-cards-paint__card:nth-child(3) .af-cards-paint__text",
+          "type": "text",
+          "default": "Submit your painting on Day 2 and hear what he sees. Personal, encouraging, and specific."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "cards-badges",
+      "name": "Cards with Badges",
+      "category": "cards",
+      "desc": "Карточки со стикерами",
+      "file": "blocks/cards-badges.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cardsbdg__heading",
+          "type": "text",
+          "default": "Course formats"
+        },
+        {
+          "key": "card1_badge",
+          "selector": ".af-cardsbdg__card:nth-child(1) .af-cardsbdg__badge",
+          "type": "text",
+          "default": "Popular"
+        },
+        {
+          "key": "card1_icon",
+          "selector": ".af-cardsbdg__card:nth-child(1) .af-cardsbdg__icon",
+          "type": "text",
+          "default": "🎨"
+        },
+        {
+          "key": "card1_title",
+          "selector": ".af-cardsbdg__card:nth-child(1) .af-cardsbdg__card-title",
+          "type": "text",
+          "default": "Group Online"
+        },
+        {
+          "key": "card1_text",
+          "selector": ".af-cardsbdg__card:nth-child(1) .af-cardsbdg__card-text",
+          "type": "text",
+          "default": "Live sessions with up to 12 students. Interactive format with Q&A."
+        },
+        {
+          "key": "card2_badge",
+          "selector": ".af-cardsbdg__card:nth-child(2) .af-cardsbdg__badge",
+          "type": "text",
+          "default": "New"
+        },
+        {
+          "key": "card2_icon",
+          "selector": ".af-cardsbdg__card:nth-child(2) .af-cardsbdg__icon",
+          "type": "text",
+          "default": "👤"
+        },
+        {
+          "key": "card2_title",
+          "selector": ".af-cardsbdg__card:nth-child(2) .af-cardsbdg__card-title",
+          "type": "text",
+          "default": "1-on-1 Coaching"
+        },
+        {
+          "key": "card2_text",
+          "selector": ".af-cardsbdg__card:nth-child(2) .af-cardsbdg__card-text",
+          "type": "text",
+          "default": "Private sessions with Nicolás. Fully customized to your level and goals."
+        },
+        {
+          "key": "card3_icon",
+          "selector": ".af-cardsbdg__card:nth-child(3) .af-cardsbdg__icon",
+          "type": "text",
+          "default": "📹"
+        },
+        {
+          "key": "card3_title",
+          "selector": ".af-cardsbdg__card:nth-child(3) .af-cardsbdg__card-title",
+          "type": "text",
+          "default": "Self-Paced"
+        },
+        {
+          "key": "card3_text",
+          "selector": ".af-cardsbdg__card:nth-child(3) .af-cardsbdg__card-text",
+          "type": "text",
+          "default": "Watch recordings at your own speed with weekly assignments and feedback."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "pricing-horizontal",
+      "name": "Pricing Horizontal",
+      "category": "pricing",
+      "desc": "Тарифы горизонтально",
+      "file": "blocks/pricing-horizontal.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-pricingh__heading",
+          "type": "text",
+          "default": "Plans & pricing"
+        },
+        {
+          "key": "plan1_name",
+          "selector": ".af-pricingh__card:nth-child(1) .af-pricingh__name",
+          "type": "text",
+          "default": "Recording Only"
+        },
+        {
+          "key": "plan1_desc",
+          "selector": ".af-pricingh__card:nth-child(1) .af-pricingh__desc",
+          "type": "text",
+          "default": "Watch at your own pace"
+        },
+        {
+          "key": "plan1_price",
+          "selector": ".af-pricingh__card:nth-child(1) .af-pricingh__price",
+          "type": "text",
+          "default": "€49"
+        },
+        {
+          "key": "plan1_cta_href",
+          "selector": ".af-pricingh__card:nth-child(1) .af-pricingh__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "plan2_name",
+          "selector": ".af-pricingh__card:nth-child(2) .af-pricingh__name",
+          "type": "text",
+          "default": "Live + Recording"
+        },
+        {
+          "key": "plan2_desc",
+          "selector": ".af-pricingh__card:nth-child(2) .af-pricingh__desc",
+          "type": "text",
+          "default": "Join live sessions with Q&A"
+        },
+        {
+          "key": "plan2_price",
+          "selector": ".af-pricingh__card:nth-child(2) .af-pricingh__price",
+          "type": "text",
+          "default": "€89"
+        },
+        {
+          "key": "plan2_cta_href",
+          "selector": ".af-pricingh__card:nth-child(2) .af-pricingh__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "plan3_name",
+          "selector": ".af-pricingh__card:nth-child(3) .af-pricingh__name",
+          "type": "text",
+          "default": "VIP Experience"
+        },
+        {
+          "key": "plan3_desc",
+          "selector": ".af-pricingh__card:nth-child(3) .af-pricingh__desc",
+          "type": "text",
+          "default": "Everything + personal feedback"
+        },
+        {
+          "key": "plan3_price",
+          "selector": ".af-pricingh__card:nth-child(3) .af-pricingh__price",
+          "type": "text",
+          "default": "€149"
+        },
+        {
+          "key": "plan3_cta_href",
+          "selector": ".af-pricingh__card:nth-child(3) .af-pricingh__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "pricing-toggle",
+      "name": "Pricing Toggle",
+      "category": "pricing",
+      "desc": "Тарифы с переключателем скидки",
+      "file": "blocks/pricing-toggle.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": true,
+      "global_ids": [
+        "afPtSwitch"
+      ],
+      "global_fn": [
+        "window.afPtToggle"
+      ],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-ptoggle__heading",
+          "type": "text",
+          "default": "Choose your plan"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-ptoggle__sub",
+          "type": "text",
+          "default": "All plans include lifetime recording access"
+        },
+        {
+          "key": "card1_name",
+          "selector": ".af-ptoggle__card:nth-child(1) .af-ptoggle__name",
+          "type": "text",
+          "default": "Recording Only"
+        },
+        {
+          "key": "card1_desc",
+          "selector": ".af-ptoggle__card:nth-child(1) .af-ptoggle__desc",
+          "type": "text",
+          "default": "Watch at your own pace"
+        },
+        {
+          "key": "card1_cta_href",
+          "selector": ".af-ptoggle__card:nth-child(1) .af-ptoggle__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "card2_name",
+          "selector": ".af-ptoggle__card:nth-child(2) .af-ptoggle__name",
+          "type": "text",
+          "default": "Live + Recording"
+        },
+        {
+          "key": "card2_desc",
+          "selector": ".af-ptoggle__card:nth-child(2) .af-ptoggle__desc",
+          "type": "text",
+          "default": "Full interactive experience"
+        },
+        {
+          "key": "card2_cta_href",
+          "selector": ".af-ptoggle__card:nth-child(2) .af-ptoggle__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "card3_name",
+          "selector": ".af-ptoggle__card:nth-child(3) .af-ptoggle__name",
+          "type": "text",
+          "default": "VIP Experience"
+        },
+        {
+          "key": "card3_desc",
+          "selector": ".af-ptoggle__card:nth-child(3) .af-ptoggle__desc",
+          "type": "text",
+          "default": "Personal guidance from Nicolás"
+        },
+        {
+          "key": "card3_cta_href",
+          "selector": ".af-ptoggle__card:nth-child(3) .af-ptoggle__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "pricing-2",
+      "name": "Pricing 2 Plans",
+      "category": "pricing",
+      "desc": "Два тарифных плана в виде карточек",
+      "file": "blocks/pricing-2.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": true,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-pricing2__heading",
+          "type": "text",
+          "default": "Choose your plan"
+        },
+        {
+          "key": "tier1_name",
+          "selector": ".af-pricing2__card:nth-child(1) .af-pricing2__name",
+          "type": "text",
+          "default": "Standard"
+        },
+        {
+          "key": "tier1_price",
+          "selector": ".af-pricing2__card:nth-child(1) .af-pricing2__price",
+          "type": "text",
+          "default": "€49"
+        },
+        {
+          "key": "tier1_period",
+          "selector": ".af-pricing2__card:nth-child(1) .af-pricing2__period",
+          "type": "text",
+          "default": "one-time"
+        },
+        {
+          "key": "tier1_cta_href",
+          "selector": ".af-pricing2__card:nth-child(1) .af-pricing2__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "tier2_name",
+          "selector": ".af-pricing2__card:nth-child(2) .af-pricing2__name",
+          "type": "text",
+          "default": "Live + Recording"
+        },
+        {
+          "key": "tier2_price",
+          "selector": ".af-pricing2__card:nth-child(2) .af-pricing2__price",
+          "type": "text",
+          "default": "€89"
+        },
+        {
+          "key": "tier2_period",
+          "selector": ".af-pricing2__card:nth-child(2) .af-pricing2__period",
+          "type": "text",
+          "default": "one-time"
+        },
+        {
+          "key": "tier2_cta_href",
+          "selector": ".af-pricing2__card:nth-child(2) .af-pricing2__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": [
+        "form"
+      ]
+    },
+    {
+      "id": "testimonials-grid",
+      "name": "Testimonials Grid",
+      "category": "social",
+      "desc": "Отзывы сеткой 2 колонки",
+      "file": "blocks/testimonials-grid.html.j2",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-testgrid__heading",
+          "type": "text",
+          "default": "What our students say"
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-cta-btn",
+          "type": "text",
+          "default": "Register for free →"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-cta-btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": [
+        "cta-simple",
+        "pricing-2",
+        "form"
+      ],
+      "template_engine": "jinja2",
+      "min_items": 3,
+      "max_items": 8,
+      "repeater_item_schema": [
+        {
+          "key": "quote",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Testimonial quote text"
+        },
+        {
+          "key": "name",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Author name"
+        },
+        {
+          "key": "role",
+          "type": "text",
+          "required": false,
+          "default": "",
+          "description": "Author role"
+        },
+        {
+          "key": "avatar_src",
+          "type": "src",
+          "required": false,
+          "default": "",
+          "description": "Avatar image URL"
+        },
+        {
+          "key": "avatar_alt",
+          "type": "attr:alt",
+          "required": false,
+          "default": "",
+          "description": "Avatar alt text"
+        }
+      ]
+    },
+    {
+      "id": "testimonial-quote",
+      "name": "Big Quote",
+      "category": "social",
+      "desc": "Большая цитата-отзыв",
+      "file": "blocks/testimonial-quote.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "text",
+          "selector": ".af-bigquote__text",
+          "type": "text",
+          "default": "This intensive didn't just teach me watercolor technique — it taught me to see the world differently. Every puddle, every rain-streaked window is now a painting waiting to happen."
+        },
+        {
+          "key": "avatar_src",
+          "selector": ".af-bigquote__avatar",
+          "type": "src",
+          "default": "https://i.pravatar.cc/128?img=12"
+        },
+        {
+          "key": "avatar_alt",
+          "selector": ".af-bigquote__avatar",
+          "type": "attr:alt",
+          "default": "Avatar"
+        },
+        {
+          "key": "name",
+          "selector": ".af-bigquote__name",
+          "type": "text",
+          "default": "Elena Voronova"
+        },
+        {
+          "key": "role",
+          "selector": ".af-bigquote__role",
+          "type": "text",
+          "default": "VIP Student, Autumn 2025"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "testimonials-photos",
+      "name": "Testimonials + Photos",
+      "category": "social",
+      "desc": "Отзывы с фото и звёздами",
+      "file": "blocks/testimonials-photos.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-testphotos__card:nth-child(1) img",
+          "default": "https://placehold.co/500x375/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-testphotos__card:nth-child(2) img",
+          "default": "https://placehold.co/500x375/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-testphotos__card:nth-child(3) img",
+          "default": "https://placehold.co/500x375/de6518/fff?text=3"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-testphotos__heading",
+          "type": "text",
+          "default": "Student results"
+        },
+        {
+          "key": "t1_img_src",
+          "selector": ".af-testphotos__card:nth-child(1) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=500&h=375&fit=crop"
+        },
+        {
+          "key": "t1_img_alt",
+          "selector": ".af-testphotos__card:nth-child(1) img",
+          "type": "attr:alt",
+          "default": "Student work"
+        },
+        {
+          "key": "t1_quote",
+          "selector": ".af-testphotos__card:nth-child(1) .af-testphotos__quote",
+          "type": "text",
+          "default": "\"My first watercolor ever! I can't believe I painted this.\""
+        },
+        {
+          "key": "t1_name",
+          "selector": ".af-testphotos__card:nth-child(1) .af-testphotos__name",
+          "type": "text",
+          "default": "Sarah M."
+        },
+        {
+          "key": "t1_role",
+          "selector": ".af-testphotos__card:nth-child(1) .af-testphotos__role",
+          "type": "text",
+          "default": "Complete beginner"
+        },
+        {
+          "key": "t2_img_src",
+          "selector": ".af-testphotos__card:nth-child(2) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=375&fit=crop"
+        },
+        {
+          "key": "t2_img_alt",
+          "selector": ".af-testphotos__card:nth-child(2) img",
+          "type": "attr:alt",
+          "default": "Student work"
+        },
+        {
+          "key": "t2_quote",
+          "selector": ".af-testphotos__card:nth-child(2) .af-testphotos__quote",
+          "type": "text",
+          "default": "\"Finally found my own style after years of copying tutorials.\""
+        },
+        {
+          "key": "t2_name",
+          "selector": ".af-testphotos__card:nth-child(2) .af-testphotos__name",
+          "type": "text",
+          "default": "Viktor K."
+        },
+        {
+          "key": "t2_role",
+          "selector": ".af-testphotos__card:nth-child(2) .af-testphotos__role",
+          "type": "text",
+          "default": "5 years of painting"
+        },
+        {
+          "key": "t3_img_src",
+          "selector": ".af-testphotos__card:nth-child(3) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=500&h=375&fit=crop"
+        },
+        {
+          "key": "t3_img_alt",
+          "selector": ".af-testphotos__card:nth-child(3) img",
+          "type": "attr:alt",
+          "default": "Student work"
+        },
+        {
+          "key": "t3_quote",
+          "selector": ".af-testphotos__card:nth-child(3) .af-testphotos__quote",
+          "type": "text",
+          "default": "\"The wet-on-wet technique opened a whole new world for me.\""
+        },
+        {
+          "key": "t3_name",
+          "selector": ".af-testphotos__card:nth-child(3) .af-testphotos__name",
+          "type": "text",
+          "default": "Lisa W."
+        },
+        {
+          "key": "t3_role",
+          "selector": ".af-testphotos__card:nth-child(3) .af-testphotos__role",
+          "type": "text",
+          "default": "Hobbyist painter"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "slider-testimonials",
+      "name": "Slider Testimonials",
+      "category": "social",
+      "desc": "Слайдер отзывов с автопрокруткой",
+      "file": "blocks/slider-testimonials.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": true,
+      "global_ids": [
+        "afSliderDots",
+        "afSliderSlides"
+      ],
+      "global_fn": [
+        "window.afSliderGo"
+      ],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-slider__heading",
+          "type": "text",
+          "default": "What our students say"
+        },
+        {
+          "key": "s1_quote",
+          "selector": ".af-slider__slide:nth-child(1) .af-slider__quote",
+          "type": "text",
+          "default": "I've tried many watercolor courses, but this was the first time I truly understood how water and pigment interact. Nicolás has an incredible gift for explaining complex concepts simply."
+        },
+        {
+          "key": "s1_avatar_src",
+          "selector": ".af-slider__slide:nth-child(1) .af-slider__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=96&h=96&fit=crop&crop=face"
+        },
+        {
+          "key": "s1_avatar_alt",
+          "selector": ".af-slider__slide:nth-child(1) .af-slider__avatar",
+          "type": "attr:alt",
+          "default": "Maria"
+        },
+        {
+          "key": "s1_name",
+          "selector": ".af-slider__slide:nth-child(1) .af-slider__name",
+          "type": "text",
+          "default": "Maria Gonzalez"
+        },
+        {
+          "key": "s1_role",
+          "selector": ".af-slider__slide:nth-child(1) .af-slider__role",
+          "type": "text",
+          "default": "Art teacher, Madrid"
+        },
+        {
+          "key": "s2_quote",
+          "selector": ".af-slider__slide:nth-child(2) .af-slider__quote",
+          "type": "text",
+          "default": "The live sessions felt personal even in a group setting. I painted more in 3 days than I had in the previous month. The recordings are a great bonus too."
+        },
+        {
+          "key": "s2_avatar_src",
+          "selector": ".af-slider__slide:nth-child(2) .af-slider__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=96&h=96&fit=crop&crop=face"
+        },
+        {
+          "key": "s2_avatar_alt",
+          "selector": ".af-slider__slide:nth-child(2) .af-slider__avatar",
+          "type": "attr:alt",
+          "default": "Thomas"
+        },
+        {
+          "key": "s2_name",
+          "selector": ".af-slider__slide:nth-child(2) .af-slider__name",
+          "type": "text",
+          "default": "Thomas Weber"
+        },
+        {
+          "key": "s2_role",
+          "selector": ".af-slider__slide:nth-child(2) .af-slider__role",
+          "type": "text",
+          "default": "Retired architect, Berlin"
+        },
+        {
+          "key": "s3_quote",
+          "selector": ".af-slider__slide:nth-child(3) .af-slider__quote",
+          "type": "text",
+          "default": "As a complete beginner, I was nervous. But Nicolás created such a warm atmosphere — by day 2 I was experimenting fearlessly. Now painting is my daily meditation."
+        },
+        {
+          "key": "s3_avatar_src",
+          "selector": ".af-slider__slide:nth-child(3) .af-slider__avatar",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=96&h=96&fit=crop&crop=face"
+        },
+        {
+          "key": "s3_avatar_alt",
+          "selector": ".af-slider__slide:nth-child(3) .af-slider__avatar",
+          "type": "attr:alt",
+          "default": "Elena"
+        },
+        {
+          "key": "s3_name",
+          "selector": ".af-slider__slide:nth-child(3) .af-slider__name",
+          "type": "text",
+          "default": "Elena Petrova"
+        },
+        {
+          "key": "s3_role",
+          "selector": ".af-slider__slide:nth-child(3) .af-slider__role",
+          "type": "text",
+          "default": "Designer, Amsterdam"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "stats",
+      "name": "Stats / Numbers",
+      "category": "social",
+      "desc": "Цифры и достижения в ряд",
+      "file": "blocks/stats.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "stat1_number",
+          "selector": ".af-stats__item:nth-child(1) .af-stats__number",
+          "type": "text",
+          "default": "2,500+"
+        },
+        {
+          "key": "stat1_label",
+          "selector": ".af-stats__item:nth-child(1) .af-stats__label",
+          "type": "text",
+          "default": "Students worldwide"
+        },
+        {
+          "key": "stat2_number",
+          "selector": ".af-stats__item:nth-child(2) .af-stats__number",
+          "type": "text",
+          "default": "7 years"
+        },
+        {
+          "key": "stat2_label",
+          "selector": ".af-stats__item:nth-child(2) .af-stats__label",
+          "type": "text",
+          "default": "Teaching experience"
+        },
+        {
+          "key": "stat3_number",
+          "selector": ".af-stats__item:nth-child(3) .af-stats__number",
+          "type": "text",
+          "default": "30+"
+        },
+        {
+          "key": "stat3_label",
+          "selector": ".af-stats__item:nth-child(3) .af-stats__label",
+          "type": "text",
+          "default": "Countries"
+        },
+        {
+          "key": "stat4_number",
+          "selector": ".af-stats__item:nth-child(4) .af-stats__number",
+          "type": "text",
+          "default": "4.9/5"
+        },
+        {
+          "key": "stat4_label",
+          "selector": ".af-stats__item:nth-child(4) .af-stats__label",
+          "type": "text",
+          "default": "Average rating"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "stats-images",
+      "name": "Stats + Images",
+      "category": "social",
+      "desc": "Цифры с картинками",
+      "file": "blocks/stats-images.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-statsimg__card:nth-child(1) img",
+          "default": "https://placehold.co/400x300/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-statsimg__card:nth-child(2) img",
+          "default": "https://placehold.co/400x300/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-statsimg__card:nth-child(3) img",
+          "default": "https://placehold.co/400x300/de6518/fff?text=3"
+        },
+        {
+          "selector": ".af-statsimg__card:nth-child(4) img",
+          "default": "https://placehold.co/400x300/de6518/fff?text=4"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-statsimg__heading",
+          "type": "text",
+          "default": "Our results"
+        },
+        {
+          "key": "stat1_img_src",
+          "selector": ".af-statsimg__card:nth-child(1) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "stat1_img_alt",
+          "selector": ".af-statsimg__card:nth-child(1) img",
+          "type": "attr:alt",
+          "default": "Students"
+        },
+        {
+          "key": "stat1_number",
+          "selector": ".af-statsimg__card:nth-child(1) .af-statsimg__number",
+          "type": "text",
+          "default": "2,500+"
+        },
+        {
+          "key": "stat1_label",
+          "selector": ".af-statsimg__card:nth-child(1) .af-statsimg__label",
+          "type": "text",
+          "default": "Students worldwide"
+        },
+        {
+          "key": "stat2_img_src",
+          "selector": ".af-statsimg__card:nth-child(2) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "stat2_img_alt",
+          "selector": ".af-statsimg__card:nth-child(2) img",
+          "type": "attr:alt",
+          "default": "Experience"
+        },
+        {
+          "key": "stat2_number",
+          "selector": ".af-statsimg__card:nth-child(2) .af-statsimg__number",
+          "type": "text",
+          "default": "7 years"
+        },
+        {
+          "key": "stat2_label",
+          "selector": ".af-statsimg__card:nth-child(2) .af-statsimg__label",
+          "type": "text",
+          "default": "Teaching experience"
+        },
+        {
+          "key": "stat3_img_src",
+          "selector": ".af-statsimg__card:nth-child(3) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "stat3_img_alt",
+          "selector": ".af-statsimg__card:nth-child(3) img",
+          "type": "attr:alt",
+          "default": "Countries"
+        },
+        {
+          "key": "stat3_number",
+          "selector": ".af-statsimg__card:nth-child(3) .af-statsimg__number",
+          "type": "text",
+          "default": "30+"
+        },
+        {
+          "key": "stat3_label",
+          "selector": ".af-statsimg__card:nth-child(3) .af-statsimg__label",
+          "type": "text",
+          "default": "Countries"
+        },
+        {
+          "key": "stat4_img_src",
+          "selector": ".af-statsimg__card:nth-child(4) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=400&h=300&fit=crop"
+        },
+        {
+          "key": "stat4_img_alt",
+          "selector": ".af-statsimg__card:nth-child(4) img",
+          "type": "attr:alt",
+          "default": "Rating"
+        },
+        {
+          "key": "stat4_number",
+          "selector": ".af-statsimg__card:nth-child(4) .af-statsimg__number",
+          "type": "text",
+          "default": "4.9/5"
+        },
+        {
+          "key": "stat4_label",
+          "selector": ".af-statsimg__card:nth-child(4) .af-statsimg__label",
+          "type": "text",
+          "default": "Average rating"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "logos-strip",
+      "name": "Logo Strip",
+      "category": "social",
+      "desc": "Логотипы партнёров",
+      "file": "blocks/logos-strip.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "label",
+          "selector": ".af-logos__label",
+          "type": "text",
+          "default": "Featured in"
+        },
+        {
+          "key": "logo1_src",
+          "selector": ".af-logos__row img:nth-child(1)",
+          "type": "src",
+          "default": "https://upload.wikimedia.org/wikipedia/commons/2/2f/Google_2015_logo.svg"
+        },
+        {
+          "key": "logo1_alt",
+          "selector": ".af-logos__row img:nth-child(1)",
+          "type": "attr:alt",
+          "default": "Google"
+        },
+        {
+          "key": "logo2_src",
+          "selector": ".af-logos__row img:nth-child(2)",
+          "type": "src",
+          "default": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg"
+        },
+        {
+          "key": "logo2_alt",
+          "selector": ".af-logos__row img:nth-child(2)",
+          "type": "attr:alt",
+          "default": "Amazon"
+        },
+        {
+          "key": "logo3_src",
+          "selector": ".af-logos__row img:nth-child(3)",
+          "type": "src",
+          "default": "https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+        },
+        {
+          "key": "logo3_alt",
+          "selector": ".af-logos__row img:nth-child(3)",
+          "type": "attr:alt",
+          "default": "Apple"
+        },
+        {
+          "key": "logo4_src",
+          "selector": ".af-logos__row img:nth-child(4)",
+          "type": "src",
+          "default": "https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+        },
+        {
+          "key": "logo4_alt",
+          "selector": ".af-logos__row img:nth-child(4)",
+          "type": "attr:alt",
+          "default": "Microsoft"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "timeline-vertical",
+      "name": "Timeline Vertical",
+      "category": "interactive",
+      "desc": "Шаги / программа вертикально",
+      "file": "blocks/timeline-vertical.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-timeline__heading",
+          "type": "text",
+          "default": "Course program"
+        },
+        {
+          "key": "step1_step",
+          "selector": ".af-timeline__item:nth-child(1) .af-timeline__step",
+          "type": "text",
+          "default": "Day 1"
+        },
+        {
+          "key": "step1_title",
+          "selector": ".af-timeline__item:nth-child(1) .af-timeline__title",
+          "type": "text",
+          "default": "Foundation: Water & Color"
+        },
+        {
+          "key": "step1_text",
+          "selector": ".af-timeline__item:nth-child(1) .af-timeline__text",
+          "type": "text",
+          "default": "Understanding how water behaves on paper. Basic washes, color mixing, and finding your first brushstrokes."
+        },
+        {
+          "key": "step2_step",
+          "selector": ".af-timeline__item:nth-child(2) .af-timeline__step",
+          "type": "text",
+          "default": "Day 2"
+        },
+        {
+          "key": "step2_title",
+          "selector": ".af-timeline__item:nth-child(2) .af-timeline__title",
+          "type": "text",
+          "default": "Technique: Light & Shadow"
+        },
+        {
+          "key": "step2_text",
+          "selector": ".af-timeline__item:nth-child(2) .af-timeline__text",
+          "type": "text",
+          "default": "Layering, glazing, and creating depth. Painting a landscape from reference with live guidance."
+        },
+        {
+          "key": "step3_step",
+          "selector": ".af-timeline__item:nth-child(3) .af-timeline__step",
+          "type": "text",
+          "default": "Day 3"
+        },
+        {
+          "key": "step3_title",
+          "selector": ".af-timeline__item:nth-child(3) .af-timeline__title",
+          "type": "text",
+          "default": "Expression: Your Own Voice"
+        },
+        {
+          "key": "step3_text",
+          "selector": ".af-timeline__item:nth-child(3) .af-timeline__text",
+          "type": "text",
+          "default": "Bringing it all together. Paint your own composition with personal feedback from Nicolás."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "timeline-vertical-images",
+      "name": "Timeline + Images",
+      "category": "interactive",
+      "desc": "Шаги с картинками (зигзаг)",
+      "file": "blocks/timeline-vertical-images.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-timeline-img__item:nth-child(1) .af-timeline-img__image img",
+          "default": "https://placehold.co/600x450/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-timeline-img__item:nth-child(2) .af-timeline-img__image img",
+          "default": "https://placehold.co/600x450/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-timeline-img__item:nth-child(3) .af-timeline-img__image img",
+          "default": "https://placehold.co/600x450/de6518/fff?text=3"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-timeline-img__heading",
+          "type": "text",
+          "default": "Course program"
+        },
+        {
+          "key": "step1_label",
+          "selector": ".af-timeline-img__item:nth-child(1) .af-timeline-img__label",
+          "type": "text",
+          "default": "Day 1"
+        },
+        {
+          "key": "step1_title",
+          "selector": ".af-timeline-img__item:nth-child(1) .af-timeline-img__title",
+          "type": "text",
+          "default": "Foundation: Water & Color"
+        },
+        {
+          "key": "step1_text",
+          "selector": ".af-timeline-img__item:nth-child(1) .af-timeline-img__text",
+          "type": "text",
+          "default": "Understanding how water behaves on paper. Basic washes, color mixing, and finding your first brushstrokes. Pure discovery, no pressure."
+        },
+        {
+          "key": "step1_img_src",
+          "selector": ".af-timeline-img__item:nth-child(1) .af-timeline-img__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=600&h=450&fit=crop"
+        },
+        {
+          "key": "step1_img_alt",
+          "selector": ".af-timeline-img__item:nth-child(1) .af-timeline-img__image img",
+          "type": "attr:alt",
+          "default": "Day 1"
+        },
+        {
+          "key": "step2_label",
+          "selector": ".af-timeline-img__item:nth-child(2) .af-timeline-img__label",
+          "type": "text",
+          "default": "Day 2"
+        },
+        {
+          "key": "step2_title",
+          "selector": ".af-timeline-img__item:nth-child(2) .af-timeline-img__title",
+          "type": "text",
+          "default": "Technique: Light & Shadow"
+        },
+        {
+          "key": "step2_text",
+          "selector": ".af-timeline-img__item:nth-child(2) .af-timeline-img__text",
+          "type": "text",
+          "default": "Layering, glazing, and creating depth. We paint a landscape from reference together, with Nicolás guiding every stroke in real time."
+        },
+        {
+          "key": "step2_img_src",
+          "selector": ".af-timeline-img__item:nth-child(2) .af-timeline-img__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=450&fit=crop"
+        },
+        {
+          "key": "step2_img_alt",
+          "selector": ".af-timeline-img__item:nth-child(2) .af-timeline-img__image img",
+          "type": "attr:alt",
+          "default": "Day 2"
+        },
+        {
+          "key": "step3_label",
+          "selector": ".af-timeline-img__item:nth-child(3) .af-timeline-img__label",
+          "type": "text",
+          "default": "Day 3"
+        },
+        {
+          "key": "step3_title",
+          "selector": ".af-timeline-img__item:nth-child(3) .af-timeline-img__title",
+          "type": "text",
+          "default": "Expression: Your Own Voice"
+        },
+        {
+          "key": "step3_text",
+          "selector": ".af-timeline-img__item:nth-child(3) .af-timeline-img__text",
+          "type": "text",
+          "default": "Bringing it all together. You choose your subject and create your own composition. Personal feedback from Nicolás on your work."
+        },
+        {
+          "key": "step3_img_src",
+          "selector": ".af-timeline-img__item:nth-child(3) .af-timeline-img__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=450&fit=crop"
+        },
+        {
+          "key": "step3_img_alt",
+          "selector": ".af-timeline-img__item:nth-child(3) .af-timeline-img__image img",
+          "type": "attr:alt",
+          "default": "Day 3"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "timeline-horizontal",
+      "name": "Timeline Horizontal",
+      "category": "interactive",
+      "desc": "Шаги горизонтально",
+      "file": "blocks/timeline-horizontal.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-timelineh__heading",
+          "type": "text",
+          "default": "How to get started"
+        },
+        {
+          "key": "step1_title",
+          "selector": ".af-timelineh__step:nth-child(1) .af-timelineh__step-title",
+          "type": "text",
+          "default": "Register"
+        },
+        {
+          "key": "step1_text",
+          "selector": ".af-timelineh__step:nth-child(1) .af-timelineh__step-text",
+          "type": "text",
+          "default": "Fill out the form and choose your plan"
+        },
+        {
+          "key": "step2_title",
+          "selector": ".af-timelineh__step:nth-child(2) .af-timelineh__step-title",
+          "type": "text",
+          "default": "Get materials"
+        },
+        {
+          "key": "step2_text",
+          "selector": ".af-timelineh__step:nth-child(2) .af-timelineh__step-text",
+          "type": "text",
+          "default": "We'll send you a list of what you'll need"
+        },
+        {
+          "key": "step3_title",
+          "selector": ".af-timelineh__step:nth-child(3) .af-timelineh__step-title",
+          "type": "text",
+          "default": "Join live"
+        },
+        {
+          "key": "step3_text",
+          "selector": ".af-timelineh__step:nth-child(3) .af-timelineh__step-text",
+          "type": "text",
+          "default": "Connect to the session at the scheduled time"
+        },
+        {
+          "key": "step4_title",
+          "selector": ".af-timelineh__step:nth-child(4) .af-timelineh__step-title",
+          "type": "text",
+          "default": "Create art"
+        },
+        {
+          "key": "step4_text",
+          "selector": ".af-timelineh__step:nth-child(4) .af-timelineh__step-text",
+          "type": "text",
+          "default": "Paint along with Nicolás and share your results"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "timeline-horizontal-images",
+      "name": "Timeline Horizontal + Images",
+      "category": "interactive",
+      "desc": "Шаги горизонтально с картинками",
+      "file": "blocks/timeline-horizontal-images.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-timelineh-img__card:nth-child(1) img",
+          "default": "https://placehold.co/500x312/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-timelineh-img__card:nth-child(2) img",
+          "default": "https://placehold.co/500x312/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-timelineh-img__card:nth-child(3) img",
+          "default": "https://placehold.co/500x312/de6518/fff?text=3"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-timelineh-img__heading",
+          "type": "text",
+          "default": "How it works"
+        },
+        {
+          "key": "card1_img_src",
+          "selector": ".af-timelineh-img__card:nth-child(1) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=500&h=312&fit=crop"
+        },
+        {
+          "key": "card1_img_alt",
+          "selector": ".af-timelineh-img__card:nth-child(1) img",
+          "type": "attr:alt",
+          "default": "Step 1"
+        },
+        {
+          "key": "card1_label",
+          "selector": ".af-timelineh-img__card:nth-child(1) .af-timelineh-img__label",
+          "type": "text",
+          "default": "Step one"
+        },
+        {
+          "key": "card1_title",
+          "selector": ".af-timelineh-img__card:nth-child(1) .af-timelineh-img__title",
+          "type": "text",
+          "default": "Register & prepare"
+        },
+        {
+          "key": "card1_text",
+          "selector": ".af-timelineh-img__card:nth-child(1) .af-timelineh-img__text",
+          "type": "text",
+          "default": "Sign up, choose your plan, and gather the materials from our list. Takes 15 minutes."
+        },
+        {
+          "key": "card2_img_src",
+          "selector": ".af-timelineh-img__card:nth-child(2) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=500&h=312&fit=crop"
+        },
+        {
+          "key": "card2_img_alt",
+          "selector": ".af-timelineh-img__card:nth-child(2) img",
+          "type": "attr:alt",
+          "default": "Step 2"
+        },
+        {
+          "key": "card2_label",
+          "selector": ".af-timelineh-img__card:nth-child(2) .af-timelineh-img__label",
+          "type": "text",
+          "default": "Step two"
+        },
+        {
+          "key": "card2_title",
+          "selector": ".af-timelineh-img__card:nth-child(2) .af-timelineh-img__title",
+          "type": "text",
+          "default": "Join the sessions"
+        },
+        {
+          "key": "card2_text",
+          "selector": ".af-timelineh-img__card:nth-child(2) .af-timelineh-img__text",
+          "type": "text",
+          "default": "Connect live for 3 days of guided painting. Ask questions, get feedback in real time."
+        },
+        {
+          "key": "card3_img_src",
+          "selector": ".af-timelineh-img__card:nth-child(3) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=500&h=312&fit=crop"
+        },
+        {
+          "key": "card3_img_alt",
+          "selector": ".af-timelineh-img__card:nth-child(3) img",
+          "type": "attr:alt",
+          "default": "Step 3"
+        },
+        {
+          "key": "card3_label",
+          "selector": ".af-timelineh-img__card:nth-child(3) .af-timelineh-img__label",
+          "type": "text",
+          "default": "Step three"
+        },
+        {
+          "key": "card3_title",
+          "selector": ".af-timelineh-img__card:nth-child(3) .af-timelineh-img__title",
+          "type": "text",
+          "default": "Keep growing"
+        },
+        {
+          "key": "card3_text",
+          "selector": ".af-timelineh-img__card:nth-child(3) .af-timelineh-img__text",
+          "type": "text",
+          "default": "Rewatch recordings anytime. Share your work in the community. Continue your journey."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "faq",
+      "name": "FAQ",
+      "category": "interactive",
+      "desc": "Вопросы и ответы",
+      "file": "blocks/faq.html.j2",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-faq__heading",
+          "type": "text",
+          "default": "Frequently asked questions"
+        }
+      ],
+      "recommended_next": [],
+      "template_engine": "jinja2",
+      "min_items": 2,
+      "max_items": 12,
+      "repeater_item_schema": [
+        {
+          "key": "question",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "FAQ question"
+        },
+        {
+          "key": "answer",
+          "type": "html",
+          "required": true,
+          "default": "",
+          "description": "FAQ answer (HTML allowed)"
+        }
+      ]
+    },
+    {
+      "id": "accordion",
+      "name": "Accordion",
+      "category": "content",
+      "desc": "Раскрывающийся список — программа или FAQ",
+      "file": "blocks/accordion.html.j2",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-accordion__heading",
+          "type": "text",
+          "default": "Course program"
+        }
+      ],
+      "recommended_next": [
+        "form"
+      ],
+      "template_engine": "jinja2",
+      "min_items": 2,
+      "max_items": 10,
+      "repeater_item_schema": [
+        {
+          "key": "question",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Accordion item title/question"
+        },
+        {
+          "key": "answer",
+          "type": "html",
+          "required": true,
+          "default": "",
+          "description": "Accordion body content (HTML supported)"
+        },
+        {
+          "key": "tag",
+          "type": "text",
+          "required": false,
+          "default": "",
+          "description": "Optional tag label (e.g. '4 hours')"
+        }
+      ]
+    },
+    {
+      "id": "faq-image",
+      "name": "FAQ + Image",
+      "category": "interactive",
+      "desc": "FAQ с картинкой сбоку",
+      "file": "blocks/faq-image.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-faq-img__image img",
+          "default": "https://placehold.co/600x450/de6518/fff?text=FAQ"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-faq-img__heading",
+          "type": "text",
+          "default": "Common questions"
+        },
+        {
+          "key": "desc",
+          "selector": ".af-faq-img__desc",
+          "type": "text",
+          "default": "Everything you need to know before joining the intensive."
+        },
+        {
+          "key": "img_src",
+          "selector": ".af-faq-img__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=600&h=450&fit=crop"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-faq-img__image img",
+          "type": "attr:alt",
+          "default": "FAQ"
+        },
+        {
+          "key": "q1",
+          "selector": ".af-faq-img__item:nth-child(1) summary",
+          "type": "text",
+          "default": "Do I need painting experience?"
+        },
+        {
+          "key": "a1",
+          "selector": ".af-faq-img__item:nth-child(1) .af-faq-img__answer",
+          "type": "text",
+          "default": "No! The intensive is designed for all levels, from complete beginners to experienced painters."
+        },
+        {
+          "key": "q2",
+          "selector": ".af-faq-img__item:nth-child(2) summary",
+          "type": "text",
+          "default": "What materials do I need?"
+        },
+        {
+          "key": "a2",
+          "selector": ".af-faq-img__item:nth-child(2) .af-faq-img__answer",
+          "type": "text",
+          "default": "Basic watercolor supplies. We'll send you a detailed materials list with budget-friendly options after registration."
+        },
+        {
+          "key": "q3",
+          "selector": ".af-faq-img__item:nth-child(3) summary",
+          "type": "text",
+          "default": "Will sessions be recorded?"
+        },
+        {
+          "key": "a3",
+          "selector": ".af-faq-img__item:nth-child(3) .af-faq-img__answer",
+          "type": "text",
+          "default": "Yes, all sessions are recorded. You get lifetime access to rewatch at your own pace."
+        },
+        {
+          "key": "q4",
+          "selector": ".af-faq-img__item:nth-child(4) summary",
+          "type": "text",
+          "default": "What if I miss a live session?"
+        },
+        {
+          "key": "a4",
+          "selector": ".af-faq-img__item:nth-child(4) .af-faq-img__answer",
+          "type": "text",
+          "default": "Recordings are available within hours. You can catch up anytime and still participate in discussions."
+        },
+        {
+          "key": "q5",
+          "selector": ".af-faq-img__item:nth-child(5) summary",
+          "type": "text",
+          "default": "Is there a refund policy?"
+        },
+        {
+          "key": "a5",
+          "selector": ".af-faq-img__item:nth-child(5) .af-faq-img__answer",
+          "type": "text",
+          "default": "Full refund within 24 hours of purchase if you haven't accessed the materials."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "segment-selector",
+      "name": "Segment Selector",
+      "category": "interactive",
+      "desc": "Табы-сегменты + контент (2-6 карточек)",
+      "file": "blocks/segment-selector.html.j2",
+      "has_form": false,
+      "has_script": true,
+      "singleton": true,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "question",
+          "selector": ".af-segments__question",
+          "type": "text",
+          "default": "Who is this for?"
+        }
+      ],
+      "recommended_next": [],
+      "template_engine": "jinja2",
+      "min_items": 2,
+      "max_items": 6,
+      "repeater_item_schema": [
+        {
+          "key": "tab_label",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Tab button label"
+        },
+        {
+          "key": "heading",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Card heading shown when tab is active"
+        },
+        {
+          "key": "body",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Card body text"
+        },
+        {
+          "key": "cta_text",
+          "type": "text",
+          "required": false,
+          "default": "",
+          "description": "CTA button text"
+        },
+        {
+          "key": "cta_href",
+          "type": "attr:href",
+          "required": false,
+          "default": "#form",
+          "description": "CTA button href"
+        }
+      ]
+    },
+    {
+      "id": "content-card",
+      "name": "Content Card",
+      "category": "cards",
+      "desc": "Карточка с тегом и текстом",
+      "file": "blocks/content-card.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "tag",
+          "selector": ".af-contentcard__tag",
+          "type": "text",
+          "default": "Художник на плато"
+        },
+        {
+          "key": "text",
+          "selector": ".af-contentcard__text",
+          "type": "html",
+          "default": "<p>Вы уже не новичек и ищете свой стиль, рисуете несколько лет и устали от рутины, возможно, работы не плохие — но все одинаковые.</p><p>Иногда, вы видите, что результат предсказуем, когда видите работы мастера в голове вопрос: «КАК это делает?!»</p>"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "checklist",
+      "name": "Checklist",
+      "category": "content",
+      "desc": "Чеклист с галочками",
+      "file": "blocks/checklist.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-checklist__heading",
+          "type": "text",
+          "default": "What's included"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-checklist__sub",
+          "type": "text",
+          "default": "Everything you need for a complete learning experience"
+        },
+        {
+          "key": "item1",
+          "selector": ".af-checklist__item:nth-child(1) .af-checklist__text",
+          "type": "html",
+          "default": "<strong>3 live sessions</strong> with Nicolás López (2 hours each)"
+        },
+        {
+          "key": "item2",
+          "selector": ".af-checklist__item:nth-child(2) .af-checklist__text",
+          "type": "html",
+          "default": "<strong>Lifetime recording access</strong> — rewatch at your own pace"
+        },
+        {
+          "key": "item3",
+          "selector": ".af-checklist__item:nth-child(3) .af-checklist__text",
+          "type": "html",
+          "default": "<strong>Materials list</strong> — exactly what you need, nothing extra"
+        },
+        {
+          "key": "item4",
+          "selector": ".af-checklist__item:nth-child(4) .af-checklist__text",
+          "type": "html",
+          "default": "<strong>Private community</strong> — Telegram group for feedback & support"
+        },
+        {
+          "key": "item5",
+          "selector": ".af-checklist__item:nth-child(5) .af-checklist__text",
+          "type": "html",
+          "default": "<strong>Certificate</strong> of completion (digital, shareable)"
+        },
+        {
+          "key": "item6",
+          "selector": ".af-checklist__item:nth-child(6) .af-checklist__text",
+          "type": "html",
+          "default": "<strong>Bonus reference sheets</strong> — color mixing & brush technique guides"
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-checklist__btn",
+          "type": "text",
+          "default": "Sign up now"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-checklist__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "cta",
+      "name": "CTA Block",
+      "category": "utility",
+      "desc": "Призыв к действию",
+      "file": "blocks/cta.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cta__heading",
+          "type": "text",
+          "default": "Ready to transform your painting?"
+        },
+        {
+          "key": "desc",
+          "selector": ".af-cta__desc",
+          "type": "text",
+          "default": "Join the intensive and discover a new way to see watercolor. Limited spots available."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-cta__btn",
+          "type": "text",
+          "default": "Reserve your spot now"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-cta__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "cta-image",
+      "name": "CTA + Image",
+      "category": "utility",
+      "desc": "CTA с картинкой сбоку",
+      "file": "blocks/cta-image.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-cta-img__image img",
+          "default": "https://placehold.co/600x500/de6518/fff?text=Image"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cta-img__heading",
+          "type": "text",
+          "default": "Ready to transform your painting?"
+        },
+        {
+          "key": "desc",
+          "selector": ".af-cta-img__desc",
+          "type": "text",
+          "default": "Join 2,500+ students who discovered a new way to see watercolor. Limited spots for the live intensive."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-cta-img__btn",
+          "type": "text",
+          "default": "Reserve your spot now"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-cta-img__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "img_src",
+          "selector": ".af-cta-img__image img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=600&h=500&fit=crop"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-cta-img__image img",
+          "type": "attr:alt",
+          "default": "Watercolor painting"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "cta-simple",
+      "name": "CTA Simple",
+      "category": "conversion",
+      "desc": "Заголовок + подзаголовок + кнопка по центру",
+      "file": "blocks/cta-simple.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cta-simple__heading",
+          "type": "text",
+          "default": "Готовы начать рисовать?"
+        },
+        {
+          "key": "desc",
+          "selector": ".af-cta-simple__desc",
+          "type": "text",
+          "default": "Присоединяйтесь к курсу и откройте для себя мир акварели."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-cta-simple__btn",
+          "type": "text",
+          "default": "Записаться на курс"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-cta-simple__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": [
+        "form"
+      ]
+    },
+    {
+      "id": "cta-accent",
+      "name": "CTA Accent",
+      "category": "conversion",
+      "desc": "Кнопка на акцентном фоне",
+      "file": "blocks/cta-accent.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-cta-accent__heading",
+          "type": "text",
+          "default": "Не упустите возможность!"
+        },
+        {
+          "key": "desc",
+          "selector": ".af-cta-accent__desc",
+          "type": "text",
+          "default": "Места ограничены — запишитесь сегодня и начните свой творческий путь."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-cta-accent__btn",
+          "type": "text",
+          "default": "Забронировать место"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-cta-accent__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "cta-minimal",
+      "name": "CTA Minimal",
+      "category": "conversion",
+      "desc": "Только кнопка по центру, без текста",
+      "file": "blocks/cta-minimal.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "cta_text",
+          "selector": ".af-cta-minimal__btn",
+          "type": "text",
+          "default": "Записаться на курс"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-cta-minimal__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "gallery",
+      "name": "Gallery",
+      "category": "utility",
+      "desc": "Сетка картинок / работ",
+      "file": "blocks/gallery.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-gallery__item:nth-child(1) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-gallery__item:nth-child(2) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-gallery__item:nth-child(3) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=3"
+        },
+        {
+          "selector": ".af-gallery__item:nth-child(4) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=4"
+        },
+        {
+          "selector": ".af-gallery__item:nth-child(5) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=5"
+        },
+        {
+          "selector": ".af-gallery__item:nth-child(6) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=6"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-gallery__heading",
+          "type": "text",
+          "default": "Student artworks"
+        },
+        {
+          "key": "img1_src",
+          "selector": ".af-gallery__item:nth-child(1) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "img1_alt",
+          "selector": ".af-gallery__item:nth-child(1) img",
+          "type": "attr:alt",
+          "default": "Artwork 1"
+        },
+        {
+          "key": "img2_src",
+          "selector": ".af-gallery__item:nth-child(2) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "img2_alt",
+          "selector": ".af-gallery__item:nth-child(2) img",
+          "type": "attr:alt",
+          "default": "Artwork 2"
+        },
+        {
+          "key": "img3_src",
+          "selector": ".af-gallery__item:nth-child(3) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "img3_alt",
+          "selector": ".af-gallery__item:nth-child(3) img",
+          "type": "attr:alt",
+          "default": "Artwork 3"
+        },
+        {
+          "key": "img4_src",
+          "selector": ".af-gallery__item:nth-child(4) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1578301978693-85fa9fd0c585?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "img4_alt",
+          "selector": ".af-gallery__item:nth-child(4) img",
+          "type": "attr:alt",
+          "default": "Artwork 4"
+        },
+        {
+          "key": "img5_src",
+          "selector": ".af-gallery__item:nth-child(5) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "img5_alt",
+          "selector": ".af-gallery__item:nth-child(5) img",
+          "type": "attr:alt",
+          "default": "Artwork 5"
+        },
+        {
+          "key": "img6_src",
+          "selector": ".af-gallery__item:nth-child(6) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "img6_alt",
+          "selector": ".af-gallery__item:nth-child(6) img",
+          "type": "attr:alt",
+          "default": "Artwork 6"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "team",
+      "name": "Team",
+      "category": "utility",
+      "desc": "Команда / преподаватели",
+      "file": "blocks/team.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-team__card:nth-child(1) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-team__card:nth-child(2) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-team__card:nth-child(3) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=3"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-team__heading",
+          "type": "text",
+          "default": "Our instructors"
+        },
+        {
+          "key": "member1_img_src",
+          "selector": ".af-team__card:nth-child(1) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "member1_img_alt",
+          "selector": ".af-team__card:nth-child(1) img",
+          "type": "attr:alt",
+          "default": "Instructor"
+        },
+        {
+          "key": "member1_name",
+          "selector": ".af-team__card:nth-child(1) .af-team__name",
+          "type": "text",
+          "default": "Nicolás López"
+        },
+        {
+          "key": "member1_role",
+          "selector": ".af-team__card:nth-child(1) .af-team__role",
+          "type": "text",
+          "default": "Watercolor Master"
+        },
+        {
+          "key": "member1_bio",
+          "selector": ".af-team__card:nth-child(1) .af-team__bio",
+          "type": "text",
+          "default": "20+ years of painting. Exhibited in Madrid, Buenos Aires, and Berlin."
+        },
+        {
+          "key": "member2_img_src",
+          "selector": ".af-team__card:nth-child(2) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "member2_img_alt",
+          "selector": ".af-team__card:nth-child(2) img",
+          "type": "attr:alt",
+          "default": "Instructor"
+        },
+        {
+          "key": "member2_name",
+          "selector": ".af-team__card:nth-child(2) .af-team__name",
+          "type": "text",
+          "default": "Anna Petrova"
+        },
+        {
+          "key": "member2_role",
+          "selector": ".af-team__card:nth-child(2) .af-team__role",
+          "type": "text",
+          "default": "Oil Painting"
+        },
+        {
+          "key": "member2_bio",
+          "selector": ".af-team__card:nth-child(2) .af-team__bio",
+          "type": "text",
+          "default": "Graduate of Stroganov Academy. Specializes in classical still life."
+        },
+        {
+          "key": "member3_img_src",
+          "selector": ".af-team__card:nth-child(3) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "member3_img_alt",
+          "selector": ".af-team__card:nth-child(3) img",
+          "type": "attr:alt",
+          "default": "Instructor"
+        },
+        {
+          "key": "member3_name",
+          "selector": ".af-team__card:nth-child(3) .af-team__name",
+          "type": "text",
+          "default": "Marco Chen"
+        },
+        {
+          "key": "member3_role",
+          "selector": ".af-team__card:nth-child(3) .af-team__role",
+          "type": "text",
+          "default": "Digital Art"
+        },
+        {
+          "key": "member3_bio",
+          "selector": ".af-team__card:nth-child(3) .af-team__bio",
+          "type": "text",
+          "default": "Former Pixar concept artist. Brings cinema-quality vision to every class."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "form",
+      "name": "Contact Form",
+      "category": "utility",
+      "desc": "Форма записи",
+      "file": "blocks/form.html",
+      "has_form": true,
+      "has_script": false,
+      "singleton": true,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-form__heading",
+          "type": "text",
+          "default": "Sign up for the intensive"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-form__sub",
+          "type": "text",
+          "default": "We'll reply within 1 hour"
+        },
+        {
+          "key": "submit_text",
+          "selector": ".af-form__btn",
+          "type": "text",
+          "default": "Submit"
+        }
+      ],
+      "recommended_next": [
+        "footer"
+      ],
+      "form_fields": [
+        {
+          "name": "name",
+          "label": "Your name",
+          "required": true
+        },
+        {
+          "name": "email",
+          "label": "Email",
+          "required": true,
+          "type": "email"
+        },
+        {
+          "name": "phone",
+          "label": "Phone / Telegram",
+          "required": false,
+          "type": "tel"
+        }
+      ]
+    },
+    {
+      "id": "footer",
+      "name": "Footer",
+      "category": "utility",
+      "desc": "Подвал страницы",
+      "file": "blocks/footer.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "brand_name",
+          "selector": ".af-footer__brand-name",
+          "type": "html",
+          "default": "<span>Artefacto</span> School"
+        },
+        {
+          "key": "brand_desc",
+          "selector": ".af-footer__brand-desc",
+          "type": "text",
+          "default": "Online art school. Live sessions with professional artists from around the world."
+        },
+        {
+          "key": "copy",
+          "selector": ".af-footer__copy",
+          "type": "html",
+          "default": "&copy; 2026 Artefacto School. All rights reserved."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "before-after",
+      "name": "Before / After",
+      "category": "conversion",
+      "desc": "Слайдер сравнения до/после",
+      "file": "blocks/before-after.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": false,
+      "global_ids": [
+        "ba-slider"
+      ],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-before-after__img--before",
+          "default": "https://placehold.co/900x560/de6518/fff?text=Before"
+        },
+        {
+          "selector": ".af-before-after__img--after",
+          "default": "https://placehold.co/900x560/de6518/fff?text=After"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-before-after__heading",
+          "type": "text",
+          "default": "See the transformation"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-before-after__sub",
+          "type": "text",
+          "default": "Drag the slider to compare student progress from first lesson to final project"
+        },
+        {
+          "key": "before_src",
+          "selector": ".af-before-after__img--before",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=900&h=560&fit=crop"
+        },
+        {
+          "key": "before_alt",
+          "selector": ".af-before-after__img--before",
+          "type": "attr:alt",
+          "default": "Before"
+        },
+        {
+          "key": "after_src",
+          "selector": ".af-before-after__img--after",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=900&h=560&fit=crop"
+        },
+        {
+          "key": "after_alt",
+          "selector": ".af-before-after__img--after",
+          "type": "attr:alt",
+          "default": "After"
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-cta-btn",
+          "type": "text",
+          "default": "Register for free →"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-cta-btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "video-play",
+      "name": "Video + Play",
+      "category": "conversion",
+      "desc": "Видео с кастомной кнопкой play",
+      "file": "blocks/video-play.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": true,
+      "global_ids": [
+        "video-wrapper"
+      ],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-video-play__poster",
+          "default": "https://placehold.co/960x540/de6518/fff?text=Video"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-video-play__heading",
+          "type": "text",
+          "default": "See how the course works"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-video-play__sub",
+          "type": "text",
+          "default": "Watch a 2-minute overview from your future instructor"
+        },
+        {
+          "key": "poster_src",
+          "selector": ".af-video-play__poster",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1524178232363-1fb2b075b655?w=960&h=540&fit=crop"
+        },
+        {
+          "key": "poster_alt",
+          "selector": ".af-video-play__poster",
+          "type": "attr:alt",
+          "default": "Video preview"
+        },
+        {
+          "key": "video_url",
+          "selector": ".af-video-play__wrapper",
+          "type": "attr:data-video",
+          "default": "https://www.youtube.com/embed/dQw4w9WgXcQ?autoplay=1"
+        },
+        {
+          "key": "caption",
+          "selector": ".af-video-play__caption",
+          "type": "text",
+          "default": "2:15 — Meet the instructor and discover what you will create"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "countdown",
+      "name": "Countdown Timer",
+      "category": "conversion",
+      "desc": "Таймер обратного отсчёта",
+      "file": "blocks/countdown.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": true,
+      "global_ids": [
+        "af-countdown-timer"
+      ],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "label",
+          "selector": ".af-countdown__label",
+          "type": "text",
+          "default": "Limited enrollment"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-countdown__heading",
+          "type": "text",
+          "default": "Registration closes soon"
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-countdown__btn",
+          "type": "text",
+          "default": "Reserve your spot"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-countdown__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "stats-animated",
+      "name": "Stats Animated",
+      "category": "social",
+      "desc": "Анимированные счётчики по скроллу",
+      "file": "blocks/stats-animated.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": true,
+      "global_ids": [
+        "af-stats-anim-grid"
+      ],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-stats-anim__heading",
+          "type": "text",
+          "default": "Our results speak for themselves"
+        },
+        {
+          "key": "stat1_icon",
+          "selector": ".af-stats-anim__item:nth-child(1) .af-stats-anim__icon",
+          "type": "text",
+          "default": "🎓"
+        },
+        {
+          "key": "stat1_target",
+          "selector": ".af-stats-anim__item:nth-child(1) .af-stats-anim__number",
+          "type": "attr:data-target",
+          "default": "5200"
+        },
+        {
+          "key": "stat1_label",
+          "selector": ".af-stats-anim__item:nth-child(1) .af-stats-anim__label",
+          "type": "text",
+          "default": "Students graduated"
+        },
+        {
+          "key": "stat2_icon",
+          "selector": ".af-stats-anim__item:nth-child(2) .af-stats-anim__icon",
+          "type": "text",
+          "default": "⭐"
+        },
+        {
+          "key": "stat2_target",
+          "selector": ".af-stats-anim__item:nth-child(2) .af-stats-anim__number",
+          "type": "attr:data-target",
+          "default": "4.9"
+        },
+        {
+          "key": "stat2_label",
+          "selector": ".af-stats-anim__item:nth-child(2) .af-stats-anim__label",
+          "type": "text",
+          "default": "Average rating"
+        },
+        {
+          "key": "stat3_icon",
+          "selector": ".af-stats-anim__item:nth-child(3) .af-stats-anim__icon",
+          "type": "text",
+          "default": "🌍"
+        },
+        {
+          "key": "stat3_target",
+          "selector": ".af-stats-anim__item:nth-child(3) .af-stats-anim__number",
+          "type": "attr:data-target",
+          "default": "34"
+        },
+        {
+          "key": "stat3_label",
+          "selector": ".af-stats-anim__item:nth-child(3) .af-stats-anim__label",
+          "type": "text",
+          "default": "Countries"
+        },
+        {
+          "key": "stat4_icon",
+          "selector": ".af-stats-anim__item:nth-child(4) .af-stats-anim__icon",
+          "type": "text",
+          "default": "💼"
+        },
+        {
+          "key": "stat4_target",
+          "selector": ".af-stats-anim__item:nth-child(4) .af-stats-anim__number",
+          "type": "attr:data-target",
+          "default": "87"
+        },
+        {
+          "key": "stat4_label",
+          "selector": ".af-stats-anim__item:nth-child(4) .af-stats-anim__label",
+          "type": "text",
+          "default": "Got hired within 3 months"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "guarantee",
+      "name": "Guarantee Badge",
+      "category": "conversion",
+      "desc": "Гарантия и знаки доверия",
+      "file": "blocks/guarantee.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-guarantee__heading",
+          "type": "text",
+          "default": "100% Satisfaction Guarantee"
+        },
+        {
+          "key": "text",
+          "selector": ".af-guarantee__text",
+          "type": "text",
+          "default": "Try the course risk-free for 30 days. If it is not the right fit, we will refund your payment in full — no questions asked. We believe in the quality of our program and want you to feel confident in your decision."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "instructor-bio",
+      "name": "Instructor Bio",
+      "category": "conversion",
+      "desc": "Подробная карточка преподавателя",
+      "file": "blocks/instructor-bio.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-instructor__photo",
+          "default": "https://placehold.co/500x600/de6518/fff?text=Instructor"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "label",
+          "selector": ".af-instructor__label",
+          "type": "text",
+          "default": "Your instructor"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-instructor__heading",
+          "type": "text",
+          "default": "Learn from the best"
+        },
+        {
+          "key": "photo_src",
+          "selector": ".af-instructor__photo",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=500&h=600&fit=crop"
+        },
+        {
+          "key": "photo_alt",
+          "selector": ".af-instructor__photo",
+          "type": "attr:alt",
+          "default": "Instructor photo"
+        },
+        {
+          "key": "name",
+          "selector": ".af-instructor__name",
+          "type": "text",
+          "default": "Nicolás López"
+        },
+        {
+          "key": "role",
+          "selector": ".af-instructor__role",
+          "type": "text",
+          "default": "Watercolor Master & Course Creator"
+        },
+        {
+          "key": "bio",
+          "selector": ".af-instructor__bio",
+          "type": "text",
+          "default": "With over 20 years of professional experience, Nicolás has taught thousands of students across three continents. His work has been exhibited in Madrid, Berlin, and Buenos Aires. He brings a warm, structured approach that makes complex techniques accessible to beginners while challenging advanced artists."
+        },
+        {
+          "key": "stat1_value",
+          "selector": ".af-instructor__stats > div:nth-child(1) .af-instructor__stat-value",
+          "type": "text",
+          "default": "20+"
+        },
+        {
+          "key": "stat1_label",
+          "selector": ".af-instructor__stats > div:nth-child(1) .af-instructor__stat-label",
+          "type": "text",
+          "default": "Years experience"
+        },
+        {
+          "key": "stat2_value",
+          "selector": ".af-instructor__stats > div:nth-child(2) .af-instructor__stat-value",
+          "type": "text",
+          "default": "5,200"
+        },
+        {
+          "key": "stat2_label",
+          "selector": ".af-instructor__stats > div:nth-child(2) .af-instructor__stat-label",
+          "type": "text",
+          "default": "Students taught"
+        },
+        {
+          "key": "stat3_value",
+          "selector": ".af-instructor__stats > div:nth-child(3) .af-instructor__stat-value",
+          "type": "text",
+          "default": "4.9/5"
+        },
+        {
+          "key": "stat3_label",
+          "selector": ".af-instructor__stats > div:nth-child(3) .af-instructor__stat-label",
+          "type": "text",
+          "default": "Average rating"
+        },
+        {
+          "key": "stat4_value",
+          "selector": ".af-instructor__stats > div:nth-child(4) .af-instructor__stat-value",
+          "type": "text",
+          "default": "12"
+        },
+        {
+          "key": "stat4_label",
+          "selector": ".af-instructor__stats > div:nth-child(4) .af-instructor__stat-label",
+          "type": "text",
+          "default": "Exhibitions"
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-cta-btn",
+          "type": "text",
+          "default": "Register for free →"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-cta-btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "student-gallery",
+      "name": "Student Gallery",
+      "category": "social",
+      "desc": "Портфолио студентов (masonry)",
+      "file": "blocks/student-gallery.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-student-gallery__item:nth-child(1) img",
+          "default": "https://placehold.co/400x500/de6518/fff?text=1"
+        },
+        {
+          "selector": ".af-student-gallery__item:nth-child(2) img",
+          "default": "https://placehold.co/400x320/de6518/fff?text=2"
+        },
+        {
+          "selector": ".af-student-gallery__item:nth-child(3) img",
+          "default": "https://placehold.co/400x400/de6518/fff?text=3"
+        },
+        {
+          "selector": ".af-student-gallery__item:nth-child(4) img",
+          "default": "https://placehold.co/400x560/de6518/fff?text=4"
+        },
+        {
+          "selector": ".af-student-gallery__item:nth-child(5) img",
+          "default": "https://placehold.co/400x350/de6518/fff?text=5"
+        },
+        {
+          "selector": ".af-student-gallery__item:nth-child(6) img",
+          "default": "https://placehold.co/400x480/de6518/fff?text=6"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-student-gallery__heading",
+          "type": "text",
+          "default": "Student portfolio"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-student-gallery__sub",
+          "type": "text",
+          "default": "Real results from real students — see what you can create"
+        },
+        {
+          "key": "item1_img_src",
+          "selector": ".af-student-gallery__item:nth-child(1) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1578926375605-eaf7559b1458?w=400&h=500&fit=crop"
+        },
+        {
+          "key": "item1_img_alt",
+          "selector": ".af-student-gallery__item:nth-child(1) img",
+          "type": "attr:alt",
+          "default": "Student work"
+        },
+        {
+          "key": "item1_name",
+          "selector": ".af-student-gallery__item:nth-child(1) .af-student-gallery__name",
+          "type": "text",
+          "default": "Maria K."
+        },
+        {
+          "key": "item1_course",
+          "selector": ".af-student-gallery__item:nth-child(1) .af-student-gallery__course",
+          "type": "text",
+          "default": "Watercolor Basics, Cohort 12"
+        },
+        {
+          "key": "item2_img_src",
+          "selector": ".af-student-gallery__item:nth-child(2) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=400&h=320&fit=crop"
+        },
+        {
+          "key": "item2_img_alt",
+          "selector": ".af-student-gallery__item:nth-child(2) img",
+          "type": "attr:alt",
+          "default": "Student work"
+        },
+        {
+          "key": "item2_name",
+          "selector": ".af-student-gallery__item:nth-child(2) .af-student-gallery__name",
+          "type": "text",
+          "default": "Alex D."
+        },
+        {
+          "key": "item2_course",
+          "selector": ".af-student-gallery__item:nth-child(2) .af-student-gallery__course",
+          "type": "text",
+          "default": "Oil Painting, Cohort 8"
+        },
+        {
+          "key": "item3_img_src",
+          "selector": ".af-student-gallery__item:nth-child(3) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1549490349-8643362247b5?w=400&h=400&fit=crop"
+        },
+        {
+          "key": "item3_img_alt",
+          "selector": ".af-student-gallery__item:nth-child(3) img",
+          "type": "attr:alt",
+          "default": "Student work"
+        },
+        {
+          "key": "item3_name",
+          "selector": ".af-student-gallery__item:nth-child(3) .af-student-gallery__name",
+          "type": "text",
+          "default": "Yuki T."
+        },
+        {
+          "key": "item3_course",
+          "selector": ".af-student-gallery__item:nth-child(3) .af-student-gallery__course",
+          "type": "text",
+          "default": "Digital Art, Cohort 5"
+        },
+        {
+          "key": "item4_img_src",
+          "selector": ".af-student-gallery__item:nth-child(4) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?w=400&h=560&fit=crop"
+        },
+        {
+          "key": "item4_img_alt",
+          "selector": ".af-student-gallery__item:nth-child(4) img",
+          "type": "attr:alt",
+          "default": "Student work"
+        },
+        {
+          "key": "item4_name",
+          "selector": ".af-student-gallery__item:nth-child(4) .af-student-gallery__name",
+          "type": "text",
+          "default": "Carlos M."
+        },
+        {
+          "key": "item4_course",
+          "selector": ".af-student-gallery__item:nth-child(4) .af-student-gallery__course",
+          "type": "text",
+          "default": "Abstract Art, Cohort 3"
+        },
+        {
+          "key": "item5_img_src",
+          "selector": ".af-student-gallery__item:nth-child(5) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=400&h=350&fit=crop"
+        },
+        {
+          "key": "item5_img_alt",
+          "selector": ".af-student-gallery__item:nth-child(5) img",
+          "type": "attr:alt",
+          "default": "Student work"
+        },
+        {
+          "key": "item5_name",
+          "selector": ".af-student-gallery__item:nth-child(5) .af-student-gallery__name",
+          "type": "text",
+          "default": "Sophie L."
+        },
+        {
+          "key": "item5_course",
+          "selector": ".af-student-gallery__item:nth-child(5) .af-student-gallery__course",
+          "type": "text",
+          "default": "Sketch & Ink, Cohort 10"
+        },
+        {
+          "key": "item6_img_src",
+          "selector": ".af-student-gallery__item:nth-child(6) img",
+          "type": "src",
+          "default": "https://images.unsplash.com/photo-1578301978693-85fa9fd0c585?w=400&h=480&fit=crop"
+        },
+        {
+          "key": "item6_img_alt",
+          "selector": ".af-student-gallery__item:nth-child(6) img",
+          "type": "attr:alt",
+          "default": "Student work"
+        },
+        {
+          "key": "item6_name",
+          "selector": ".af-student-gallery__item:nth-child(6) .af-student-gallery__name",
+          "type": "text",
+          "default": "Dmitry V."
+        },
+        {
+          "key": "item6_course",
+          "selector": ".af-student-gallery__item:nth-child(6) .af-student-gallery__course",
+          "type": "text",
+          "default": "Watercolor Advanced, Cohort 6"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "sticky-cta",
+      "name": "Sticky CTA Bar",
+      "category": "conversion",
+      "desc": "Фиксированная CTA при скролле",
+      "file": "blocks/sticky-cta.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": true,
+      "global_ids": [
+        "af-sticky-cta"
+      ],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "text",
+          "selector": ".af-sticky-cta__text",
+          "type": "html",
+          "default": "<strong>Watercolor Masterclass</strong> — Enrollment open, limited spots"
+        },
+        {
+          "key": "price_old",
+          "selector": ".af-sticky-cta__price-old",
+          "type": "text",
+          "default": "$199"
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-sticky-cta__btn",
+          "type": "text",
+          "default": "Enroll now"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-sticky-cta__btn",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "comparison-table",
+      "name": "Comparison Table",
+      "category": "conversion",
+      "desc": "Таблица сравнения (мы vs другие)",
+      "file": "blocks/comparison-table.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-comparison__heading",
+          "type": "text",
+          "default": "Why choose our course?"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-comparison__sub",
+          "type": "text",
+          "default": "See how we compare to other learning options"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "process-steps",
+      "name": "Process Steps",
+      "category": "interactive",
+      "desc": "Как это работает — 3-8 шагов",
+      "file": "blocks/process-steps.html.j2",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-process__heading",
+          "type": "text",
+          "default": "How it works"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-process__sub",
+          "type": "text",
+          "default": "From sign-up to your first masterpiece in simple steps"
+        }
+      ],
+      "recommended_next": [],
+      "template_engine": "jinja2",
+      "min_items": 3,
+      "max_items": 8,
+      "repeater_item_schema": [
+        {
+          "key": "step_number",
+          "type": "text",
+          "required": false,
+          "default": "",
+          "description": "Short label shown in circle (e.g. '1', '2')"
+        },
+        {
+          "key": "title",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Step title"
+        },
+        {
+          "key": "description",
+          "type": "text",
+          "required": true,
+          "default": "",
+          "description": "Step description text"
+        },
+        {
+          "key": "badge",
+          "type": "text",
+          "required": false,
+          "default": "",
+          "description": "Optional badge label (e.g. 'Day 1 · Lesson')"
+        }
+      ]
+    },
+    {
+      "id": "marquee",
+      "name": "Marquee Strip",
+      "category": "social",
+      "desc": "Бегущая строка отзывов",
+      "file": "blocks/marquee.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "label",
+          "selector": ".af-marquee__label",
+          "type": "text",
+          "default": "What our students say"
+        },
+        {
+          "key": "item1_quote",
+          "selector": ".af-marquee__item:nth-child(1) .af-marquee__quote",
+          "type": "text",
+          "default": "\"Changed how I see color forever\""
+        },
+        {
+          "key": "item1_author",
+          "selector": ".af-marquee__item:nth-child(1) .af-marquee__author",
+          "type": "text",
+          "default": "— Maria K."
+        },
+        {
+          "key": "item2_quote",
+          "selector": ".af-marquee__item:nth-child(2) .af-marquee__quote",
+          "type": "text",
+          "default": "\"Best online art course I have taken\""
+        },
+        {
+          "key": "item2_author",
+          "selector": ".af-marquee__item:nth-child(2) .af-marquee__author",
+          "type": "text",
+          "default": "— Alex D."
+        },
+        {
+          "key": "item3_quote",
+          "selector": ".af-marquee__item:nth-child(3) .af-marquee__quote",
+          "type": "text",
+          "default": "\"The feedback alone is worth 10x the price\""
+        },
+        {
+          "key": "item3_author",
+          "selector": ".af-marquee__item:nth-child(3) .af-marquee__author",
+          "type": "text",
+          "default": "— Yuki T."
+        },
+        {
+          "key": "item4_quote",
+          "selector": ".af-marquee__item:nth-child(4) .af-marquee__quote",
+          "type": "text",
+          "default": "\"Went from zero to selling prints in 3 months\""
+        },
+        {
+          "key": "item4_author",
+          "selector": ".af-marquee__item:nth-child(4) .af-marquee__author",
+          "type": "text",
+          "default": "— Carlos M."
+        },
+        {
+          "key": "item5_quote",
+          "selector": ".af-marquee__item:nth-child(5) .af-marquee__quote",
+          "type": "text",
+          "default": "\"Nicolas is an incredible teacher\""
+        },
+        {
+          "key": "item5_author",
+          "selector": ".af-marquee__item:nth-child(5) .af-marquee__author",
+          "type": "text",
+          "default": "— Sophie L."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "notification-bar",
+      "name": "Notification Bar",
+      "category": "conversion",
+      "desc": "Баннер-уведомление сверху",
+      "file": "blocks/notification-bar.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": true,
+      "global_ids": [
+        "af-notif-bar"
+      ],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "text",
+          "selector": ".af-notif-bar__text",
+          "type": "html",
+          "default": "<strong>New cohort starts April 15</strong> — Early bird pricing: save 40%"
+        },
+        {
+          "key": "link_text",
+          "selector": ".af-notif-bar__link",
+          "type": "text",
+          "default": "Reserve your spot →"
+        },
+        {
+          "key": "link_href",
+          "selector": ".af-notif-bar__link",
+          "type": "attr:href",
+          "default": "#form"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "zoom-schedule",
+      "name": "Zoom Schedule",
+      "category": "interactive",
+      "desc": "Расписание Zoom-встреч с фильтрами и ссылками (таблица + карточки)",
+      "file": "blocks/zoom-schedule.html",
+      "has_form": false,
+      "has_script": true,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-zoom-schedule__heading",
+          "type": "text",
+          "default": "Расписание Zoom-встреч"
+        },
+        {
+          "key": "subtitle",
+          "selector": ".af-zoom-schedule__subtitle",
+          "type": "text",
+          "default": "Живые сессии с преподавателями и кураторами"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "ebook-promo",
+      "name": "E-Book Promo",
+      "category": "conversion",
+      "desc": "Промо-блок с обложкой книги, описанием и CTA",
+      "file": "blocks/ebook-promo.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [
+        {
+          "selector": ".af-ebook__image img",
+          "default": "https://placehold.co/320x420/f4efe9/3b3b3b?text=E-Book"
+        }
+      ],
+      "editable_fields": [
+        {
+          "key": "badge",
+          "selector": ".af-ebook__badge",
+          "type": "text",
+          "default": "Бесплатно"
+        },
+        {
+          "key": "heading",
+          "selector": ".af-ebook__heading",
+          "type": "text",
+          "default": "Скачайте гайд по основам акварели"
+        },
+        {
+          "key": "desc",
+          "selector": ".af-ebook__desc",
+          "type": "text",
+          "default": "48 страниц с пошаговыми упражнениями и секретами работы с цветом."
+        },
+        {
+          "key": "cta_text",
+          "selector": ".af-ebook__btn",
+          "type": "text",
+          "default": "Получить бесплатно"
+        },
+        {
+          "key": "cta_href",
+          "selector": ".af-ebook__btn",
+          "type": "attr:href",
+          "default": "#form"
+        },
+        {
+          "key": "img_src",
+          "selector": ".af-ebook__image img",
+          "type": "src",
+          "default": "https://placehold.co/320x420/f4efe9/3b3b3b?text=E-Book"
+        },
+        {
+          "key": "img_alt",
+          "selector": ".af-ebook__image img",
+          "type": "attr:alt",
+          "default": "Обложка электронной книги"
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "risks-grid",
+      "name": "Risks / Pain Points Grid",
+      "category": "content",
+      "desc": "Сетка карточек проблем/болей с иконками",
+      "file": "blocks/risks-grid.html",
+      "has_form": false,
+      "has_script": false,
+      "singleton": false,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-risks__heading",
+          "type": "text",
+          "default": "Знакомые ситуации?"
+        },
+        {
+          "key": "subtitle",
+          "selector": ".af-risks__subtitle",
+          "type": "text",
+          "default": "Многие ученики приходят к нам с такими проблемами — и решают их за первый месяц."
+        },
+        {
+          "key": "card1_icon",
+          "selector": ".af-risks__card:nth-child(1) .af-risks__icon",
+          "type": "text",
+          "default": "😰"
+        },
+        {
+          "key": "card1_title",
+          "selector": ".af-risks__card:nth-child(1) .af-risks__card-title",
+          "type": "text",
+          "default": "Страх чистого листа"
+        },
+        {
+          "key": "card1_text",
+          "selector": ".af-risks__card:nth-child(1) .af-risks__card-text",
+          "type": "text",
+          "default": "Боитесь начать, потому что «а вдруг не получится» — и откладываете снова и снова."
+        },
+        {
+          "key": "card2_icon",
+          "selector": ".af-risks__card:nth-child(2) .af-risks__icon",
+          "type": "text",
+          "default": "🎨"
+        },
+        {
+          "key": "card2_title",
+          "selector": ".af-risks__card:nth-child(2) .af-risks__card-title",
+          "type": "text",
+          "default": "Грязные цвета"
+        },
+        {
+          "key": "card2_text",
+          "selector": ".af-risks__card:nth-child(2) .af-risks__card-text",
+          "type": "text",
+          "default": "Смешиваете краски, а результат получается тусклым и мутным вместо чистых оттенков."
+        },
+        {
+          "key": "card3_icon",
+          "selector": ".af-risks__card:nth-child(3) .af-risks__icon",
+          "type": "text",
+          "default": "📐"
+        },
+        {
+          "key": "card3_title",
+          "selector": ".af-risks__card:nth-child(3) .af-risks__card-title",
+          "type": "text",
+          "default": "Нет системы"
+        },
+        {
+          "key": "card3_text",
+          "selector": ".af-risks__card:nth-child(3) .af-risks__card-text",
+          "type": "text",
+          "default": "Смотрите уроки на YouTube, но без структуры навыки не складываются в цельную картину."
+        },
+        {
+          "key": "card4_icon",
+          "selector": ".af-risks__card:nth-child(4) .af-risks__icon",
+          "type": "text",
+          "default": "⏰"
+        },
+        {
+          "key": "card4_title",
+          "selector": ".af-risks__card:nth-child(4) .af-risks__card-title",
+          "type": "text",
+          "default": "Нет времени"
+        },
+        {
+          "key": "card4_text",
+          "selector": ".af-risks__card:nth-child(4) .af-risks__card-text",
+          "type": "text",
+          "default": "Кажется, что для результата нужно рисовать часами — а свободного времени нет."
+        },
+        {
+          "key": "card5_icon",
+          "selector": ".af-risks__card:nth-child(5) .af-risks__icon",
+          "type": "text",
+          "default": "🤷"
+        },
+        {
+          "key": "card5_title",
+          "selector": ".af-risks__card:nth-child(5) .af-risks__card-title",
+          "type": "text",
+          "default": "Не с кем обсудить"
+        },
+        {
+          "key": "card5_text",
+          "selector": ".af-risks__card:nth-child(5) .af-risks__card-text",
+          "type": "text",
+          "default": "Рисуете в одиночестве, без обратной связи — не понимаете, как расти дальше."
+        },
+        {
+          "key": "card6_icon",
+          "selector": ".af-risks__card:nth-child(6) .af-risks__icon",
+          "type": "text",
+          "default": "💸"
+        },
+        {
+          "key": "card6_title",
+          "selector": ".af-risks__card:nth-child(6) .af-risks__card-title",
+          "type": "text",
+          "default": "Потраченные деньги"
+        },
+        {
+          "key": "card6_text",
+          "selector": ".af-risks__card:nth-child(6) .af-risks__card-text",
+          "type": "text",
+          "default": "Купили дорогие материалы, но они лежат без дела, потому что не знаете как ими пользоваться."
+        }
+      ],
+      "recommended_next": []
+    },
+    {
+      "id": "form-gc",
+      "name": "Contact Form (GetCourse embed)",
+      "category": "utility",
+      "desc": "Форма GetCourse (iframe/widget/offer) — вместо собственной формы+API",
+      "file": "blocks/form-gc.html",
+      "has_form": true,
+      "has_script": false,
+      "singleton": true,
+      "global_ids": [],
+      "global_fn": [],
+      "placeholder_images": [],
+      "editable_fields": [
+        {
+          "key": "heading",
+          "selector": ".af-form-gc__heading",
+          "type": "text",
+          "default": "Записаться на интенсив"
+        },
+        {
+          "key": "sub",
+          "selector": ".af-form-gc__sub",
+          "type": "text",
+          "default": "Заполните форму ниже — мы свяжемся с вами в течение часа"
+        },
+        {
+          "key": "embed_code",
+          "selector": ".af-form-gc__embed",
+          "type": "html",
+          "default": "<div class=\"af-form-gc__fallback\">Вставьте embed-код формы GetCourse в поле <code>embed_code</code> брифа.</div>"
+        }
+      ]
+    },
+    {
+      "id": "custom",
+      "name": "Custom Generated Block",
+      "category": "custom",
+      "desc": "AI-generated block. Content and layout specified via CustomBlockSpec.",
+      "file": "blocks/_custom_placeholder.html",
+      "template_engine": "generated",
+      "singleton": false,
+      "has_form": false,
+      "has_script": false,
+      "editable_fields": [],
+      "repeater_item_schema": []
+    }
+  ]
+}
